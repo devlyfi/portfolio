@@ -10,21 +10,21 @@ interface SearchBarProps {
 
 export function SearchBar({ value, onChange }: SearchBarProps) {
     return (
-        <div className="relative max-w-md mx-auto w-full">
-            <Search className="absolute left-4 top-1/2 -translate-y-1/2 size-5 text-muted-foreground" />
+        <div className="relative max-w-md mx-auto w-full group">
+            <Search className="absolute left-6 top-1/2 -translate-y-1/2 size-4 text-muted-foreground/60 group-focus-within:text-primary transition-colors" />
             <Input
                 type="text"
-                placeholder="Search articles, topics or keywords..."
-                className="pl-12 pr-10 h-14 rounded-none border-border/50 bg-background/50 backdrop-blur-sm focus-visible:ring-primary/20 focus-visible:border-primary text-base"
+                placeholder="/SEARCH_INSIGHTS..."
+                className="pl-14 pr-10 h-14 rounded-none border-border/40 bg-background focus-visible:ring-0 focus-visible:border-primary text-xs font-bold uppercase tracking-widest placeholder:opacity-40"
                 value={value}
                 onChange={(e) => onChange(e.target.value)}
             />
             {value && (
                 <button
                     onClick={() => onChange("")}
-                    className="absolute right-4 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground transition-colors"
+                    className="absolute right-4 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-primary transition-colors"
                 >
-                    <X className="size-5" />
+                    <X className="size-4" />
                 </button>
             )}
         </div>

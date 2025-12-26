@@ -34,30 +34,35 @@ export function BlogCTA({ type }: BlogCTAProps) {
     const Icon = config.icon;
 
     return (
-        <div className="relative overflow-hidden p-8 md:p-12 lg:p-16 border border-primary/20 bg-primary/5 rounded-none mt-16 group">
-            {/* Background pattern */}
-            <div className="absolute top-0 right-0 -mr-20 -mt-20 size-64 bg-primary/10 rounded-none blur-3xl group-hover:bg-primary/20 transition-colors duration-700" />
+        <div className="relative overflow-hidden p-8 md:p-12 lg:p-16 border border-border/40 bg-muted/5 rounded-none mt-16 group">
+            {/* Background symbol pattern */}
+            <div className="absolute top-1/2 right-12 -translate-y-1/2 opacity-[0.02] rotate-12 pointer-events-none select-none">
+                <Icon className="size-64" />
+            </div>
 
             <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8 md:gap-12">
                 <div className="max-w-2xl text-center md:text-left">
-                    <div className="inline-flex items-center gap-2 text-primary font-bold text-sm tracking-widest uppercase mb-4">
-                        <Icon className="size-5" />
-                        Next Steps
+                    <div className="inline-flex items-center gap-3 text-primary font-black text-[10px] uppercase tracking-[0.4em] mb-6">
+                        <Icon className="size-4" />
+                        /NEXT_PROTOCOL
                     </div>
-                    <h2 className="text-3xl md:text-4xl font-bold mb-4">{config.title}</h2>
-                    <p className="text-muted-foreground text-lg leading-relaxed">
+                    <h2 className="display-bold text-3xl md:text-4xl lg:text-5xl mb-6 uppercase tracking-tight leading-tight">{config.title}</h2>
+                    <p className="text-muted-foreground text-lg leading-relaxed italic border-l-2 border-primary/20 pl-6">
                         {config.desc}
                     </p>
                 </div>
 
                 <div className="shrink-0">
-                    <Button size="lg" className="rounded-none h-14 px-10 text-base shadow-xl shadow-primary/30 group/btn" asChild>
+                    <Button size="lg" className="rounded-none h-16 px-10 text-xs font-bold uppercase tracking-[0.2em] shadow-2xl shadow-primary/10 group/btn" asChild>
                         <Link href={config.href}>
-                            {config.label} <ArrowRight className="ml-2 size-5 group-hover/btn:translate-x-1 transition-transform" />
+                            {config.label} <ArrowRight className="ml-3 size-4 group-hover/btn:translate-x-1 transition-transform" />
                         </Link>
                     </Button>
                 </div>
             </div>
+
+            <div className="grid-symbol -top-2.5 -left-2.5" />
+            <div className="grid-symbol -bottom-2.5 -right-2.5" />
         </div>
     );
 }

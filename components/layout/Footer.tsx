@@ -6,105 +6,121 @@ export function Footer() {
     const currentYear = new Date().getFullYear();
 
     return (
-        <footer className="bg-muted/30 border-t border-border mt-auto">
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+        <footer className="bg-background border-t border-border/40 mt-auto relative overflow-hidden">
+            {/* Connected Grid Background Lines */}
+            <div className="absolute inset-0 pointer-events-none opacity-20">
+                <div className="absolute left-[25%] top-0 bottom-0 w-[1px] bg-border/40" />
+                <div className="absolute left-[50%] top-0 bottom-0 w-[1px] bg-border/40" />
+                <div className="absolute left-[75%] top-0 bottom-0 w-[1px] bg-border/40" />
+            </div>
+
+            <div className="container mx-auto px-4 relative z-10">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 divide-y md:divide-y-0 lg:divide-x divide-border/40 border-x border-border/40">
                     {/* Brand Column */}
-                    <div className="space-y-4">
-                        <Link href="/" className="flex items-center gap-2">
-                            <div className="size-8 rounded-lg bg-primary flex items-center justify-center text-primary-foreground font-bold text-xl">
-                                D
+                    <div className="p-8 lg:p-12 space-y-8 flex flex-col relative group">
+                        <Link href="/" className="flex items-center gap-3 group/logo">
+                            <div className="size-8 bg-primary flex items-center justify-center text-xs text-primary-foreground font-bold rounded-none group-hover/logo:scale-110 transition-transform">
+                                NX
                             </div>
-                            <span className="text-xl font-bold tracking-tight">
+                            <span className="text-lg font-bold tracking-[0.2em] uppercase">
                                 {SITE_CONFIG.name}
                             </span>
                         </Link>
-                        <p className="text-muted-foreground text-sm max-w-xs">
-                            {SITE_CONFIG.description}. We build digital products that matter.
+                        <p className="text-xs uppercase tracking-widest text-foreground/70 font-medium leading-relaxed max-w-[240px]">
+                            {SITE_CONFIG.description}. We engineer digital experiences that push the boundaries of possibility.
                         </p>
-                        <div className="flex items-center gap-4">
-                            <a href={SITE_CONFIG.links.twitter} className="text-muted-foreground hover:text-primary transition-colors">
-                                <Twitter className="size-5" />
-                            </a>
-                            <a href={SITE_CONFIG.links.linkedin} className="text-muted-foreground hover:text-primary transition-colors">
-                                <Linkedin className="size-5" />
-                            </a>
-                            <a href={SITE_CONFIG.links.github} className="text-muted-foreground hover:text-primary transition-colors">
-                                <Github className="size-5" />
-                            </a>
+                        islands                        <div className="flex items-center gap-6 pt-4">
+                            {[
+                                { icon: Twitter, href: SITE_CONFIG.links.twitter },
+                                { icon: Linkedin, href: SITE_CONFIG.links.linkedin },
+                                { icon: Github, href: SITE_CONFIG.links.github }
+                            ].map((social, i) => (
+                                <a key={i} href={social.href} className="text-muted-foreground hover:text-primary transition-colors">
+                                    <social.icon className="size-4" />
+                                </a>
+                            ))}
                         </div>
+                        <div className="sidebar-meta absolute -left-2 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity">/SITE_CORE_V1.0</div>
                     </div>
 
                     {/* Links Column */}
-                    <div>
-                        <h3 className="font-semibold mb-4">Company</h3>
-                        <ul className="space-y-3">
+                    <div className="p-8 lg:p-12 space-y-8 relative group">
+                        <div className="flex items-center gap-3">
+                            <div className="size-1.5 bg-primary" />
+                            <h3 className="text-[11px] font-bold uppercase tracking-[0.3em]">Navigation</h3>
+                        </div>
+                        <ul className="space-y-4">
                             {NAV_LINKS.map((link) => (
                                 <li key={link.href}>
                                     <Link
                                         href={link.href}
-                                        className="text-muted-foreground hover:text-primary text-sm transition-colors"
+                                        className="text-xs uppercase tracking-widest text-foreground/80 font-bold hover:text-primary transition-colors flex items-center gap-2 group/item"
                                     >
+                                        <span className="opacity-0 group-hover/item:opacity-100 transition-opacity">/</span>
                                         {link.label}
                                     </Link>
                                 </li>
                             ))}
                         </ul>
+                        <div className="sidebar-meta absolute top-12 right-4">/DIR_MAP</div>
                     </div>
 
-                    {/* Services Column - Static subset of services for footer */}
-                    <div>
-                        <h3 className="font-semibold mb-4">Services</h3>
-                        <ul className="space-y-3">
-                            <li>
-                                <Link href="/services/web-application-development" className="text-muted-foreground hover:text-primary text-sm transition-colors">
-                                    Web Development
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href="/services/mobile-app-development" className="text-muted-foreground hover:text-primary text-sm transition-colors">
-                                    Mobile Apps
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href="/services/cloud-devops" className="text-muted-foreground hover:text-primary text-sm transition-colors">
-                                    Cloud & DevOps
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href="/services/ui-ux-design" className="text-muted-foreground hover:text-primary text-sm transition-colors">
-                                    UI/UX Design
-                                </Link>
-                            </li>
+                    {/* Services Column */}
+                    <div className="p-8 lg:p-12 space-y-8 relative group">
+                        <div className="flex items-center gap-3">
+                            <div className="size-1.5 bg-primary" />
+                            <h3 className="text-xs font-bold uppercase tracking-widest">Expertise</h3>
+                        </div>
+                        <ul className="space-y-4 text-xs uppercase tracking-widest text-foreground/80 font-bold">
+                            {["Architecture", "Engineering", "Intelligence", "Interface"].map((item) => (
+                                <li key={item} className="flex items-center gap-2 group/item hover:text-primary transition-colors">
+                                    <span className="size-1.5 bg-border/40 group-hover/item:bg-primary transition-colors" />
+                                    {item}
+                                </li>
+                            ))}
                         </ul>
+                        <div className="sidebar-meta absolute top-12 right-4">/SERVICES</div>
                     </div>
 
                     {/* Contact Column */}
-                    <div>
-                        <h3 className="font-semibold mb-4">Contact</h3>
-                        <ul className="space-y-4">
-                            <li className="flex items-start gap-3 text-sm text-muted-foreground">
-                                <MapPin className="size-5 shrink-0 text-primary" />
-                                <span>{SITE_CONFIG.contact.address}</span>
-                            </li>
-                            <li className="flex items-center gap-3 text-sm text-muted-foreground">
-                                <Phone className="size-5 shrink-0 text-primary" />
-                                <span>{SITE_CONFIG.contact.phone}</span>
-                            </li>
-                            <li className="flex items-center gap-3 text-sm text-muted-foreground">
-                                <Mail className="size-5 shrink-0 text-primary" />
-                                <span>{SITE_CONFIG.contact.email}</span>
-                            </li>
-                        </ul>
+                    <div className="p-8 lg:p-12 space-y-8 relative group">
+                        <div className="flex items-center gap-3">
+                            <div className="size-1.5 bg-primary" />
+                            <h3 className="text-xs font-bold uppercase tracking-widest">Terminal</h3>
+                        </div>
+                        <div className="space-y-6">
+                            <div className="space-y-2">
+                                <p className="text-[10px] font-bold text-muted-foreground tracking-widest uppercase">/LOCALATION</p>
+                                <p className="text-xs uppercase tracking-widest text-foreground font-bold">{SITE_CONFIG.contact.address}</p>
+                            </div>
+                            <div className="space-y-2">
+                                <p className="text-[10px] font-bold text-muted-foreground tracking-widest uppercase">/TRANSMISSION</p>
+                                <p className="text-xs uppercase tracking-widest text-foreground font-bold">{SITE_CONFIG.contact.email}</p>
+                            </div>
+                        </div>
+                        <div className="sidebar-meta absolute -right-2 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity">/STATUS_ACTIVE</div>
                     </div>
                 </div>
 
-                <div className="border-t border-border mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-muted-foreground">
-                    <p>&copy; {currentYear} {SITE_CONFIG.name}. All rights reserved.</p>
-                    <div className="flex gap-6">
-                        <Link href="/privacy" className="hover:text-foreground">Privacy Policy</Link>
-                        <Link href="/terms" className="hover:text-foreground">Terms of Service</Link>
+                {/* Bottom Bar with Symbols */}
+                <div className="border-x border-t border-border/40 py-8 px-8 flex flex-col md:flex-row justify-between items-center gap-6 relative group/bottom">
+                    <p className="text-[10px] uppercase tracking-[0.4em] text-foreground/60 font-medium">
+                        &copy; {currentYear} {SITE_CONFIG.name}_SYSTEMS [[ ALL_RIGHTS_RESERVED ]]
+                    </p>
+                    <div className="flex gap-8">
+                        {["Privacy", "Terms"].map((legal) => (
+                            <Link key={legal} href={`/${legal.toLowerCase()}`} className="text-[10px] uppercase tracking-[0.3em] text-foreground/70 font-bold hover:text-primary transition-colors border-b border-transparent hover:border-primary pb-1">
+                                {legal}
+                            </Link>
+                        ))}
                     </div>
+
+                    {/* Intersection Symbols */}
+                    {[0, 25, 50, 75, 100].map((pos) => (
+                        <div key={pos} className="grid-symbol -top-2.5" style={{ left: `calc(${pos}% - 10px)` }} />
+                    ))}
+                    <div className="grid-symbol -bottom-2.5 left-[-10px]" />
+                    <div className="grid-symbol -bottom-2.5 right-[-10px]" />
                 </div>
             </div>
         </footer>

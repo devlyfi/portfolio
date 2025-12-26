@@ -6,8 +6,9 @@ import { BlogCard } from "@/components/blog/BlogCard";
 import { FeaturedPost } from "@/components/blog/FeaturedPost";
 import { CategoryFilter } from "@/components/blog/CategoryFilter";
 import { SearchBar } from "@/components/blog/SearchBar";
+import { Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft } from "lucide-react";
+import { cn } from "@/lib/utils";
 import Link from "next/link";
 
 export default function BlogListingPage() {
@@ -29,72 +30,116 @@ export default function BlogListingPage() {
 
     return (
         <div className="bg-background min-h-screen">
-            {/* Page Header */}
-            <section className="pt-20 pb-16 lg:pt-32 lg:pb-24 border-b border-border/50 bg-muted/20 relative overflow-hidden">
-                <div className="absolute inset-0 -z-10">
-                    <div className="absolute top-0 right-0 -mr-40 -mt-40 size-96 bg-primary/5 rounded-none blur-3xl" />
-                    <div className="absolute bottom-0 left-0 -ml-40 -mb-40 size-96 bg-secondary/10 rounded-none blur-3xl" />
-                </div>
+            {/* Split Header */}
+            <header className="pt-32 pb-0 border-b border-border/40 overflow-hidden bg-background">
+                <div className="container px-4 mx-auto">
+                    <div className="flex flex-col lg:flex-row">
+                        {/* Title Side */}
+                        <div className="lg:w-2/3 pb-12 lg:pb-20">
+                            <div className="inline-flex items-center gap-3 mb-8">
+                                <span className="text-[10px] font-bold uppercase tracking-[0.4em] text-muted-foreground/60">Agency // Insights</span>
+                                <div className="h-[1px] w-8 bg-border" />
+                                <span className="text-[10px] font-bold uppercase tracking-[0.4em] text-primary">Strategy</span>
+                            </div>
+                            <h1 className="display-bold text-6xl md:text-7xl lg:text-8xl flex flex-col items-start gap-2">
+                                <span className="flex items-center gap-6">
+                                    INSIGHTS <span className="h-[2px] w-12 md:w-24 bg-primary mt-4" />
+                                </span>
+                                <span className="text-muted-foreground/20">& STRATEGY.</span>
+                            </h1>
+                        </div>
 
-                <div className="container px-4 mx-auto text-center relative z-10">
-                    <div className="inline-flex items-center rounded-none border border-primary/20 bg-primary/5 px-3 py-1 text-sm font-medium text-primary mb-6 backdrop-blur-sm uppercase tracking-widest">
-                        <span className="flex h-2 w-2 rounded-none bg-primary mr-2"></span>
-                        Insights & Resources
+                        {/* Description Side */}
+                        <div className="lg:w-1/3 border-l border-border/40 p-8 md:p-12 lg:p-16 flex flex-col justify-end">
+                            <p className="text-lg text-muted-foreground leading-relaxed italic border-l-2 border-primary/20 pl-6">
+                                Expert guidance on Fiverr growth, client management, and scaling your software agency in the global market.
+                            </p>
+                        </div>
                     </div>
-                    <h1 className="text-4xl md:text-6xl font-bold mb-8 tracking-tight">
-                        Elevate Your <span className="text-primary italic">Software Business.</span>
-                    </h1>
-                    <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-                        Expert guidance on Fiverr growth, client management, and scaling your software agency in the global market.
-                    </p>
+                </div>
+            </header>
+
+            {/* Metadata Grid */}
+            <section className="border-b border-border/40 bg-muted/5">
+                <div className="container px-4 mx-auto">
+                    <div className="grid grid-cols-2 lg:grid-cols-4 divide-x divide-border/40 border-x border-border/40">
+                        {[
+                            { label: "/TOTAL_POSTS", value: BLOG_POSTS.length.toString().padStart(2, '0') },
+                            { label: "/CATEGORIES", value: "07" },
+                            { label: "/AUTHORS", value: "02" },
+                            { label: "/LATEST", value: "Q4_2025" }
+                        ].map((stat, i) => (
+                            <div key={i} className="p-8 lg:p-10 flex flex-col gap-4 relative group hover:bg-background transition-colors duration-500">
+                                <span className="text-[9px] font-bold uppercase tracking-[0.3em] text-muted-foreground group-hover:text-primary transition-colors">{stat.label}</span>
+                                <span className="text-4xl font-bold tracking-tighter">{stat.value}</span>
+                                <div className="grid-symbol -top-2.5 -left-2.5" />
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </section>
 
             {/* Featured Post */}
             {!searchQuery && activeCategory === "All" && (
-                <div className="relative -mt-12 lg:-mt-20 z-20 pb-20">
+                <div className="relative border-b border-border/40">
                     <FeaturedPost post={featuredPost} />
+                    <div className="grid-symbol -bottom-2.5 left-1/2 -ml-2.5 z-20" />
                 </div>
             )}
 
-            {/* Filters and Search */}
-            <section className="py-12 border-b border-border/50 sticky top-20 bg-background/80 backdrop-blur-md z-30">
+            {/* Filters and Search - Architectural Layout */}
+            <section className="py-12 border-b border-border/40 sticky top-20 bg-background/90 backdrop-blur-md z-30">
                 <div className="container px-4 mx-auto">
-                    <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
+                    <div className="flex flex-col lg:flex-row items-center justify-between gap-8 border border-border/40 p-6 relative">
                         <CategoryFilter
                             activeCategory={activeCategory}
-                            onCategoryChange={(cat) => {
-                                setActiveCategory(cat);
-                                // Optional: scroll to grid if needed
-                            }}
+                            onCategoryChange={(cat) => setActiveCategory(cat)}
                         />
+                        <div className="hidden lg:block w-[1px] h-8 bg-border/40" />
                         <SearchBar value={searchQuery} onChange={setSearchQuery} />
+
+                        <div className="grid-symbol -top-2.5 -left-2.5" />
+                        <div className="grid-symbol -bottom-2.5 -right-2.5" />
                     </div>
                 </div>
             </section>
 
             {/* Blog Grid */}
-            <section className="py-20 lg:py-32">
-                <div className="container px-4 mx-auto">
+            <section className="py-20 lg:py-32 relative overflow-hidden bg-background">
+                {/* Connected Grid Background Lines */}
+                <div className="absolute inset-0 pointer-events-none opacity-20">
+                    <div className="absolute left-[33%] top-0 bottom-0 w-[1px] bg-border/40" />
+                    <div className="absolute left-[66%] top-0 bottom-0 w-[1px] bg-border/40" />
+                </div>
+
+                <div className="container px-4 mx-auto relative z-10">
                     {filteredPosts.length > 0 ? (
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
-                            {filteredPosts.map((post) => (
-                                <BlogCard key={post.id} post={post} />
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0 border border-border/40">
+                            {filteredPosts.map((post, i) => (
+                                <div key={post.id} className={cn(
+                                    "p-8 lg:p-12 border-border/40 relative group",
+                                    i % 3 !== 2 && "lg:border-r",
+                                    i % 2 !== 1 && "md:border-r lg:md:border-none",
+                                    i >= 3 && "border-t",
+                                    i >= 2 && "md:border-t lg:md:border-none"
+                                )}>
+                                    <BlogCard post={post} />
+                                    {/* Architectural intersection markers would go here if we were using a more manual grid */}
+                                </div>
                             ))}
                         </div>
                     ) : (
-                        <div className="text-center py-20 max-w-md mx-auto">
-                            <div className="size-20 bg-muted rounded-none flex items-center justify-center mx-auto mb-6">
-                                <SearchBar value="" onChange={() => { }} /> {/* Just for icon visual */}
+                        <div className="text-center py-20 max-w-md mx-auto border border-border/40 p-12 relative">
+                            <div className="size-20 bg-muted/50 flex items-center justify-center mx-auto mb-6 border border-border/40">
+                                <Search className="size-8 text-muted-foreground/40" />
                             </div>
-                            <h3 className="text-2xl font-bold mb-2">No results found</h3>
-                            <p className="text-muted-foreground mb-8">
+                            <h3 className="text-2xl font-bold mb-2 uppercase tracking-tighter">No results found</h3>
+                            <p className="text-sm text-muted-foreground mb-8 uppercase tracking-widest leading-relaxed">
                                 We couldn't find any articles matching "{searchQuery}" in {activeCategory}.
-                                Try clearing your filters or search something else.
                             </p>
                             <Button
                                 variant="outline"
-                                className="rounded-none px-8"
+                                className="rounded-none px-8 text-xs font-bold uppercase tracking-[0.2em]"
                                 onClick={() => {
                                     setSearchQuery("");
                                     setActiveCategory("All");
@@ -102,31 +147,52 @@ export default function BlogListingPage() {
                             >
                                 Clear All Filters
                             </Button>
+                            <div className="grid-symbol -top-2.5 -left-2.5" />
                         </div>
                     )}
                 </div>
             </section>
 
-            {/* Newsletter/Subscriber Placeholder */}
-            <section className="py-24 bg-muted/30 border-t border-border/50">
-                <div className="container px-4 mx-auto text-center max-w-4xl">
-                    <h2 className="text-3xl md:text-5xl font-bold mb-6">Never miss an insight.</h2>
-                    <p className="text-lg text-muted-foreground mb-10">
-                        Join 2,500+ software professionals receiving our weekly strategy teardowns directly in their inbox.
-                    </p>
-                    <div className="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto">
-                        <input
-                            type="email"
-                            placeholder="your@email.com"
-                            className="flex-1 px-6 h-14 bg-background border border-border focus:border-primary outline-none text-base"
-                        />
-                        <Button size="lg" className="rounded-none h-14 px-8 text-base shadow-lg shadow-primary/20">
-                            Subscribe Now
-                        </Button>
+            {/* Newsletter/Subscriber - Visual/Narrative Split */}
+            <section className="py-0 border-t border-border/40 bg-muted/10">
+                <div className="container px-4 mx-auto">
+                    <div className="flex flex-col lg:flex-row divide-y lg:divide-y-0 lg:divide-x divide-border/40 border-x border-border/40">
+                        {/* Narrative Side */}
+                        <div className="lg:w-1/2 p-12 lg:p-24 space-y-8 relative group">
+                            <div className="sidebar-meta absolute -left-2 top-24">01 // SUBSCRIPTION</div>
+                            <h2 className="display-bold text-4xl md:text-5xl leading-tight">
+                                Never miss an <span className="text-muted-foreground/30">insight.</span>
+                            </h2>
+                            <p className="text-lg text-muted-foreground leading-relaxed italic border-l-2 border-primary/20 pl-6">
+                                Join 2,500+ software professionals receiving our weekly strategy teardowns directly in their inbox.
+                            </p>
+                            <div className="grid-symbol -bottom-2.5 -left-2.5" />
+                        </div>
+
+                        {/* Input Side */}
+                        <div className="lg:w-1/2 p-12 lg:p-24 flex items-center justify-center bg-background relative group">
+                            <div className="grid-symbol -top-2.5 -right-2.5" />
+                            <div className="w-full max-w-lg space-y-6">
+                                <div className="space-y-4">
+                                    <label className="text-[10px] font-bold uppercase tracking-[0.4em] text-muted-foreground/60">/NEWSLETTER_TRANSMISSION</label>
+                                    <div className="flex flex-col sm:flex-row gap-0">
+                                        <input
+                                            type="email"
+                                            placeholder="ENTER@EMAIL.ADDR"
+                                            className="flex-1 px-6 h-16 bg-muted/20 border border-border focus:border-primary outline-none text-xs font-bold uppercase tracking-widest placeholder:opacity-30"
+                                        />
+                                        <Button size="lg" className="rounded-none h-16 px-10 text-xs font-bold uppercase tracking-[0.2em] shadow-xl shadow-primary/10">
+                                            Transmit
+                                        </Button>
+                                    </div>
+                                </div>
+                                <p className="text-[10px] text-muted-foreground/40 mt-4 uppercase tracking-[0.2em] flex items-center gap-2">
+                                    <div className="size-1 bg-primary animate-pulse" />
+                                    No spam, ever. Only high-value growth strategies.
+                                </p>
+                            </div>
+                        </div>
                     </div>
-                    <p className="text-xs text-muted-foreground mt-4 italic">
-                        No spam, ever. Only high-value growth strategies.
-                    </p>
                 </div>
             </section>
         </div>
