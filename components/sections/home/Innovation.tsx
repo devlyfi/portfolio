@@ -1,51 +1,71 @@
 import { Cpu, Leaf, Github } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 export function Innovation() {
     return (
-        <section className="py-24 bg-background border-t border-border">
-            <div className="container px-4 md:px-6 mx-auto">
-                <div className="text-center mb-16">
-                    <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">Beyond Client Work</h2>
-                    <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-                        We invest heavily in R&D, community, and the planet. Here is how we give back and stay ahead.
-                    </p>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    {/* Innovation Lab */}
-                    <div className="group relative overflow-hidden rounded-none bg-muted/40 p-8 hover:bg-muted/60 transition-colors">
-                        <div className="mb-4 inline-flex p-3 rounded-none bg-primary/10 text-primary">
-                            <Cpu className="size-6" />
+        <section className="py-0 bg-background overflow-hidden border border-border/40 relative">
+            <div className="container px-4 mx-auto">
+                <div className="flex flex-col lg:flex-row border-x border-border/40">
+                    {/* Header Label */}
+                    <div className="w-full lg:w-1/3 p-10 lg:p-16 xl:p-24 space-y-12 relative bg-muted/5 border-b lg:border-b-0 lg:border-r border-border/40">
+                        <div className="space-y-6">
+                            <span className="text-[10px] font-black text-primary uppercase tracking-[0.5em] block animate-pulse">/RD_LAB_STUDIES</span>
+                            <h2 className="display-bold text-3xl lg:text-3xl xl:text-5xl uppercase tracking-tighter !leading-[0.9]">Beyond<br />Systems<br />Architecture</h2>
                         </div>
-                        <h3 className="text-2xl font-bold mb-2">NexLabs R&D</h3>
-                        <p className="text-muted-foreground mb-4">
-                            Our internal incubator exploring Generative AI, Web3 protocols, and edge computing before they hit the mainstream market.
-                        </p>
-                        <div className="h-1 w-12 bg-primary/30 group-hover:w-full transition-all duration-500 rounded-none" />
+                        <p className="text-[11px] text-muted-foreground uppercase tracking-[0.3em] leading-relaxed opacity-60 max-w-sm">Investing in high-frontier R&D, community ecosystems, and ecological resilience.</p>
+                        <div className="grid-symbol -bottom-2.5 -left-2.5" />
                     </div>
 
-                    {/* Open Source */}
-                    <div className="group relative overflow-hidden rounded-none bg-muted/40 p-8 hover:bg-muted/60 transition-colors">
-                        <div className="mb-4 inline-flex p-3 rounded-none bg-primary/10 text-primary">
-                            <Github className="size-6" />
-                        </div>
-                        <h3 className="text-2xl font-bold mb-2">Open Source</h3>
-                        <p className="text-muted-foreground mb-4">
-                            We maintain 15+ open source libraries downloaded by 500k+ developers. Giving back to the ecosystem that powers us.
-                        </p>
-                        <div className="h-1 w-12 bg-primary/30 group-hover:w-full transition-all duration-500 rounded-none" />
-                    </div>
-
-                    {/* Sustainability */}
-                    <div className="group relative overflow-hidden rounded-none bg-muted/40 p-8 hover:bg-muted/60 transition-colors">
-                        <div className="mb-4 inline-flex p-3 rounded-none bg-primary/10 text-primary">
-                            <Leaf className="size-6" />
-                        </div>
-                        <h3 className="text-2xl font-bold mb-2">Green Tech</h3>
-                        <p className="text-muted-foreground mb-4">
-                            We prioritize carbon-neutral hosting and sustainable code practices. 1% of our profits go to climate action initiatives.
-                        </p>
-                        <div className="h-1 w-12 bg-primary/30 group-hover:w-full transition-all duration-500 rounded-none" />
+                    {/* Innovation Grid */}
+                    <div className="w-full lg:w-2/3 grid grid-cols-1 md:grid-cols-1 xl:grid-cols-3 relative">
+                        {[
+                            {
+                                title: "NexLabs R&D",
+                                desc: "Our internal incubator exploring Generative AI, Web3 protocols, and edge computing.",
+                                icon: Cpu,
+                                marker: "/LAB_01"
+                            },
+                            {
+                                title: "Open Source",
+                                desc: "Maintaining 15+ libraries for the global ecosystem. Collective engineering mastery.",
+                                icon: Github,
+                                marker: "/OSS_CONTRIB"
+                            },
+                            {
+                                title: "Green Tech",
+                                desc: "Carbon-neutral hosting and sustainable digital engineering for a low-impact future.",
+                                icon: Leaf,
+                                marker: "/ECO_STRAT"
+                            }
+                        ].map((item, index) => (
+                            <div
+                                key={index}
+                                className={cn(
+                                    "p-10 lg:p-16 xl:p-20 space-y-12 group hover:bg-muted/5 transition-all duration-700 relative flex flex-col justify-between border-b border-border/40",
+                                    (index === 0 || index === 1) && "xl:border-r last:border-r-0",
+                                    index === 2 && "border-b-0",
+                                    "xl:border-b-0"
+                                )}
+                            >
+                                <div className="space-y-10">
+                                    <div className="flex items-center justify-between">
+                                        <div className="size-16 border border-border/40 flex items-center justify-center text-primary bg-background group-hover:border-primary transition-all duration-500 shadow-sm group-hover:shadow-primary/5">
+                                            <item.icon className="size-6" />
+                                        </div>
+                                        <span className="text-[10px] font-black text-primary uppercase tracking-[0.4em] opacity-0 group-hover:opacity-100 transition-all group-hover:translate-x-0 translate-x-4 duration-500">{item.marker}</span>
+                                    </div>
+                                    <div className="space-y-6">
+                                        <h3 className="text-[13px] font-black uppercase tracking-[0.3em] text-foreground group-hover:text-primary transition-colors">{item.title}</h3>
+                                        <p className="text-[11px] text-muted-foreground uppercase leading-[2] tracking-[0.2em] opacity-60 group-hover:opacity-100 transition-opacity">
+                                            {item.desc}
+                                        </p>
+                                    </div>
+                                </div>
+                                <div className="grid-symbol -bottom-2.5 -right-2.5 opacity-0 group-hover:opacity-100 transition-opacity" />
+                            </div>
+                        ))}
+                        <div className="grid-symbol -top-2.5 -right-2.5 hidden lg:block" />
+                        <div className="grid-symbol -bottom-2.5 -right-2.5 lg:block hidden" />
                     </div>
                 </div>
             </div>

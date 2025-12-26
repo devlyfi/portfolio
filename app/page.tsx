@@ -14,18 +14,20 @@ import { CTASection } from "@/components/sections/home/CTASection";
 export default function Home() {
     return (
         <>
-            <Hero />
-            <TechStack />
-            <ServicesOverview />
-            <FeaturedWork />
-            <WhyChooseUs />
-            <Process />
-            <Innovation />
-            <TeamSection isCarousel={true} />
-            <Testimonials />
-            <LatestInsights />
-            <FAQ />
-            <CTASection />
+            <div className="flex flex-col gap-32 mb-32">
+                <Hero />
+                <TechStack />
+                <ServicesOverview />
+                <FeaturedWork />
+                <WhyChooseUs />
+                <Process />
+                <Innovation />
+                <TeamSection isCarousel={true} />
+                <Testimonials />
+                <LatestInsights />
+                <FAQ />
+                <CTASection />
+            </div>
         </>
     );
 }

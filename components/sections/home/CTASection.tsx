@@ -1,29 +1,64 @@
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { ArrowUpRight } from "lucide-react";
 
 export function CTASection() {
     return (
-        <section className="py-24">
-            <div className="container px-4 md:px-6 mx-auto">
-                <div className="bg-muted rounded-none p-8 md:p-16 text-center space-y-8 relative overflow-hidden">
-                    {/* Background decoration */}
-                    <div className="absolute top-0 right-0 -mt-20 -mr-20 size-96 bg-primary/10 rounded-none blur-3xl" />
-                    <div className="absolute bottom-0 left-0 -mb-20 -ml-20 size-96 bg-primary/10 rounded-none blur-3xl" />
+        <section className="py-0 bg-muted/3 overflow-hidden relative border-b border-border/40">
+            <div className="container px-4 mx-auto">
+                <div className="flex flex-col lg:flex-row border-x border-border/40 divide-y lg:divide-y-0 lg:divide-x divide-border/40 h-full min-h-[600px]">
+                    {/* Narrative Panel */}
+                    <div className="lg:w-2/3 p-12 lg:p-24 space-y-16 relative flex flex-col justify-center bg-background/40">
+                        <div className="space-y-10 max-w-3xl">
+                            <span className="text-[10px] font-black text-primary uppercase tracking-[0.5em] block animate-pulse">/OPEN_CHANNEL_PROTOCOL</span>
+                            <h2 className="display-bold text-4xl lg:text-7xl uppercase tracking-tighter !leading-[0.85]">
+                                Transform Your<br />Technical Future
+                            </h2>
+                            <p className="text-[12px] text-muted-foreground uppercase leading-[2] tracking-[0.3em] font-medium opacity-60 border-l border-primary/20 pl-10">
+                                Initiating a partnership begins with a high-fidelity strategy session. Secure your position in the upcoming deployment phase through our verified technical channel.
+                            </p>
+                        </div>
 
-                    <h2 className="text-3xl md:text-5xl font-bold tracking-tight relative z-10 max-w-4xl mx-auto">
-                        Transform Your Business with Custom Software
-                    </h2>
-                    <p className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto relative z-10">
-                        Sometimes the hardest part is reaching out — but once you do, we’ll make the rest easy.
-                        Schedule a free strategy session today.
-                    </p>
-                    <div className="relative z-10 pt-4">
-                        <Button size="lg" className="h-14 px-8 text-lg rounded-none" asChild>
-                            <Link href="/contact">
-                                Start a Conversation <ArrowRight className="ml-2 size-5" />
-                            </Link>
-                        </Button>
+                        <div className="flex flex-wrap gap-16 pt-8">
+                            <div className="space-y-4">
+                                <span className="text-[10px] font-black text-muted-foreground/30 uppercase tracking-[0.4em] block">AVAILABILITY</span>
+                                <div className="text-sm font-black uppercase text-primary tracking-[0.4em]">PHASE_04 // DEC 2024</div>
+                            </div>
+                            <div className="space-y-4">
+                                <span className="text-[10px] font-black text-muted-foreground/30 uppercase tracking-[0.4em] block">STATUS</span>
+                                <div className="text-sm font-black uppercase text-foreground tracking-[0.4em]">READY_FOR_COMMMS</div>
+                            </div>
+                        </div>
+
+                        <div className="sidebar-meta absolute -right-2 top-24 scale-90 opacity-10">TX_READY_v04</div>
+                        <div className="grid-symbol -bottom-2.5 -left-2.5 lg:hidden" />
+                    </div>
+
+                    {/* Action Panel */}
+                    <div className="lg:w-1/3 group relative bg-muted/5 flex flex-col items-center justify-center p-12 lg:p-24 overflow-hidden cursor-pointer transition-all duration-1000">
+                        {/* Hover Overlay */}
+                        <div className="absolute inset-0 bg-primary translate-y-full group-hover:translate-y-0 transition-transform duration-700 ease-in-out -z-10" />
+
+                        <Link href="/contact" className="relative z-10 text-center space-y-10">
+                            <div className="size-24 border border-border/40 flex items-center justify-center mx-auto bg-background group-hover:border-primary-foreground group-hover:scale-110 transition-all duration-700 shadow-2xl group-hover:shadow-primary/20">
+                                <ArrowUpRight className="size-10 text-primary group-hover:rotate-45 transition-all duration-700" />
+                            </div>
+
+                            <div className="space-y-4">
+                                <span className="text-lg font-black uppercase tracking-[0.6em] text-foreground group-hover:text-white transition-colors block">Initiate</span>
+                                <span className="text-[10px] font-bold text-muted-foreground group-hover:text-white/60 uppercase tracking-[0.4em] transition-colors block">/START_CONVERSATION</span>
+                            </div>
+                        </Link>
+
+                        {/* Visual Connector - Abstract Grid */}
+                        <div className="absolute inset-0 pointer-events-none opacity-10 group-hover:opacity-30 transition-all duration-1000">
+                            <div className="h-full w-full border-[40px] border-border/5 border-double group-hover:border-white/10 transition-colors" />
+                        </div>
+
+                        <div className="grid-symbol -top-2.5 -right-2.5" />
+                        <div className="grid-symbol -bottom-2.5 -right-2.5" />
+
+                        {/* Subtle Radial Glow */}
+                        <div className="absolute inset-0 opacity-0 group-hover:opacity-40 bg-[radial-gradient(circle_at_center,var(--primary-foreground)_0%,transparent_70%)] transition-opacity duration-1000 -z-20" />
                     </div>
                 </div>
             </div>

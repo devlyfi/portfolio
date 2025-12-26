@@ -214,45 +214,85 @@ export default async function BlogPostPage({ params }: PageProps) {
                 </div>
             </div>
 
-            {/* Next Insight Section */}
-            <section className="bg-background py-0 border-b border-border/40 overflow-hidden">
+            {/* Premium Footer Transition */}
+            <section className="bg-background border-t border-border/40 overflow-hidden">
                 <div className="container px-4 mx-auto">
-                    <div className="grid grid-cols-1 lg:grid-cols-12 border-x border-border/40 divide-y lg:divide-y-0 lg:divide-x divide-border/40">
-                        <div className="lg:col-span-8 p-12 lg:p-24 space-y-8 relative overflow-hidden group">
-                            <div className="relative z-10 flex flex-col items-start gap-8">
-                                <div className="space-y-4">
-                                    <span className="text-[10px] font-bold text-primary uppercase tracking-[0.4em]">Next Insight</span>
-                                    <h3 className="display-bold text-4xl lg:text-6xl leading-[1.1] uppercase tracking-tight group-hover:text-primary transition-colors">
-                                        Ready for the <span className="text-muted-foreground/30 text-nowrap">next level?</span>
+                    <div className="flex flex-col lg:flex-row divide-y lg:divide-y-0 lg:divide-x divide-border/40 border-x border-border/40">
+                        {/* Next Post Preview - 66% width on desktop */}
+                        <div className="lg:w-2/3 relative group/next overflow-hidden bg-muted/5">
+                            <Link href={`/blog/${BLOG_POSTS[(BLOG_POSTS.findIndex(p => p.id === post.id) + 1) % BLOG_POSTS.length].slug}`} className="block relative h-full">
+                                <div className="p-12 lg:p-20 space-y-8 relative z-20 transition-transform duration-700 group-hover/next:-translate-y-4">
+                                    <div className="flex items-center gap-4 text-primary font-black text-[10px] uppercase tracking-[0.4em]">
+                                        <div className="h-px w-8 bg-primary" />
+                                        Next Strategy Item
+                                    </div>
+                                    <h3 className="display-bold text-4xl lg:text-5xl uppercase tracking-tight leading-none max-w-2xl group-hover/next:text-primary transition-colors">
+                                        {BLOG_POSTS[(BLOG_POSTS.findIndex(p => p.id === post.id) + 1) % BLOG_POSTS.length].title}
                                     </h3>
+                                    <div className="flex items-center gap-8 opacity-40 group-hover/next:opacity-100 transition-opacity">
+                                        <div className="space-y-1">
+                                            <p className="text-[9px] font-bold text-muted-foreground uppercase tracking-widest">/READING_TIME</p>
+                                            <p className="text-xs font-bold uppercase tracking-widest">{BLOG_POSTS[(BLOG_POSTS.findIndex(p => p.id === post.id) + 1) % BLOG_POSTS.length].readingTime}</p>
+                                        </div>
+                                        <div className="space-y-1">
+                                            <p className="text-[9px] font-bold text-muted-foreground uppercase tracking-widest">/CATEGORY</p>
+                                            <p className="text-xs font-bold uppercase tracking-widest">{BLOG_POSTS[(BLOG_POSTS.findIndex(p => p.id === post.id) + 1) % BLOG_POSTS.length].category.split(' ')[0]}</p>
+                                        </div>
+                                    </div>
                                 </div>
-                                <BlogCTA type={post.ctaType} />
-                            </div>
 
-                            {/* Background Symbol Pattern */}
-                            <div className="absolute top-1/2 right-[-50px] -translate-y-1/2 opacity-[0.03] rotate-12 pointer-events-none select-none">
-                                <span className="text-[20vw] font-black leading-none">STRATEGY</span>
-                            </div>
-                            <div className="grid-symbol -bottom-2.5 -left-2.5" />
+                                {/* Abstract Visual Background */}
+                                <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-background to-transparent z-10 opacity-70" />
+                                <div className="absolute inset-0 grayscale brightness-[0.2] group-hover/next:grayscale-0 group-hover/next:brightness-[0.4] transition-all duration-1000 -z-10">
+                                    {BLOG_POSTS[(BLOG_POSTS.findIndex(p => p.id === post.id) + 1) % BLOG_POSTS.length].featuredImage ? (
+                                        <img
+                                            src={BLOG_POSTS[(BLOG_POSTS.findIndex(p => p.id === post.id) + 1) % BLOG_POSTS.length].featuredImage}
+                                            alt="Next Post"
+                                            className="w-full h-full object-cover scale-110 group-hover/next:scale-100 transition-transform duration-[2000ms]"
+                                        />
+                                    ) : (
+                                        <div className="w-full h-full bg-primary/5 flex items-center justify-center">
+                                            <span className="text-[15vw] font-black opacity-5">NEXT</span>
+                                        </div>
+                                    )}
+                                </div>
+                                <div className="grid-symbol -bottom-2.5 -left-2.5" />
+                                <div className="absolute right-12 top-1/2 -translate-y-1/2 group-hover/next:translate-x-4 transition-transform duration-500 opacity-0 group-hover/next:opacity-100">
+                                    <ArrowLeft className="size-12 rotate-180 text-primary/40" />
+                                </div>
+                            </Link>
                         </div>
 
-                        {/* Next Post Preview */}
-                        <div className="lg:col-span-4 p-8 lg:p-16 flex flex-col justify-center gap-8 bg-muted/5 relative group">
-                            <span className="text-[9px] font-bold text-muted-foreground tracking-widest uppercase">/CONTINUE_TRANSMISSION</span>
-                            <div className="learn-more-box group/btn">
-                                <Link
-                                    href="/blog"
-                                    className="block p-8 border border-border/40 bg-background hover:bg-muted/5 transition-all relative group-hover/btn:-translate-y-2 group-hover/btn:translate-x-2"
-                                >
-                                    <div className="flex items-center justify-between mb-4">
-                                        <span className="text-[10px] font-bold text-primary uppercase tracking-widest">/DIRECTORY</span>
-                                        <ArrowLeft className="size-4 rotate-180" />
+                        {/* Directory Access - 33% width on desktop */}
+                        <div className="lg:w-1/3 p-12 lg:p-20 flex flex-col items-center justify-center bg-muted/5 relative group/dir">
+                            <Link href="/blog" className="flex flex-col items-center gap-8 w-full">
+                                <div className="relative">
+                                    <div className="size-20 border border-border/40 flex items-center justify-center relative z-20 bg-background group-hover/dir:border-primary transition-colors duration-500">
+                                        <div className="grid grid-cols-2 gap-1.5">
+                                            <div className="size-1.5 bg-muted-foreground group-hover/dir:bg-primary transition-colors" />
+                                            <div className="size-1.5 bg-muted-foreground group-hover/dir:bg-primary transition-colors" />
+                                            <div className="size-1.5 bg-muted-foreground group-hover/dir:bg-primary transition-colors" />
+                                            <div className="size-1.5 bg-muted-foreground group-hover/dir:bg-primary transition-colors" />
+                                        </div>
                                     </div>
-                                    <h4 className="text-xl font-bold uppercase tracking-tight">Return to All Insights</h4>
-                                </Link>
-                                <div className="absolute inset-0 border border-primary opacity-0 group-hover/btn:opacity-100 -z-10 transition-all" />
-                            </div>
-                            <div className="grid-symbol -bottom-2.5 -right-2.5" />
+                                    <div className="absolute inset-0 size-20 border border-primary/20 -z-10 animate-pulse group-hover/dir:scale-125 transition-transform" />
+                                </div>
+
+                                <div className="space-y-4 text-center">
+                                    <span className="text-[10px] font-black text-primary uppercase tracking-[0.5em] block animate-pulse">/DIRECTORY_ACCESS</span>
+                                    <h4 className="display-bold text-2xl uppercase tracking-tight group-hover/dir:text-primary transition-colors">Return to All<br />Insights & Case Studies</h4>
+                                    <p className="text-[10px] text-muted-foreground uppercase tracking-widest opacity-40 group-hover/dir:opacity-100 transition-opacity">
+                                        System Protocol // Secure Return
+                                    </p>
+                                </div>
+
+                                <div className="w-full bg-border/40 h-px relative overflow-hidden mt-4">
+                                    <div className="absolute inset-0 bg-primary w-1/4 -translate-x-full group-hover/dir:translate-x-[400%] transition-transform duration-[1500ms]" />
+                                </div>
+
+                                <div className="grid-symbol -top-2.5 -right-2.5" />
+                                <div className="grid-symbol -bottom-2.5 -right-2.5" />
+                            </Link>
                         </div>
                     </div>
                 </div>

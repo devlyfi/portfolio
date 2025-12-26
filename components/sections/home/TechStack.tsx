@@ -8,20 +8,33 @@ export function TechStack() {
     ];
 
     return (
-        <section className="py-24 border-y border-border overflow-hidden bg-muted/20">
-            <div className="container px-4 mx-auto mb-12 text-center">
-                <h2 className="text-2xl md:text-3xl font-bold">Powered by Modern Tech</h2>
-                <p className="text-muted-foreground mt-2">We use the best tools to build future-proof solutions.</p>
-            </div>
+        <section className="py-0 border-b border-border/40 overflow-hidden bg-muted/3">
+            <div className="container px-4 mx-auto">
+                <div className="flex flex-col lg:flex-row border-x border-border/40 divide-y lg:divide-y-0 lg:divide-x divide-border/40">
+                    {/* Summary Label */}
+                    <div className="lg:w-1/4 p-12 lg:p-20 space-y-4 relative">
+                        <span className="text-[10px] font-black text-primary uppercase tracking-[0.4em] block animate-pulse">/SYSTEM_STACK_01</span>
+                        <h2 className="display-bold text-2xl lg:text-3xl uppercase tracking-tighter">Enterprise Infrastructure</h2>
+                        <p className="text-[10px] text-muted-foreground uppercase tracking-widest leading-relaxed opacity-60">Highly reliable and scalable technology stack for modern digital solutions.</p>
+                        <div className="grid-symbol -bottom-2.5 -left-2.5 lg:hidden" />
+                    </div>
 
-            <div className="relative w-full overflow-hidden max-w-7xl mx-auto [mask-image:linear-gradient(to_right,transparent,black_15%,black_85%,transparent)]">
-                <div className="flex animate-marquee space-x-12 items-center hover:pause py-4">
-                    {/* Repeat list 4 times to ensure it covers wide screens and loops smoothly */}
-                    {[...technologies, ...technologies, ...technologies, ...technologies].map((tech, index) => (
-                        <span key={index} className="text-2xl md:text-5xl font-extrabold tracking-tighter text-muted-foreground/50 hover:text-primary transition-all duration-300 cursor-default shrink-0">
-                            {tech}
-                        </span>
-                    ))}
+                    {/* Infinite Marquee */}
+                    <div className="lg:w-3/4 py-20 lg:py-0 flex items-center relative group overflow-hidden bg-background/40">
+                        <div className="flex animate-marquee space-x-0 items-center hover:pause">
+                            {[...technologies, ...technologies, ...technologies].map((tech, index) => (
+                                <div key={index} className="flex items-center">
+                                    <span className="text-sm md:text-base font-bold tracking-[0.3em] text-muted-foreground/30 hover:text-primary transition-all duration-300 cursor-default px-16 uppercase whitespace-nowrap">
+                                        {tech}
+                                    </span>
+                                    <div className="h-12 w-px bg-border/40" />
+                                </div>
+                            ))}
+                        </div>
+
+                        <div className="sidebar-meta absolute -right-2 top-1/2 -translate-y-1/2 text-[8px] opacity-20 group-hover:opacity-100 transition-opacity">TX_STACK_ACTIVE</div>
+                        <div className="grid-symbol -bottom-2.5 -right-2.5" />
+                    </div>
                 </div>
             </div>
         </section>

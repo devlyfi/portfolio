@@ -2,9 +2,9 @@
 
 import { useState } from "react";
 import { TESTIMONIALS } from "@/lib/data";
-import { ArrowLeft, ArrowRight, User } from "lucide-react";
+import { ArrowLeft, ArrowRight, User, Quote, MessageSquare } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
+import { cn } from "@/lib/utils";
 
 export function Testimonials() {
     const [activeIndex, setActiveIndex] = useState(0);
@@ -15,74 +15,88 @@ export function Testimonials() {
     const testimonial = TESTIMONIALS[activeIndex];
 
     return (
-        <section className="py-24 bg-background overflow-hidden">
-            <div className="container px-4 md:px-6 mx-auto max-w-5xl">
-                {/* Section Header */}
-                <div className="mb-20">
-                    <div className="inline-flex items-center rounded-none border border-primary/20 bg-primary/5 px-3 py-1 text-sm font-medium text-primary mb-6 backdrop-blur-sm uppercase tracking-[0.2em]">
-                        <span className="flex h-2 w-2 rounded-none bg-primary mr-2"></span>
-                        Success Stories
-                    </div>
-                    <h2 className="text-3xl md:text-5xl font-bold tracking-tight">
-                        Trusted <span className="text-primary italic">Voices.</span>
-                    </h2>
-                </div>
+        <section className="py-0 bg-background overflow-hidden border-b border-border/40">
+            <div className="container px-4 mx-auto">
+                <div className="flex flex-col lg:flex-row border-x border-border/40 divide-y lg:divide-y-0 lg:divide-x divide-border/40">
+                    {/* Header Label / Sidebar */}
+                    <div className="lg:w-1/3 p-12 lg:p-24 space-y-12 relative bg-muted/2">
+                        <div className="space-y-6">
+                            <span className="text-[10px] font-black text-primary uppercase tracking-[0.5em] block animate-pulse">/FEEDBACK_METRICS</span>
+                            <h2 className="display-bold text-4xl lg:text-5xl uppercase tracking-tighter !leading-[0.9]">Verified<br />Industry<br />Voices</h2>
+                        </div>
 
-                <div className="relative space-y-12">
-
-                    {/* Big Quote Icon - Custom SVG for that blocky look */}
-                    <div className="text-primary">
-                        <svg width="45" height="36" viewBox="0 0 45 36" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M0 36V16.3636H10.125V0H19.125V16.3636V36H0ZM25.875 36V16.3636H36V0H45V16.3636V36H25.875Z" />
-                        </svg>
-                    </div>
-
-                    {/* Testimonial Text */}
-                    <div className="relative min-h-[160px] flex items-center">
-                        <p className="text-3xl md:text-5xl lg:text-5xl font-medium tracking-tight !leading-[1.1] text-foreground/90">
-                            {testimonial.content}
-                        </p>
-                    </div>
-
-
-                    {/* Custom Separator Line */}
-                    <div className="relative h-px w-full bg-border">
-                        <div className="absolute top-0 left-0 h-[3px] -translate-y-[1px] w-32 bg-primary" />
-                    </div>
-
-                    {/* Footer: Author & Nav */}
-                    <div className="flex flex-col md:flex-row items-center justify-between gap-8 pt-4">
-                        <div className="flex items-center gap-4">
-                            <div className="size-14 rounded-full bg-muted overflow-hidden flex items-center justify-center border border-border">
-                                <User className="size-8 text-muted-foreground/50" />
+                        <div className="space-y-6 pt-4">
+                            <div className="p-8 bg-background border border-border/40 relative group overflow-hidden shadow-sm group-hover:shadow-primary/5 transition-all">
+                                <span className="text-[10px] font-black text-muted-foreground/40 uppercase tracking-[0.4em] block mb-4">/SATISFACTION_INDEX</span>
+                                <div className="text-4xl font-black text-primary tracking-tighter">98.4%</div>
+                                <div className="sidebar-meta absolute -right-2 top-4 scale-75 opacity-10 group-hover:opacity-100 transition-opacity">TX_CONFIRMED</div>
+                                <div className="absolute bottom-0 left-0 h-0.5 w-0 bg-primary/20 group-hover:w-full transition-all duration-700" />
                             </div>
-                            <div className="text-left">
-                                <p className="text-lg font-bold leading-none">{testimonial.author}</p>
-                                <p className="text-sm font-medium text-muted-foreground mt-1 tracking-wider uppercase">
-                                    {testimonial.role}
+                        </div>
+
+                        <div className="grid-symbol -bottom-2.5 -left-2.5 lg:hidden" />
+                    </div>
+
+                    {/* Testimonial Active Unit */}
+                    <div className="lg:w-2/3 flex flex-col divide-y divide-border/40 relative">
+                        <div className="flex-1 p-12 lg:p-24 space-y-16 relative min-h-[600px] flex flex-col justify-center bg-background/50 backdrop-blur-[2px]">
+                            <Quote className="size-24 text-primary opacity-[0.03] absolute top-12 left-12 rotate-12" />
+
+                            <div className="space-y-12 relative z-10">
+                                <p className="text-2xl md:text-4xl font-bold uppercase tracking-tight !leading-[1.4] text-foreground/90 italic border-l-2 border-primary/20 pl-10 max-w-2xl">
+                                    "{testimonial.content}"
                                 </p>
+
+                                <div className="flex items-center gap-8 pt-8">
+                                    <div className="size-20 border border-border/40 flex items-center justify-center bg-muted/5 group-hover:border-primary transition-all duration-700">
+                                        <User className="size-10 text-primary opacity-20" />
+                                    </div>
+                                    <div className="space-y-2">
+                                        <h4 className="text-2xl font-black uppercase tracking-tight text-foreground">{testimonial.author}</h4>
+                                        <div className="text-[11px] font-black text-primary uppercase tracking-[0.4em] opacity-80">{testimonial.role}</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="sidebar-meta absolute -right-2 top-24 scale-90 opacity-20 transition-opacity">PROTOCOL_0{activeIndex + 1}</div>
+                        </div>
+
+                        {/* Navigation Unit */}
+                        <div className="p-10 lg:p-16 flex items-center justify-between bg-muted/1 relative group/nav">
+                            <div className="flex items-center gap-3">
+                                {TESTIMONIALS.map((_, i) => (
+                                    <div
+                                        key={i}
+                                        className={cn(
+                                            "h-1.5 transition-all duration-700",
+                                            i === activeIndex ? "w-16 bg-primary" : "w-6 bg-border/40 group-hover/nav:bg-border/60"
+                                        )}
+                                    />
+                                ))}
+                            </div>
+
+                            <div className="flex gap-2">
+                                <Button
+                                    variant="outline"
+                                    size="icon"
+                                    onClick={prev}
+                                    className="size-14 rounded-none border-border/40 bg-background hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all duration-500 group shadow-lg shadow-black/5"
+                                >
+                                    <ArrowLeft className="size-6 transition-transform group-hover:-translate-x-2" />
+                                </Button>
+                                <Button
+                                    variant="outline"
+                                    size="icon"
+                                    onClick={next}
+                                    className="size-14 rounded-none border-border/40 bg-background hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all duration-500 group shadow-lg shadow-black/5"
+                                >
+                                    <ArrowRight className="size-6 transition-transform group-hover:translate-x-2" />
+                                </Button>
                             </div>
                         </div>
 
-                        {/* Navigation Buttons */}
-                        <div className="flex items-center gap-4">
-                            <Button
-                                variant="outline"
-                                size="icon"
-                                onClick={prev}
-                                className="size-10  border-primary/20 hover:bg-primary/5 hover:text-primary transition-all"
-                            >
-                                <ArrowLeft className="size-5" />
-                            </Button>
-                            <Button
-                                variant="outline"
-                                size="icon"
-                                onClick={next}
-                                className="size-10 border-primary/20 hover:bg-primary/5 hover:text-primary transition-all"
-                            >
-                                <ArrowRight className="size-5" />
-                            </Button>
-                        </div>
+                        <div className="grid-symbol -top-2.5 -right-2.5 hidden lg:block" />
+                        <div className="grid-symbol -bottom-2.5 -right-2.5" />
                     </div>
                 </div>
             </div>

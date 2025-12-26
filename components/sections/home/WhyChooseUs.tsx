@@ -1,59 +1,73 @@
 import { ShieldCheck, Zap, Users, TrendingUp } from "lucide-react";
-import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
-
-const REASONS = [
-    {
-        title: "Enterprise-Grade Security",
-        description: "We implement rigorous security standards (ISO 27001, SOC 2) to protect your IP and user data.",
-        icon: ShieldCheck
-    },
-    {
-        title: "High-Velocity Agile",
-        description: "Our CI/CD pipelines and rapid iteration cycles ensure you get to market faster.",
-        icon: Zap
-    },
-    {
-        title: "Senior Talent Only",
-        description: "Work directly with seasoned engineers and designers, not junior trainees.",
-        icon: Users
-    },
-    {
-        title: "Scalable Architecture",
-        description: "Systems built to handle millions of users from day one, using cloud-native patterns.",
-        icon: TrendingUp
-    }
-];
 
 export function WhyChooseUs() {
-    return (
-        <section className="py-24">
-            <div className="container px-4 md:px-6 mx-auto">
-                <div className="bg-muted rounded-none p-8 md:p-16 relative overflow-hidden">
-                    {/* Background decoration */}
-                    <div className="absolute top-0 right-0 -mt-20 -mr-20 size-96 bg-primary/10 rounded-none blur-3xl" />
-                    <div className="absolute bottom-0 left-0 -mb-20 -ml-20 size-96 bg-primary/10 rounded-none blur-3xl" />
+    const reasons = [
+        {
+            title: "Enterprise Security",
+            desc: "Rigorous security standards (ISO 27001, SOC 2) to protect your IP and user data.",
+            icon: ShieldCheck,
+            marker: "/SEC_READY"
+        },
+        {
+            title: "High-Velocity Agile",
+            desc: "CI/CD pipelines and rapid iteration cycles ensuring faster market entry.",
+            icon: Zap,
+            marker: "/VELOCITY_OPT"
+        },
+        {
+            title: "Senior Talent",
+            desc: "Work directly with seasoned engineers and designers, not junior trainees.",
+            icon: Users,
+            marker: "/TALENT_EXP"
+        },
+        {
+            title: "Scalable Architecture",
+            desc: "Systems built to handle millions of users using proven cloud-native patterns.",
+            icon: TrendingUp,
+            marker: "/ARCH_SCALE"
+        }
+    ];
 
-                    <div className="text-center max-w-3xl mx-auto mb-16 space-y-4 relative z-10">
-                        <h2 className="text-3xl md:text-5xl font-bold tracking-tight">Why Leading Brands Choose Us</h2>
-                        <p className="text-muted-foreground text-lg">
-                            We combine technical excellence with business acumen to deliver software that drives real growth.
-                        </p>
+    return (
+        <section className="py-0 bg-background overflow-hidden border-b border-border/40">
+            <div className="container px-4 mx-auto">
+                <div className="flex flex-col lg:flex-row border-x border-border/40 divide-y lg:divide-y-0 lg:divide-x divide-border/40">
+                    {/* Header Label */}
+                    <div className="lg:w-1/3 p-12 lg:p-24 space-y-10 relative bg-muted/2">
+                        <div className="space-y-4">
+                            <span className="text-[10px] font-black text-primary uppercase tracking-[0.5em] block animate-pulse">/RATION_LOG</span>
+                            <h2 className="display-bold text-4xl lg:text-5xl uppercase tracking-tighter !leading-[0.9]">Why<br />Leading<br />Brands Choose Us</h2>
+                        </div>
+                        <p className="text-[11px] text-muted-foreground uppercase tracking-[0.3em] leading-relaxed opacity-60">Technical superiority through architectural discipline and deep business acumen.</p>
+                        <div className="grid-symbol -bottom-2.5 -left-2.5 lg:hidden" />
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative z-10">
-                        {REASONS.map((reason, i) => (
-                            <Card key={i} className="bg-background/80 border-border/50 text-foreground backdrop-blur-sm rounded-none">
-                                <CardHeader>
-                                    <reason.icon className="size-8 mb-2 text-primary opacity-90" />
-                                    <CardTitle className="text-xl">{reason.title}</CardTitle>
-                                </CardHeader>
-                                <CardContent>
-                                    <p className="text-sm text-muted-foreground opacity-80 leading-relaxed">
-                                        {reason.description}
-                                    </p>
-                                </CardContent>
-                            </Card>
+                    {/* Reasons Grid */}
+                    <div className="lg:w-2/3 grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-border/40 relative">
+                        {reasons.map((reason, index) => (
+                            <div
+                                key={index}
+                                className="p-12 lg:p-24 space-y-12 group hover:bg-muted/5 transition-all duration-700 relative"
+                            >
+                                <div className="space-y-8">
+                                    <div className="flex items-center justify-between">
+                                        <div className="size-16 border border-border/40 flex items-center justify-center text-primary bg-background group-hover:border-primary transition-all duration-500 shadow-sm group-hover:shadow-primary/5">
+                                            <reason.icon className="size-7" />
+                                        </div>
+                                        <span className="text-[10px] font-black text-primary uppercase tracking-[0.4em] opacity-0 group-hover:opacity-100 transition-all group-hover:translate-x-0 translate-x-4 duration-500">{reason.marker}</span>
+                                    </div>
+                                    <div className="space-y-4">
+                                        <h3 className="text-2xl font-black uppercase tracking-tight text-foreground group-hover:text-primary transition-colors">{reason.title}</h3>
+                                        <p className="text-[11px] text-muted-foreground uppercase leading-loose tracking-widest opacity-60 group-hover:opacity-100 transition-opacity max-w-sm">
+                                            {reason.desc}
+                                        </p>
+                                    </div>
+                                </div>
+                                <div className="grid-symbol -bottom-2.5 -right-2.5 opacity-0 group-hover:opacity-100 transition-opacity" />
+                            </div>
                         ))}
+                        <div className="grid-symbol -top-2.5 -right-2.5 hidden lg:block" />
+                        <div className="grid-symbol -bottom-2.5 -right-2.5" />
                     </div>
                 </div>
             </div>
