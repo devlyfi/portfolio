@@ -1,117 +1,89 @@
 import Link from "next/link";
-import { ArrowRight, Check } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import { SERVICES } from "@/lib/data";
-import { Card, CardHeader, CardTitle, CardContent, CardFooter } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 
 export default function ServicesPage() {
     return (
-        <div className="bg-background">
-            <section className="py-20 lg:py-32 bg-muted/20">
-                <div className="container px-4 mx-auto text-center max-w-3xl">
-                    <div className="inline-flex items-center rounded-none border border-primary/20 bg-primary/5 px-3 py-1 text-sm font-medium text-primary mb-4 backdrop-blur-sm">
-                        <span className="flex h-2 w-2 rounded-none bg-primary mr-2 animate-pulse"></span>
-                        Our Expertise
+        <div className="relative bg-background overflow-hidden min-h-screen">
+            <div className="container relative z-10 px-4 mx-auto pt-32 pb-24">
+                {/* Header Section */}
+                <div className="mb-24 relative">
+                    <div className="flex items-center gap-4 mb-4">
+                        <div className="h-[1px] w-12 lg:w-24 bg-border/60" />
+                        <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground">
+                            /OUR EXPERTISE
+                        </span>
                     </div>
-                    <h1 className="text-4xl md:text-6xl font-bold mb-6">Comprehensive Tech Services</h1>
-                    <p className="text-xl text-muted-foreground">
-                        From initial discovery to final deployment, we provide end-to-end engineering and design services to scale your business.
-                    </p>
-                </div>
-            </section>
 
-            {/* Services Grid */}
-            <section className="py-24">
-                <div className="container px-4 mx-auto">
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {SERVICES.map((service) => (
-                            <Card key={service.id} className="flex flex-col h-full hover:shadow-lg transition-shadow">
-                                <CardHeader>
-                                    <div className="size-12 rounded-none bg-primary/10 flex items-center justify-center text-primary mb-4">
-                                        <service.icon className="size-6" />
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-end">
+                        <h1 className="text-6xl md:text-8xl font-bold display-bold">
+                            Comprehensive <br /> Tech Services
+                        </h1>
+                        <p className="text-lg text-muted-foreground leading-relaxed max-w-xl lg:mb-2">
+                            From initial discovery to final deployment, we provide end-to-end engineering and design services to scale your business.
+                        </p>
+                    </div>
+                </div>
+
+                {/* Services Grid */}
+                <div className="grid grid-cols-1 xl:grid-cols-2 gap-4 lg:gap-6">
+                    {SERVICES.map((service, index) => (
+                        <Link key={service.id} href={`/services/${service.slug}`} className="group block outline-none">
+                            <div className="next-project-card h-full min-h-[500px]">
+                                {/* Hover "LEARN MORE" Label */}
+                                <div className="learn-more-label">
+                                    <div className="relative">
+                                        <div className="learn-more-connector">
+                                            <div className="learn-more-dot" />
+                                        </div>
+                                        <div className="learn-more-box">
+                                            <span className="learn-more-text">EXPLORE SERVICE</span>
+                                            <ArrowLeft className="size-3 text-[#a3e635] rotate-135" />
+                                        </div>
                                     </div>
-                                    <CardTitle className="text-2xl">{service.title}</CardTitle>
-                                </CardHeader>
-                                <CardContent className="flex-1">
-                                    <p className="text-muted-foreground mb-6">
-                                        {service.shortDesc}
-                                    </p>
-                                    <ul className="space-y-2">
-                                        {service.features.slice(0, 3).map((feature) => (
-                                            <li key={feature} className="flex items-start gap-2 text-sm">
-                                                <Check className="size-4 text-primary shrink-0 mt-0.5" />
-                                                <span>{feature}</span>
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </CardContent>
-                                <CardFooter>
-                                    <Button variant="outline" className="w-full group" asChild>
-                                        <Link href={`/services/${service.slug}`}>
-                                            Explore Service <ArrowRight className="ml-2 size-4 group-hover:translate-x-1 transition-transform" />
-                                        </Link>
-                                    </Button>
-                                </CardFooter>
-                            </Card>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-            {/* Industries */}
-            <section className="py-24">
-                <div className="container px-4 mx-auto">
-                    <div className="bg-muted rounded-none p-8 md:p-16 relative overflow-hidden">
-                        {/* Background decoration */}
-                        <div className="absolute top-0 right-0 -mt-20 -mr-20 size-96 bg-primary/10 rounded-none blur-3xl" />
-                        <div className="absolute bottom-0 left-0 -mb-20 -ml-20 size-96 bg-primary/10 rounded-none blur-3xl" />
-
-                        <div className="text-center mb-16 relative z-10">
-                            <h2 className="text-3xl font-bold mb-4">Industries We Serve</h2>
-                            <p className="text-muted-foreground opacity-80 max-w-2xl mx-auto">Deep domain expertise across key sectors allowing us to solve industry-specific challenges.</p>
-                        </div>
-                        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 relative z-10">
-                            {["FinTech", "Healthcare", "E-Commerce", "EdTech", "Real Estate", "Logistics"].map((industry) => (
-                                <div key={industry} className="bg-background/80 text-foreground text-center p-6 rounded-none backdrop-blur-sm border border-border/50 hover:bg-background transition-colors">
-                                    <span className="font-semibold">{industry}</span>
                                 </div>
-                            ))}
-                        </div>
-                    </div>
-                </div>
-            </section>
 
-            {/* Engagement Models */}
-            <section className="py-24">
-                <div className="container px-4 mx-auto">
-                    <div className="text-center mb-16">
-                        <h2 className="text-3xl font-bold mb-4">Engagement Models</h2>
-                        <p className="text-muted-foreground">Flexible cooperation models to match your project needs.</p>
-                    </div>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        {[
-                            {
-                                title: "Dedicated Team",
-                                desc: "A full cross-functional team working exclusively on your product. Best for long-term development.",
-                            },
-                            {
-                                title: "Time & Material",
-                                desc: "Pay for the actual work done. Flexible and scalable. Best for undefined scopes and R&D.",
-                            },
-                            {
-                                title: "Fixed Price",
-                                desc: "Defined scope, timeline, and budget. Best for MVPs and small projects with clear requirements.",
-                            }
-                        ].map((model) => (
-                            <div key={model.title} className="p-8 border rounded-none hover:border-primary transition-colors">
-                                <h3 className="text-xl font-bold mb-3">{model.title}</h3>
-                                <p className="text-muted-foreground">{model.desc}</p>
+                                {/* Narrative Side */}
+                                <div className="next-project-narrative border-b md:border-b-0 md:border-r border-border/40">
+                                    <div className="space-y-8 lg:space-y-12 mb-12">
+                                        <div className="flex items-center justify-between">
+                                            <div className="font-bold tracking-tighter text-2xl opacity-80 uppercase tracking-widest">{service.title.split(' ')[0]}</div>
+                                            <div className="text-[10px] font-bold text-muted-foreground/60">/{service.year || '2024'}</div>
+                                        </div>
+                                        <h3 className="text-3xl lg:text-4xl lg:leading-[1.15] font-bold">
+                                            {service.shortDesc}
+                                        </h3>
+                                    </div>
+
+                                    <div className="grid grid-cols-2 gap-4 pt-8 border-t border-border/20">
+                                        {service.features.slice(0, 4).map((feature, j) => (
+                                            <div key={j} className="space-y-2">
+                                                <div className="flex items-center gap-2">
+                                                    <div className="size-1 bg-primary rotate-45" />
+                                                    <p className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">
+                                                        {feature}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
+
+                                {/* Visual Side */}
+                                <div className="next-project-visual min-h-[300px] md:min-h-full bg-muted/30">
+                                    <div className="absolute inset-0 flex items-center justify-center p-8 lg:p-12">
+                                        <div className="w-full h-full border border-foreground/5 bg-foreground/[0.02] backdrop-blur-sm flex items-center justify-center relative">
+                                            <service.icon className="size-16 lg:size-24 text-foreground/5" />
+                                            <div className="absolute top-0 right-0 w-4 h-4 border-t border-r border-foreground/10" />
+                                            <div className="absolute bottom-0 left-0 w-4 h-4 border-b border-l border-foreground/10" />
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                        ))}
-                    </div>
+                        </Link>
+                    ))}
                 </div>
-            </section>
+            </div>
         </div>
     );
 }

@@ -20,9 +20,6 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
 
     return (
         <div className="relative bg-background overflow-hidden min-h-screen">
-            {/* Top Glow */}
-            <div className="aura-glow" />
-
             <div className="container relative z-10 px-4 mx-auto pt-32 pb-24">
                 {/* Header Section */}
                 <div className="mb-16">
@@ -204,17 +201,98 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
                     </div>
                 )}
 
+                {/* Header for Next Projects */}
+                <div className="mt-48 mb-16 relative">
+                    <div className="flex items-center gap-4 mb-4">
+                        <div className="h-[1px] w-12 lg:w-24 bg-border/60" />
+                        <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground">
+                            /CASE STUDIES
+                        </span>
+                    </div>
+                    <div className="flex flex-col md:flex-row md:items-end justify-between gap-8">
+                        <h2 className="text-5xl lg:text-7xl font-bold leading-tight">
+                            Next case study
+                        </h2>
+                        <Link href="/work" className="inline-flex items-center gap-3 px-6 py-4 border border-border/40 font-bold text-sm tracking-widest uppercase hover:bg-foreground hover:text-background transition-colors group">
+                            More case studies
+                            <ArrowLeft className="size-4 rotate-180 group-hover:translate-x-1 transition-transform" />
+                        </Link>
+                    </div>
+                </div>
+
+                {/* Next Projects Grid */}
+                <div className="space-y-4">
+                    {(() => {
+                        const currentIndex = PROJECTS.findIndex(p => p.slug === slug);
+                        const nextProjects = [
+                            PROJECTS[(currentIndex + 1) % PROJECTS.length],
+                            PROJECTS[(currentIndex + 2) % PROJECTS.length]
+                        ];
+
+                        return nextProjects.map((nextProject, i) => (
+                            <Link key={nextProject.id} href={`/work/${nextProject.slug}`} className="group block outline-none">
+                                <div className="next-project-card relative">
+                                    {/* Hover "LEARN MORE" Label */}
+                                    <div className="learn-more-label">
+                                        <div className="relative">
+                                            <div className="learn-more-connector">
+                                                <div className="learn-more-dot" />
+                                            </div>
+                                            <div className="learn-more-box">
+                                                <span className="learn-more-text">LEARN MORE</span>
+                                                <ArrowLeft className="size-3 text-[#a3e635] rotate-135" />
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    {/* Narrative Side */}
+                                    <div className="next-project-narrative lg:border-r lg:border-border/40">
+                                        <div className="space-y-12">
+                                            <div className="flex items-center justify-between">
+                                                <div className="font-bold tracking-tighter text-2xl opacity-80">{nextProject.client.name.split(' ')[0].toLowerCase()}</div>
+                                                <div className="text-[10px] font-bold text-muted-foreground/60">/{nextProject.year}</div>
+                                            </div>
+                                            <h3 className="text-3xl lg:text-5xl lg:leading-[1.15] font-bold">
+                                                {nextProject.summary.split('.')[0]}.
+                                            </h3>
+                                        </div>
+
+                                        <div className="grid grid-cols-3 gap-4 pt-12 border-t border-border/20">
+                                            {nextProject.results.map((res, j) => (
+                                                <div key={j} className="space-y-2">
+                                                    <p className="font-bold text-xl lg:text-2xl">{res.split(' ')[0]}</p>
+                                                    <p className="text-[8px] font-bold uppercase tracking-widest text-muted-foreground leading-tight">
+                                                        {res.split(' ').slice(1).join(' ')}
+                                                    </p>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </div>
+
+                                    {/* Visual Side */}
+                                    <div className="next-project-visual aspect-[16/10] md:aspect-auto">
+                                        <div className="absolute inset-0 flex items-center justify-center p-8 lg:p-16">
+                                            <div className="w-full h-full border border-foreground/5 bg-foreground/[0.02] backdrop-blur-sm flex items-center justify-center relative">
+                                                <p className="text-[10px] font-bold uppercase tracking-[0.3em] opacity-10">[ {nextProject.title} ]</p>
+                                                <div className="absolute top-0 right-0 w-4 h-4 border-t border-r border-foreground/10" />
+                                                <div className="absolute bottom-0 left-0 w-4 h-4 border-b border-l border-foreground/10" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </Link>
+                        ));
+                    })()}
+                </div>
+
                 {/* Footer Nav */}
-                <div className="mt-32 border-t border-border/40 pt-24 text-center">
+                <div className="mt-32 pt-24 text-center">
                     <Link href="/work" className="inline-flex items-center gap-3 text-lg font-bold group">
                         <ArrowLeft className="size-5 group-hover:-translate-x-1 transition-transform" />
                         <span>All Cases</span>
                     </Link>
                 </div>
             </div>
-
-            {/* Bottom Glow */}
-            <div className="aura-glow-bottom" />
         </div>
     );
 }

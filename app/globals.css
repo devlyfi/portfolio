@@ -254,3 +254,52 @@
 .grid-symbol::before {
   content: "+";
 }
+
+/* Next Case Study Cards */
+.next-project-card {
+  @apply relative grid grid-cols-1 md:grid-cols-2 overflow-hidden border border-border/40 transition-all duration-500 hover:border-border/80;
+}
+
+.next-project-narrative {
+  @apply bg-white dark:bg-[#111] p-8 lg:p-12 flex flex-col justify-between transition-colors duration-500;
+}
+
+.next-project-visual {
+  @apply relative overflow-hidden bg-muted transition-transform duration-700;
+}
+
+.next-project-card:hover .next-project-visual {
+  transform: scale(1.02);
+}
+
+.learn-more-label {
+  @apply absolute hidden md:flex items-center gap-3 opacity-0 transition-all duration-500 scale-90 pointer-events-none z-50;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.next-project-card:hover .learn-more-label {
+  @apply opacity-100 scale-100;
+}
+
+.learn-more-box {
+  @apply bg-black border border-[#a3e635] px-4 py-2 flex items-center gap-3;
+  box-shadow: 0 0 20px rgba(163, 230, 53, 0.3);
+}
+
+.learn-more-text {
+  @apply text-[#a3e635] text-[11px] font-bold tracking-[0.2em] uppercase;
+}
+
+.learn-more-connector {
+  @apply absolute right-full top-1/2 -translate-y-1/2 w-16 h-[1px] bg-[#a3e635] origin-right scale-x-0 transition-transform duration-700 delay-100;
+}
+
+.next-project-card:hover .learn-more-connector {
+  @apply scale-x-100;
+}
+
+.learn-more-dot {
+  @apply absolute left-0 top-1/2 -translate-y-1/2 size-1.5 bg-[#a3e635] rounded-full;
+}
