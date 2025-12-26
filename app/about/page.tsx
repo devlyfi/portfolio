@@ -6,126 +6,180 @@ import Image from "next/image";
 
 export default function AboutPage() {
     return (
-        <div className="bg-background">
-            {/* Hero Section */}
-            <section className="relative py-24 lg:py-32 overflow-hidden">
-                <div className="absolute inset-0 bg-muted/20 -z-10" />
-                <div className="container px-4 mx-auto text-center">
-                    <div className="inline-flex items-center rounded-none border border-primary/20 bg-primary/5 px-3 py-1 text-sm font-medium text-primary mb-4 backdrop-blur-sm">
-                        <span className="flex h-2 w-2 rounded-none bg-primary mr-2 animate-pulse"></span>
-                        About NexAgency
+        <div className="relative bg-background overflow-hidden min-h-screen">
+            <div className="container relative z-10 px-4 mx-auto pt-32 pb-24 text-foreground">
+                {/* Header Section */}
+                <div className="mb-24">
+                    <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-muted-foreground mb-6">
+                        <span>Agency</span>
+                        <span>/</span>
+                        <span>Established 2015</span>
+                        <span>/</span>
+                        <span className="text-foreground">About Us</span>
                     </div>
-                    <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">
-                        We Design the Future <br /> of Digital Business
-                    </h1>
-                    <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                        Founded in 2015, we are a collective of strategists, engineers, and designers dedicated to building impactful software solutions.
-                    </p>
-                </div>
-            </section>
 
-            {/* Stats / Snapshot */}
-            <section className="py-12 border-y border-border">
-                <div className="container px-4 mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-                    <div className="space-y-2">
-                        <h3 className="text-4xl font-bold text-primary">10+</h3>
-                        <p className="text-sm font-medium text-muted-foreground uppercase tracking-wider">Years Experience</p>
-                    </div>
-                    <div className="space-y-2">
-                        <h3 className="text-4xl font-bold text-primary">200+</h3>
-                        <p className="text-sm font-medium text-muted-foreground uppercase tracking-wider">Projects Delivered</p>
-                    </div>
-                    <div className="space-y-2">
-                        <h3 className="text-4xl font-bold text-primary">50+</h3>
-                        <p className="text-sm font-medium text-muted-foreground uppercase tracking-wider">Experts Globally</p>
-                    </div>
-                    <div className="space-y-2">
-                        <h3 className="text-4xl font-bold text-primary">15</h3>
-                        <p className="text-sm font-medium text-muted-foreground uppercase tracking-wider">Countries Served</p>
+                    <div className="grid grid-cols-1 lg:grid-cols-[1fr_400px] gap-12 lg:gap-24 items-end">
+                        <h1 className="text-5xl lg:text-8xl font-bold display-bold leading-[0.9]">
+                            We Design the <br /> Future of Digital.
+                        </h1>
+                        <p className="text-lg text-muted-foreground leading-relaxed pb-2 border-l border-border/40 pl-8">
+                            A collective of strategists, engineers, and designers dedicated to building impactful software solutions that drive global transformation.
+                        </p>
                     </div>
                 </div>
-            </section>
 
-            {/* Vision & Mission */}
-            <section className="py-24">
-                <div className="container px-4 mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-                    <div className="space-y-6">
-                        <h2 className="text-3xl font-bold">Our Vision & Mission</h2>
-                        <div className="space-y-4">
-                            <div className="flex gap-4">
-                                <div className="bg-primary/10 p-3 rounded-none h-fit">
-                                    <Globe className="size-6 text-primary" />
-                                </div>
-                                <div>
-                                    <h3 className="tex-xl font-semibold mb-2">Global Impact</h3>
-                                    <p className="text-muted-foreground">To empower businesses worldwide with technology that drives sustainable growth and efficiency.</p>
+                {/* Metadata / Impact Grid */}
+                <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-32 py-12 border-y border-border/40 relative">
+                    <div className="grid-symbol -top-2.5 -left-2.5" />
+                    <div className="grid-symbol -top-2.5 -right-2.5" />
+                    <div className="grid-symbol -bottom-2.5 -left-2.5" />
+                    <div className="grid-symbol -bottom-2.5 -right-2.5" />
+
+                    <div className="space-y-2">
+                        <p className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">/EXPERIENCE</p>
+                        <p className="font-bold uppercase tracking-tighter text-4xl text-primary">10Y+</p>
+                    </div>
+                    <div className="space-y-2">
+                        <p className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">/DELIVERED</p>
+                        <p className="font-bold uppercase tracking-tighter text-4xl text-primary">200+</p>
+                    </div>
+                    <div className="space-y-2">
+                        <p className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">/EXPERTS</p>
+                        <p className="font-bold uppercase tracking-tighter text-4xl text-primary">50+</p>
+                    </div>
+                    <div className="space-y-2">
+                        <p className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">/REACH</p>
+                        <p className="font-bold uppercase tracking-tighter text-4xl text-primary">15+</p>
+                    </div>
+                </div>
+
+                {/* Vision & Mission - Narrative Visual Split */}
+                <div className="grid grid-cols-1 md:grid-cols-[1fr_150px] lg:grid-cols-[1fr_300px] border-b border-border/40 divide-x divide-border/40 relative group/section">
+                    <div className="flex flex-col">
+                        <div className="grid grid-cols-1 lg:grid-cols-2 divide-x divide-border/40">
+                            {/* Text content */}
+                            <div className="p-8 lg:p-16 flex flex-col justify-center">
+                                <div className="mb-6">
+                                    <h2 className="text-3xl lg:text-5xl font-bold leading-tight mb-6 uppercase tracking-tighter">
+                                        Vision & Mission
+                                    </h2>
+                                    <div className="space-y-12">
+                                        <div className="space-y-4">
+                                            <div className="flex items-center gap-3">
+                                                <Globe className="size-5 text-primary" />
+                                                <h3 className="text-xl font-bold uppercase tracking-tight">Global Impact</h3>
+                                            </div>
+                                            <p className="text-lg text-muted-foreground leading-relaxed">
+                                                To empower businesses worldwide with technology that drives sustainable growth and efficiency. We build for the global stage, ensuring every solution is scalable and resilient.
+                                            </p>
+                                        </div>
+                                        <div className="space-y-4">
+                                            <div className="flex items-center gap-3">
+                                                <Users className="size-5 text-primary" />
+                                                <h3 className="text-xl font-bold uppercase tracking-tight">Human-Centric</h3>
+                                            </div>
+                                            <p className="text-lg text-muted-foreground leading-relaxed">
+                                                We believe technology should serve people, creating intuitive experiences that solve real problems. Our design philosophy stands at the intersection of psychology and aesthetics.
+                                            </p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <div className="flex gap-4">
-                                <div className="bg-primary/10 p-3 rounded-none h-fit">
-                                    <Users className="size-6 text-primary" />
-                                </div>
-                                <div>
-                                    <h3 className="tex-xl font-semibold mb-2">Human-Centric</h3>
-                                    <p className="text-muted-foreground">We believe technology should serve people, creating intuitive experiences that solve real problems.</p>
+
+                            {/* Visual content */}
+                            <div className="relative min-h-[400px] lg:min-h-full bg-muted/20">
+                                <div className="absolute inset-0 flex items-center justify-center p-8">
+                                    <div className="w-full h-full border border-foreground/5 bg-foreground/[0.02] backdrop-blur-sm flex items-center justify-center relative">
+                                        <div className="p-12 text-center max-w-sm">
+                                            <p className="text-xl font-bold italic opacity-60 leading-relaxed">
+                                                "Innovation distinguishes between a leader and a follower."
+                                            </p>
+                                            <div className="mt-6 h-[1px] w-12 bg-primary/40 mx-auto" />
+                                        </div>
+                                        <div className="absolute top-0 right-0 w-4 h-4 border-t border-r border-foreground/10" />
+                                        <div className="absolute bottom-0 left-0 w-4 h-4 border-b border-l border-foreground/10" />
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div className="bg-muted rounded-none aspect-square flex items-center justify-center relative overflow-hidden">
-                        {/* Abstract Graphic */}
-                        <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-secondary/20" />
-                        <div className="relative text-center p-8">
-                            <p className="text-2xl font-bold italic opacity-80">"Innovation distinguishes between a leader and a follower."</p>
+
+                    {/* Sidebar Column */}
+                    <div className="hidden md:flex flex-col items-center justify-between py-12 relative bg-muted/5">
+                        <div className="space-y-12 flex flex-col items-center">
+                            <div className="sidebar-meta">01 // VISION_V01</div>
+                            <div className="h-12 w-[1px] bg-border/40" />
                         </div>
+                        <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-muted-foreground/60 -rotate-90 whitespace-nowrap">
+                            /PURPOSE
+                        </span>
+                        <div className="sidebar-meta opacity-20">2024 // ANTIGRAVITY</div>
+                    </div>
+
+                    <div className="grid-symbol -bottom-2.5 -left-2.5" />
+                    <div className="grid-symbol -bottom-2.5 right-[150px] lg:right-[300px] -mr-2.5 hidden md:block" />
+                    <div className="grid-symbol -bottom-2.5 -right-2.5" />
+                </div>
+
+                {/* Core Values Section */}
+                <div className="py-24">
+                    <div className="flex items-center gap-4 mb-16">
+                        <div className="h-[1px] w-12 lg:w-24 bg-border/60" />
+                        <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground">
+                            /CORE VALUES
+                        </span>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-y-1 gap-x-1 bg-border/40 border border-border/40">
+                        {[
+                            {
+                                icon: CheckCircle2,
+                                title: "Excellence First",
+                                desc: "We never settle for 'good enough'. Quality is non-negotiable in our engineering."
+                            },
+                            {
+                                icon: TrendingUp,
+                                title: "Continuous Growth",
+                                desc: "Technology evolves fast. So do we. We are always learning and adapting."
+                            },
+                            {
+                                icon: Award,
+                                title: "Transparency",
+                                desc: "We build trust through open communication and complete visibility into our process."
+                            }
+                        ].map((value, i) => (
+                            <div key={i} className="bg-background p-10 group relative h-full flex flex-col">
+                                <div className="space-y-6 flex-grow">
+                                    <div className="flex items-center justify-between">
+                                        <div className="size-10 bg-primary/10 flex items-center justify-center group-hover:bg-primary transition-colors duration-500">
+                                            <value.icon className="size-5 text-primary group-hover:text-primary-foreground transition-colors" />
+                                        </div>
+                                        <div className="size-2 bg-primary/40 rotate-45 group-hover:bg-primary group-hover:scale-125 transition-all duration-500" />
+                                    </div>
+                                    <div>
+                                        <h3 className="text-xl font-bold mb-4 uppercase tracking-tighter">{value.title}</h3>
+                                        <p className="text-sm text-muted-foreground leading-relaxed">
+                                            {value.desc}
+                                        </p>
+                                    </div>
+                                </div>
+
+                                {/* Geometric Decoration */}
+                                <div className="absolute top-0 right-0 w-4 h-4 border-t border-r border-border/0 group-hover:border-border/40 transition-colors" />
+                                <div className="absolute bottom-0 left-0 w-4 h-4 border-b border-l border-border/0 group-hover:border-border/40 transition-colors" />
+                            </div>
+                        ))}
                     </div>
                 </div>
-            </section>
 
-            {/* Values */}
-            <section className="py-24 bg-muted/30">
-                <div className="container px-4 mx-auto">
-                    <div className="text-center mb-16">
-                        <h2 className="text-3xl font-bold mb-4">Core Values</h2>
-                        <p className="text-muted-foreground">The principles that guide every line of code we write.</p>
-                    </div>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        <Card>
-                            <CardContent className="pt-6 text-center space-y-4">
-                                <div className="mx-auto bg-primary/10 size-12 rounded-none flex items-center justify-center">
-                                    <CheckCircle2 className="size-6 text-primary" />
-                                </div>
-                                <h3 className="font-bold text-xl">Excellence First</h3>
-                                <p className="text-muted-foreground">We never settle for "good enough". Quality is non-negotiable in our engineering.</p>
-                            </CardContent>
-                        </Card>
-                        <Card>
-                            <CardContent className="pt-6 text-center space-y-4">
-                                <div className="mx-auto bg-primary/10 size-12 rounded-none flex items-center justify-center">
-                                    <TrendingUp className="size-6 text-primary" />
-                                </div>
-                                <h3 className="font-bold text-xl">Continuous Growth</h3>
-                                <p className="text-muted-foreground">Technology evolves fast. So do we. We are always learning and adapting.</p>
-                            </CardContent>
-                        </Card>
-                        <Card>
-                            <CardContent className="pt-6 text-center space-y-4">
-                                <div className="mx-auto bg-primary/10 size-12 rounded-none flex items-center justify-center">
-                                    <Award className="size-6 text-primary" />
-                                </div>
-                                <h3 className="font-bold text-xl">Transparency</h3>
-                                <p className="text-muted-foreground">We build trust through open communication and complete visibility into our process.</p>
-                            </CardContent>
-                        </Card>
-                    </div>
+                {/* Team Section Integration */}
+                <div className="pt-24 border-t border-border/40">
+                    <TeamSection
+                        title="Leadership Team"
+                        subtitle="The visionaries steering Nakula towards global excellence."
+                    />
                 </div>
-            </section>
-
-            {/* Team Section */}
-            <TeamSection
-                title="Leadership Team"
-                subtitle="The visionaries and innovators steering Devlyfi towards global excellence."
-            />
+            </div>
         </div>
     );
 }
