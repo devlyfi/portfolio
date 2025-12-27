@@ -273,15 +273,9 @@
 }
 
 .learn-more-label {
-  @apply absolute hidden md:flex items-center gap-3 opacity-0 transition-all duration-500 scale-90 pointer-events-none z-50;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  @apply absolute flex items-center gap-3 pointer-events-none z-50;
 }
 
-.next-project-card:hover .learn-more-label {
-  @apply opacity-100 scale-100;
-}
 
 .learn-more-box {
   @apply bg-black border border-[#a3e635] px-4 py-2 flex items-center gap-3;

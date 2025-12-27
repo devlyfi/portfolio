@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { SERVICES } from "@/lib/data";
+import { CursorFollowingLabel } from "@/components/ui/CursorFollowingLabel";
 
 export function generateStaticParams() {
     return SERVICES.map((service) => ({
@@ -247,9 +248,9 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
 
                         return nextServices.map((nextService, i) => (
                             <Link key={nextService.id} href={`/services/${nextService.slug}`} className="group block outline-none">
-                                <div className="next-project-card relative">
-                                    {/* Hover "EXPLORE" Label */}
-                                    <div className="learn-more-label">
+                                <CursorFollowingLabel
+                                    className="relative h-full"
+                                    labelContent={
                                         <div className="relative">
                                             <div className="learn-more-connector">
                                                 <div className="learn-more-dot" />
@@ -259,43 +260,45 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
                                                 <ArrowLeft className="size-3 text-[#a3e635] rotate-135" />
                                             </div>
                                         </div>
-                                    </div>
-
-                                    {/* Narrative Side */}
-                                    <div className="next-project-narrative lg:border-r lg:border-border/40">
-                                        <div className="space-y-12">
-                                            <div className="flex items-center justify-between">
-                                                <div className="font-bold tracking-tighter text-2xl opacity-80 uppercase tracking-widest">{nextService.title.split(' ')[0]}</div>
-                                                <div className="text-[10px] font-bold text-muted-foreground/60">/{nextService.year || '2024'}</div>
+                                    }
+                                >
+                                    <div className="next-project-card h-full">
+                                        {/* Narrative Side */}
+                                        <div className="next-project-narrative lg:border-r lg:border-border/40">
+                                            <div className="space-y-12">
+                                                <div className="flex items-center justify-between">
+                                                    <div className="font-bold tracking-tighter text-2xl opacity-80 uppercase tracking-widest">{nextService.title.split(' ')[0]}</div>
+                                                    <div className="text-[10px] font-bold text-muted-foreground/60">/{nextService.year || '2024'}</div>
+                                                </div>
+                                                <h3 className="text-3xl lg:text-5xl lg:leading-[1.15] font-bold">
+                                                    {nextService.shortDesc}
+                                                </h3>
                                             </div>
-                                            <h3 className="text-3xl lg:text-5xl lg:leading-[1.15] font-bold">
-                                                {nextService.shortDesc}
-                                            </h3>
-                                        </div>
 
-                                        <div className="flex flex-wrap gap-3 pt-12 border-t border-border/20">
-                                            {nextService.features.slice(0, 3).map((f, j) => (
-                                                <span key={j} className="text-[9px] font-bold uppercase tracking-widest px-3 py-1 bg-foreground/5 border border-foreground/10">
-                                                    {f}
-                                                </span>
-                                            ))}
-                                        </div>
-                                    </div>
-
-                                    {/* Visual Side */}
-                                    <div className="next-project-visual aspect-[16/10] md:aspect-auto">
-                                        <div className="absolute inset-0 flex items-center justify-center p-8 lg:p-16">
-                                            <div className="w-full h-full border border-foreground/5 bg-foreground/[0.02] backdrop-blur-sm flex items-center justify-center relative">
-                                                {(() => {
-                                                    const Icon = nextService.icon;
-                                                    return <Icon className="size-16 lg:size-24 text-foreground/5" />;
-                                                })()}
-                                                <div className="absolute top-0 right-0 w-4 h-4 border-t border-r border-foreground/10" />
-                                                <div className="absolute bottom-0 left-0 w-4 h-4 border-b border-l border-foreground/10" />
+                                            <div className="flex flex-wrap gap-3 pt-12 border-t border-border/20">
+                                                {nextService.features.slice(0, 3).map((f, j) => (
+                                                    <span key={j} className="text-[9px] font-bold uppercase tracking-widest px-3 py-1 bg-foreground/5 border border-foreground/10">
+                                                        {f}
+                                                    </span>
+                                                ))}
                                             </div>
                                         </div>
+
+                                        {/* Visual Side */}
+                                        <div className="next-project-visual aspect-[16/10] md:aspect-auto">
+                                            <div className="absolute inset-0 flex items-center justify-center p-8 lg:p-16">
+                                                <div className="w-full h-full border border-foreground/5 bg-foreground/[0.02] backdrop-blur-sm flex items-center justify-center relative">
+                                                    {(() => {
+                                                        const Icon = nextService.icon;
+                                                        return <Icon className="size-16 lg:size-24 text-foreground/5" />;
+                                                    })()}
+                                                    <div className="absolute top-0 right-0 w-4 h-4 border-t border-r border-foreground/10" />
+                                                    <div className="absolute bottom-0 left-0 w-4 h-4 border-b border-l border-foreground/10" />
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
+                                </CursorFollowingLabel>
                             </Link>
                         ));
                     })()}

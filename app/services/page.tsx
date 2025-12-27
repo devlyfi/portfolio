@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { SERVICES } from "@/lib/data";
+import { CursorFollowingLabel } from "@/components/ui/CursorFollowingLabel";
 
 export default function ServicesPage() {
     return (
@@ -29,9 +30,9 @@ export default function ServicesPage() {
                 <div className="grid grid-cols-1 xl:grid-cols-2 gap-4 lg:gap-6">
                     {SERVICES.map((service, index) => (
                         <Link key={service.id} href={`/services/${service.slug}`} className="group block outline-none">
-                            <div className="next-project-card h-full min-h-[500px]">
-                                {/* Hover "LEARN MORE" Label */}
-                                <div className="learn-more-label">
+                            <CursorFollowingLabel
+                                className="h-full min-h-[500px]"
+                                labelContent={
                                     <div className="relative">
                                         <div className="learn-more-connector">
                                             <div className="learn-more-dot" />
@@ -41,45 +42,47 @@ export default function ServicesPage() {
                                             <ArrowLeft className="size-3 text-[#a3e635] rotate-135" />
                                         </div>
                                     </div>
-                                </div>
-
-                                {/* Narrative Side */}
-                                <div className="next-project-narrative border-b md:border-b-0 md:border-r border-border/40">
-                                    <div className="space-y-8 lg:space-y-12 mb-12">
-                                        <div className="flex items-center justify-between">
-                                            <div className="font-bold tracking-tighter text-2xl opacity-80 uppercase tracking-widest">{service.title.split(' ')[0]}</div>
-                                            <div className="text-[10px] font-bold text-muted-foreground/60">/{service.year || '2024'}</div>
-                                        </div>
-                                        <h3 className="text-3xl lg:text-4xl lg:leading-[1.15] font-bold">
-                                            {service.shortDesc}
-                                        </h3>
-                                    </div>
-
-                                    <div className="grid grid-cols-2 gap-4 pt-8 border-t border-border/20">
-                                        {service.features.slice(0, 4).map((feature, j) => (
-                                            <div key={j} className="space-y-2">
-                                                <div className="flex items-center gap-2">
-                                                    <div className="size-1 bg-primary rotate-45" />
-                                                    <p className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">
-                                                        {feature}
-                                                    </p>
-                                                </div>
+                                }
+                            >
+                                <div className="next-project-card h-full">
+                                    {/* Narrative Side */}
+                                    <div className="next-project-narrative border-b md:border-b-0 md:border-r border-border/40">
+                                        <div className="space-y-8 lg:space-y-12 mb-12">
+                                            <div className="flex items-center justify-between">
+                                                <div className="font-bold tracking-tighter text-2xl opacity-80 uppercase tracking-widest">{service.title.split(' ')[0]}</div>
+                                                <div className="text-[10px] font-bold text-muted-foreground/60">/{service.year || '2024'}</div>
                                             </div>
-                                        ))}
-                                    </div>
-                                </div>
+                                            <h3 className="text-3xl lg:text-4xl lg:leading-[1.15] font-bold">
+                                                {service.shortDesc}
+                                            </h3>
+                                        </div>
 
-                                {/* Visual Side */}
-                                <div className="next-project-visual min-h-[300px] md:min-h-full bg-muted/30">
-                                    <div className="absolute inset-0 flex items-center justify-center p-8 lg:p-12">
-                                        <div className="w-full h-full border border-foreground/5 bg-foreground/[0.02] backdrop-blur-sm flex items-center justify-center relative">
-                                            <service.icon className="size-16 lg:size-24 text-foreground/5" />
-                                            <div className="absolute top-0 right-0 w-4 h-4 border-t border-r border-foreground/10" />
-                                            <div className="absolute bottom-0 left-0 w-4 h-4 border-b border-l border-foreground/10" />
+                                        <div className="grid grid-cols-2 gap-4 pt-8 border-t border-border/20">
+                                            {service.features.slice(0, 4).map((feature, j) => (
+                                                <div key={j} className="space-y-2">
+                                                    <div className="flex items-center gap-2">
+                                                        <div className="size-1 bg-primary rotate-45" />
+                                                        <p className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">
+                                                            {feature}
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </div>
+
+                                    {/* Visual Side */}
+                                    <div className="next-project-visual min-h-[300px] md:min-h-full bg-muted/30">
+                                        <div className="absolute inset-0 flex items-center justify-center p-8 lg:p-12">
+                                            <div className="w-full h-full border border-foreground/5 bg-foreground/[0.02] backdrop-blur-sm flex items-center justify-center relative">
+                                                <service.icon className="size-16 lg:size-24 text-foreground/5" />
+                                                <div className="absolute top-0 right-0 w-4 h-4 border-t border-r border-foreground/10" />
+                                                <div className="absolute bottom-0 left-0 w-4 h-4 border-b border-l border-foreground/10" />
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </CursorFollowingLabel>
                         </Link>
                     ))}
                 </div>
