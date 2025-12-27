@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Mail, MapPin, Phone, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -18,6 +18,22 @@ import { cn } from "@/lib/utils";
 
 export default function ContactPage() {
     const [activeTab, setActiveTab] = useState<"hello" | "quote">("hello");
+    const [currentTime, setCurrentTime] = useState<string>("");
+
+    useEffect(() => {
+        const updateClock = () => {
+            const now = new Date();
+            setCurrentTime(now.toLocaleTimeString("en-US", {
+                hour: "2-digit",
+                minute: "2-digit",
+                second: "2-digit",
+                hour12: true,
+            }));
+        };
+        updateClock();
+        const timer = setInterval(updateClock, 1000);
+        return () => clearInterval(timer);
+    }, []);
 
     return (
         <div className="bg-background">
@@ -125,7 +141,7 @@ export default function ContactPage() {
                                             <div className="space-y-3">
                                                 <Label htmlFor="budget" className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">Budget Range</Label>
                                                 <Select>
-                                                    <SelectTrigger className="bg-transparent border-border/40 focus:border-primary rounded-none h-14">
+                                                    <SelectTrigger className="w-full bg-transparent border-border/40 focus:border-primary rounded-none h-14!">
                                                         <SelectValue placeholder="Select budget" />
                                                     </SelectTrigger>
                                                     <SelectContent>
@@ -172,7 +188,7 @@ export default function ContactPage() {
                                 </div>
                                 <div className="pt-6 border-t border-border/40 w-full">
                                     <p className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground mb-2">Current Local Time</p>
-                                    <p className="text-2xl font-bold display-bold">01:07 AM</p>
+                                    <p className="text-2xl font-bold display-bold min-w-[140px]">{currentTime || "00:00:00 AM"}</p>
                                 </div>
                             </div>
 
