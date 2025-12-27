@@ -90,17 +90,6 @@ export function Navbar() {
                         </button>
                     </div>
 
-                    {/* Architectural Symbols - only visible when scrolled or hovered */}
-                    <div className={cn(
-                        "grid-symbol -top-1 -left-1 opacity-0 transition-opacity duration-500",
-                        (scrolled || scrolled === false) && "group-hover:opacity-100",
-                        scrolled && "opacity-100"
-                    )} />
-                    <div className={cn(
-                        "grid-symbol -top-1 -right-1 opacity-0 transition-opacity duration-500",
-                        (scrolled || scrolled === false) && "group-hover:opacity-100",
-                        scrolled && "opacity-100"
-                    )} />
                 </div>
             </div>
 

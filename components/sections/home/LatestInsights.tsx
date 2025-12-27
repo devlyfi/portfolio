@@ -17,7 +17,7 @@ export function LatestInsights() {
                         <h2 className="display-bold text-4xl lg:text-6xl uppercase tracking-tighter !leading-[0.9]">Technical<br />Insights &<br />Strategy</h2>
                     </div>
                     <div className="lg:w-1/3 p-12 lg:p-24 flex flex-col justify-center space-y-12 bg-muted/1 relative">
-                        <p className="text-[11px] text-muted-foreground uppercase leading-[2] tracking-[0.3em] font-medium opacity-60 border-l border-primary/20 pl-8">
+                        <p className="text-[11px] text-muted-foreground uppercase leading-[2] tracking-[0.3em] font-medium opacity-80 border-l border-primary/20 pl-8">
                             Engineering perspectives and strategic resources to master global scale and technical excellence.
                         </p>
 

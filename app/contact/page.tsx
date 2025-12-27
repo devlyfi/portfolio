@@ -41,7 +41,7 @@ export default function ContactPage() {
                 <div className="container relative z-10 px-4 mx-auto pt-32 pb-24 text-foreground">
                     {/* Header Section */}
                     <div className="mb-24">
-                        <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-muted-foreground mb-6">
+                        <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-muted-foreground/80 mb-6">
                             <span>Agency</span>
                             <span>/</span>
                             <span>Partnership</span>
@@ -53,7 +53,7 @@ export default function ContactPage() {
                             <h1 className="text-5xl lg:text-8xl font-bold display-bold leading-[0.9]">
                                 Let's Build <br /> Something.
                             </h1>
-                            <p className="text-lg text-muted-foreground leading-relaxed pb-2 border-l border-border/40 pl-8">
+                            <p className="text-lg text-muted-foreground leading-relaxed pb-2 border-l border-border/40 pl-8 opacity-90">
                                 Whether you have a specific project in mind or just want to explore a new idea, we're here to help you navigate the digital frontier.
                             </p>
                         </div>
@@ -211,7 +211,7 @@ export default function ContactPage() {
                             {/* Legal/Privacy Slot */}
                             <div className="p-12 flex-grow flex flex-col items-center justify-center text-center space-y-6 bg-primary/5 min-h-[300px]">
                                 <div className="sidebar-meta">03 // PRIVACY</div>
-                                <p className="text-[10px] leading-loose text-muted-foreground/80 uppercase tracking-widest max-w-[200px]">
+                                <p className="text-[10px] leading-loose text-muted-foreground uppercase tracking-widest max-w-[200px] opacity-90">
                                     Your data is encrypted and handled with absolute confidentiality. We are happy to execute an NDA prior to disclosure.
                                 </p>
                                 <div className="h-12 w-[1px] bg-border/40" />

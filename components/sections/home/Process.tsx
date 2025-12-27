@@ -12,7 +12,7 @@ export function Process() {
                             <span className="text-[10px] font-black text-primary uppercase tracking-[0.5em] block animate-pulse">/OPERATIONAL_FLOW</span>
                             <h2 className="display-bold text-3xl lg:text-3xl xl:text-5xl uppercase tracking-tighter !leading-[0.9]">Phase<br />Based<br />Methodology</h2>
                         </div>
-                        <p className="text-[11px] text-muted-foreground uppercase tracking-[0.3em] leading-relaxed opacity-60 max-w-sm">A disciplined engineering lifecycle designed for enterprise scale and absolute precision.</p>
+                        <p className="text-[11px] text-muted-foreground uppercase tracking-[0.3em] leading-relaxed opacity-80 max-w-sm">A disciplined engineering lifecycle designed for enterprise scale and absolute precision.</p>
                         <div className="grid-symbol -bottom-2.5 -left-2.5" />
                     </div>
 
@@ -32,13 +32,13 @@ export function Process() {
                                 <div className="space-y-12">
                                     <div className="flex items-center justify-between">
                                         <span className="text-[10px] font-black text-primary uppercase tracking-[0.5em]">PHASE_0{i + 1}</span>
-                                        <div className="size-14 border border-border/40 flex items-center justify-center text-muted-foreground/20 group-hover:text-primary group-hover:border-primary transition-all duration-500 bg-background/50 shadow-sm">
+                                        <div className="size-14 border border-border/40 flex items-center justify-center text-muted-foreground/40 group-hover:text-primary group-hover:border-primary transition-all duration-500 bg-background/50">
                                             <step.icon className="size-6" />
                                         </div>
                                     </div>
                                     <div className="space-y-6">
                                         <h3 className="text-[14px] font-black uppercase tracking-[0.3em] text-foreground group-hover:text-primary transition-colors">{step.title}</h3>
-                                        <p className="text-[11px] text-muted-foreground uppercase leading-[2] tracking-[0.2em] opacity-60 group-hover:opacity-100 transition-opacity">
+                                        <p className="text-[11px] text-muted-foreground uppercase leading-[2] tracking-[0.2em] opacity-80 group-hover:opacity-100 transition-opacity">
                                             {step.description}
                                         </p>
                                     </div>

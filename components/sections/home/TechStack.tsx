@@ -17,7 +17,7 @@ export function TechStack() {
                             <span className="text-[10px] font-black text-primary uppercase tracking-[0.5em] block animate-pulse">/SYSTEM_STACK_01</span>
                             <h2 className="display-bold text-3xl lg:text-3xl xl:text-5xl uppercase tracking-tighter !leading-[0.9]">Enterprise<br />Infrastructure<br />Stack</h2>
                         </div>
-                        <p className="text-[11px] text-muted-foreground uppercase tracking-[0.3em] leading-relaxed opacity-60 max-w-sm">Highly reliable and scalable technology stack for modern digital solutions.</p>
+                        <p className="text-[11px] text-muted-foreground uppercase tracking-[0.3em] leading-relaxed opacity-80 max-w-sm">Highly reliable and scalable technology stack for modern digital solutions.</p>
                         <div className="grid-symbol -bottom-2.5 -left-2.5 lg:hidden" />
                     </div>
 
@@ -26,7 +26,7 @@ export function TechStack() {
                         <div className="flex animate-marquee space-x-0 items-center hover:pause">
                             {[...technologies, ...technologies, ...technologies].map((tech, index) => (
                                 <div key={index} className="flex items-center">
-                                    <span className="text-sm md:text-base font-bold tracking-[0.3em] text-muted-foreground/30 hover:text-primary transition-all duration-300 cursor-default px-16 uppercase whitespace-nowrap">
+                                    <span className="text-sm md:text-base font-bold tracking-[0.3em] text-muted-foreground/50 hover:text-primary transition-all duration-300 cursor-default px-16 uppercase whitespace-nowrap">
                                         {tech}
                                     </span>
                                     <div className="h-12 w-px bg-border/40" />

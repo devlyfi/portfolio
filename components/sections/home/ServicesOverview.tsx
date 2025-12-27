@@ -14,7 +14,7 @@ export function ServicesOverview() {
                             <span className="text-[10px] font-black text-primary uppercase tracking-[0.4em] block animate-pulse">/SOLUTIONS_OVERVIEW</span>
                             <h2 className="display-bold text-3xl lg:text-5xl uppercase tracking-tighter !leading-[0.9]">Core<br />Systems &<br />Services</h2>
                         </div>
-                        <p className="text-[11px] text-muted-foreground uppercase tracking-[0.2em] leading-relaxed opacity-60">End-to-end digital engineering protocols designed for high-frontier enterprise performance.</p>
+                        <p className="text-[11px] text-muted-foreground uppercase tracking-[0.2em] leading-relaxed opacity-80">End-to-end digital engineering protocols designed for high-frontier enterprise performance.</p>
 
                         <div className="pt-8">
                             <Link
@@ -39,14 +39,14 @@ export function ServicesOverview() {
                             >
                                 <div className="space-y-8">
                                     <div className="flex items-center justify-between">
-                                        <div className="size-16 border border-border/40 flex items-center justify-center text-primary bg-background group-hover:border-primary transition-all duration-500 shadow-sm group-hover:shadow-primary/5">
+                                        <div className="size-16 border border-border/40 flex items-center justify-center text-primary bg-background group-hover:border-primary transition-all duration-500">
                                             <service.icon className="size-7" />
                                         </div>
                                         <span className="text-[10px] font-mono text-muted-foreground/20 group-hover:text-primary transition-colors">ID: 0{index + 1}</span>
                                     </div>
                                     <div className="space-y-4">
                                         <h3 className="text-3xl font-black uppercase tracking-tight text-foreground group-hover:text-primary transition-colors">{service.title}</h3>
-                                        <p className="text-[11px] text-muted-foreground uppercase leading-loose tracking-widest opacity-60 group-hover:opacity-100 transition-opacity max-w-sm">
+                                        <p className="text-[11px] text-muted-foreground uppercase leading-loose tracking-widest opacity-80 group-hover:opacity-100 transition-opacity max-w-sm">
                                             {service.shortDesc}
                                         </p>
                                     </div>

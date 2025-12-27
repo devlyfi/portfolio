@@ -12,7 +12,7 @@ export function Innovation() {
                             <span className="text-[10px] font-black text-primary uppercase tracking-[0.5em] block animate-pulse">/RD_LAB_STUDIES</span>
                             <h2 className="display-bold text-3xl lg:text-3xl xl:text-5xl uppercase tracking-tighter !leading-[0.9]">Beyond<br />Systems<br />Architecture</h2>
                         </div>
-                        <p className="text-[11px] text-muted-foreground uppercase tracking-[0.3em] leading-relaxed opacity-60 max-w-sm">Investing in high-frontier R&D, community ecosystems, and ecological resilience.</p>
+                        <p className="text-[11px] text-muted-foreground uppercase tracking-[0.3em] leading-relaxed opacity-80 max-w-sm">Investing in high-frontier R&D, community ecosystems, and ecological resilience.</p>
                         <div className="grid-symbol -bottom-2.5 -left-2.5" />
                     </div>
 
@@ -49,14 +49,14 @@ export function Innovation() {
                             >
                                 <div className="space-y-10">
                                     <div className="flex items-center justify-between">
-                                        <div className="size-16 border border-border/40 flex items-center justify-center text-primary bg-background group-hover:border-primary transition-all duration-500 shadow-sm group-hover:shadow-primary/5">
+                                        <div className="size-14 border border-border/40 flex items-center justify-center text-muted-foreground/40 group-hover:text-primary group-hover:border-primary transition-all duration-500 bg-background/50">
                                             <item.icon className="size-6" />
                                         </div>
                                         <span className="text-[10px] font-black text-primary uppercase tracking-[0.4em] opacity-0 group-hover:opacity-100 transition-all group-hover:translate-x-0 translate-x-4 duration-500">{item.marker}</span>
                                     </div>
                                     <div className="space-y-6">
                                         <h3 className="text-[13px] font-black uppercase tracking-[0.3em] text-foreground group-hover:text-primary transition-colors">{item.title}</h3>
-                                        <p className="text-[11px] text-muted-foreground uppercase leading-[2] tracking-[0.2em] opacity-60 group-hover:opacity-100 transition-opacity">
+                                        <p className="text-[11px] text-muted-foreground uppercase leading-[2] tracking-[0.2em] opacity-80 group-hover:opacity-100 transition-opacity">
                                             {item.desc}
                                         </p>
                                     </div>

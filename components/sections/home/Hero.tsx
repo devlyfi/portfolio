@@ -35,7 +35,7 @@ export function Hero() {
                         </div>
 
                         <div className="max-w-2xl space-y-10 flex flex-col items-center">
-                            <p className="text-[11px] text-muted-foreground uppercase leading-[2] tracking-[0.3em] font-medium opacity-70 border-y border-border/10 py-6 px-8">
+                            <p className="text-[11px] text-muted-foreground uppercase leading-[2] tracking-[0.3em] font-medium opacity-90 border-y border-border/10 py-6 px-8">
                                 We build high-frontier infrastructure for enterprise units that demand absolute technical precision, deep resilience, and global-scale performance.
                             </p>
 
@@ -77,7 +77,7 @@ export function Hero() {
                         <div key={i} className="p-10 lg:p-14 space-y-4 group hover:bg-muted/5 transition-all relative overflow-hidden">
                             <p className="text-[9px] font-bold text-muted-foreground uppercase tracking-[0.3em]">{stat.label}</p>
                             <h3 className="text-3xl font-black uppercase tracking-tight text-foreground group-hover:text-primary transition-colors">{stat.value}</h3>
-                            <p className="text-[9px] text-muted-foreground uppercase tracking-[0.2em] opacity-40">{stat.sub}</p>
+                            <p className="text-[9px] text-muted-foreground uppercase tracking-[0.2em] opacity-70">{stat.sub}</p>
 
                             {/* Decorative line */}
                             <div className="absolute bottom-0 left-0 h-0.5 bg-primary/20 w-0 group-hover:w-full transition-all duration-700" />
