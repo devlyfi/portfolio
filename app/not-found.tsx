@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { ArrowRight, Home, Compass, Terminal, MoveRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { ScrambleButton } from "@/components/ui/ScrambleButton";
 
 export default function NotFound() {
     return (
@@ -57,16 +57,27 @@ export default function NotFound() {
                             </div>
 
                             <div className="flex flex-col sm:flex-row gap-4 pt-6">
-                                <Button size="lg" className="h-16 px-12 text-[10px] font-black uppercase tracking-[0.4em] rounded-none group/btn bg-primary text-primary-foreground hover:bg-primary/90 transition-all border border-primary" asChild>
+                                <ScrambleButton
+                                    size="lg"
+                                    scrambleText="REBOOT_TO_HOME"
+                                    className="h-16 px-12 text-[10px] font-black uppercase tracking-[0.4em] rounded-none group/btn bg-primary text-primary-foreground hover:bg-primary/90 transition-all border border-primary"
+                                    asChild
+                                >
                                     <Link href="/" className="flex items-center">
-                                        REBOOT_TO_HOME <Home className="ml-4 size-4 group-hover/btn:translate-x-2 transition-transform duration-500" />
+                                        <Home className="ml-4 size-4 group-hover/btn:translate-x-2 transition-transform duration-500" />
                                     </Link>
-                                </Button>
-                                <Button size="lg" variant="outline" className="h-16 px-12 text-[10px] font-black uppercase tracking-[0.4em] rounded-none border-border/40 hover:bg-muted/10 transition-all" asChild>
+                                </ScrambleButton>
+                                <ScrambleButton
+                                    size="lg"
+                                    variant="outline"
+                                    scrambleText="CONTACT_OPS"
+                                    className="h-16 px-12 text-[10px] font-black uppercase tracking-[0.4em] rounded-none border-border/40 hover:bg-muted/10 transition-all"
+                                    asChild
+                                >
                                     <Link href="/contact" className="flex items-center">
-                                        CONTACT_OPS <MoveRight className="ml-4 size-4 opacity-40 group-hover:translate-x-2 transition-transform" />
+                                        <MoveRight className="ml-4 size-4 opacity-40 group-hover:translate-x-2 transition-transform" />
                                     </Link>
-                                </Button>
+                                </ScrambleButton>
                             </div>
                         </div>
 

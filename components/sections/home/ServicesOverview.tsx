@@ -1,6 +1,10 @@
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { SERVICES } from "@/lib/data";
+import { ScrambleText } from "@/components/ui/ScrambleText";
 import { cn } from "@/lib/utils";
 
 export function ServicesOverview() {
@@ -21,7 +25,7 @@ export function ServicesOverview() {
                                 href="/services"
                                 className="inline-flex items-center gap-4 text-[10px] font-black text-primary uppercase tracking-[0.4em] hover:translate-x-2 transition-all group"
                             >
-                                View full directory <ArrowUpRight className="size-4 group-hover:rotate-45 transition-transform" />
+                                <DirectoryLinkText /> <ArrowUpRight className="size-4 group-hover:rotate-45 transition-transform" />
                             </Link>
                         </div>
                         <div className="grid-symbol -bottom-2.5 -left-2.5 lg:hidden" />
@@ -57,7 +61,7 @@ export function ServicesOverview() {
                                         href={`/services/${service.slug}`}
                                         className="inline-flex items-center gap-4 text-[10px] font-black text-primary uppercase tracking-[0.4em] group-hover:translate-x-4 transition-all"
                                     >
-                                        /EXPLORE_CASE <ArrowUpRight className="size-3" />
+                                        <ExploreCaseLinkText /> <ArrowUpRight className="size-3" />
                                     </Link>
                                 </div>
                                 <div className="grid-symbol -top-2.5 -right-2.5 opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -69,5 +73,23 @@ export function ServicesOverview() {
                 </div>
             </div>
         </section>
+    );
+}
+
+function DirectoryLinkText() {
+    const [isHovered, setIsHovered] = useState(false);
+    return (
+        <span onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
+            <ScrambleText text="View full directory" trigger={isHovered} />
+        </span>
+    );
+}
+
+function ExploreCaseLinkText() {
+    const [isHovered, setIsHovered] = useState(false);
+    return (
+        <span onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
+            <ScrambleText text="/EXPLORE_CASE" trigger={isHovered} />
+        </span>
     );
 }

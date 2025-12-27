@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { Menu, X, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ModeToggle } from "@/components/mode-toggle";
+import { ScrambleText } from "@/components/ui/ScrambleText";
 import { NAV_LINKS, SITE_CONFIG } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 
@@ -58,23 +59,14 @@ export function Navbar() {
                     {/* Desktop Nav */}
                     <nav className="hidden md:flex items-center gap-12">
                         {NAV_LINKS.map((link) => (
-                            <Link
-                                key={link.href}
-                                href={link.href}
-                                className={cn(
-                                    "text-xs font-bold uppercase tracking-[0.2em] transition-all hover:text-primary",
-                                    pathname === link.href ? "text-primary" : "text-muted-foreground"
-                                )}
-                            >
-                                {link.label}
-                            </Link>
+                            <NavLink key={link.href} link={link} pathname={pathname} />
                         ))}
                         <div className="w-[1px] h-4 bg-border/40" />
                         <Link
                             href="/contact"
-                            className="text-xs font-bold uppercase tracking-[0.2em] px-6 py-2 border border-border/40 hover:border-primary hover:bg-primary hover:text-primary-foreground transition-all"
+                            className="text-xs font-bold uppercase tracking-[0.2em] px-6 py-2 border border-border/40 hover:border-primary hover:bg-primary hover:text-primary-foreground transition-all group/btn"
                         >
-                            ENQUIRY
+                            <EnquiryButtonText />
                         </Link>
                         <ModeToggle />
                     </nav>
@@ -121,5 +113,37 @@ export function Navbar() {
                 </div>
             )}
         </header>
+    );
+}
+
+function NavLink({ link, pathname }: { link: { label: string; href: string }; pathname: string }) {
+    const [isHovered, setIsHovered] = useState(false);
+
+    return (
+        <Link
+            href={link.href}
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+            className={cn(
+                "text-xs font-bold uppercase tracking-[0.2em] transition-all hover:text-primary",
+                pathname === link.href ? "text-primary" : "text-muted-foreground"
+            )}
+        >
+            <ScrambleText text={link.label} trigger={isHovered} />
+        </Link>
+    );
+}
+
+function EnquiryButtonText() {
+    const [isHovered, setIsHovered] = useState(false);
+
+    return (
+        <span
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+            className="relative"
+        >
+            <ScrambleText text="ENQUIRY" trigger={isHovered} />
+        </span>
     );
 }

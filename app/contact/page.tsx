@@ -2,7 +2,8 @@
 
 import { useState, useEffect } from "react";
 import { Mail, MapPin, Phone, Clock } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { ScrambleButton } from "@/components/ui/ScrambleButton";
+import { ScrambleText } from "@/components/ui/ScrambleText";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
@@ -99,28 +100,16 @@ export default function ContactPage() {
 
                                 {/* Custom Tabs */}
                                 <div className="flex w-full mb-12 border border-border/40">
-                                    <button
+                                    <ContactTabButton
+                                        isActive={activeTab === "hello"}
                                         onClick={() => setActiveTab("hello")}
-                                        className={cn(
-                                            "flex-1 py-4 text-[10px] font-bold uppercase tracking-[0.2em] transition-all",
-                                            activeTab === "hello"
-                                                ? "bg-primary text-primary-foreground"
-                                                : "bg-transparent text-muted-foreground hover:text-foreground"
-                                        )}
-                                    >
-                                        Say Hello
-                                    </button>
-                                    <button
+                                        label="Say Hello"
+                                    />
+                                    <ContactTabButton
+                                        isActive={activeTab === "quote"}
                                         onClick={() => setActiveTab("quote")}
-                                        className={cn(
-                                            "flex-1 py-4 text-[10px] font-bold uppercase tracking-[0.2em] transition-all",
-                                            activeTab === "quote"
-                                                ? "bg-primary text-primary-foreground"
-                                                : "bg-transparent text-muted-foreground hover:text-foreground"
-                                        )}
-                                    >
-                                        Get a Quote
-                                    </button>
+                                        label="Get a Quote"
+                                    />
                                 </div>
 
                                 <form className="space-y-8">
@@ -170,9 +159,11 @@ export default function ContactPage() {
                                         />
                                     </div>
 
-                                    <Button size="lg" className="w-full lg:w-fit rounded-none h-14 px-12 text-[10px] font-bold uppercase tracking-[0.3em] bg-primary text-primary-foreground hover:bg-primary/90 transition-all">
-                                        {activeTab === "hello" ? "Send Message" : "Submit Request"}
-                                    </Button>
+                                    <ScrambleButton
+                                        size="lg"
+                                        scrambleText={activeTab === "hello" ? "Send Message" : "Submit Request"}
+                                        className="w-full lg:w-fit rounded-none h-14 px-12 text-[10px] font-bold uppercase tracking-[0.3em] bg-primary text-primary-foreground hover:bg-primary/90 transition-all"
+                                    />
                                 </form>
                             </div>
                         </div>
@@ -231,5 +222,25 @@ export default function ContactPage() {
                 </div>
             </div>
         </div>
+    );
+}
+
+function ContactTabButton({ isActive, onClick, label }: { isActive: boolean; onClick: () => void; label: string }) {
+    const [isHovered, setIsHovered] = useState(false);
+
+    return (
+        <button
+            onClick={onClick}
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+            className={cn(
+                "flex-1 py-4 text-[10px] font-bold uppercase tracking-[0.2em] transition-all",
+                isActive
+                    ? "bg-primary text-primary-foreground"
+                    : "bg-transparent text-muted-foreground hover:text-foreground"
+            )}
+        >
+            <ScrambleText text={label} trigger={isHovered} />
+        </button>
     );
 }

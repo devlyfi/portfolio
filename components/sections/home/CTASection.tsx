@@ -1,5 +1,9 @@
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
+import { ScrambleText } from "@/components/ui/ScrambleText";
 
 export function CTASection() {
     return (
@@ -44,7 +48,9 @@ export function CTASection() {
                             </div>
 
                             <div className="space-y-4">
-                                <span className="text-lg font-black uppercase tracking-[0.6em] text-foreground group-hover:text-white transition-colors block">Initiate</span>
+                                <span className="text-lg font-black uppercase tracking-[0.6em] text-foreground group-hover:text-white transition-colors block">
+                                    <CTAActionText />
+                                </span>
                                 <span className="text-[10px] font-bold text-muted-foreground group-hover:text-white/60 uppercase tracking-[0.4em] transition-colors block">/START_CONVERSATION</span>
                             </div>
                         </Link>
@@ -63,5 +69,19 @@ export function CTASection() {
                 </div>
             </div>
         </section>
+    );
+}
+
+function CTAActionText() {
+    const [isHovered, setIsHovered] = useState(false);
+
+    return (
+        <span
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+            className="inline-block"
+        >
+            <ScrambleText text="Initiate" trigger={isHovered} />
+        </span>
     );
 }

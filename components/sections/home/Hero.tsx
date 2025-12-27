@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { ArrowRight, ChevronRight, Binary, Cpu, ShieldCheck, Globe, MoveDown } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { ScrambleButton } from "@/components/ui/ScrambleButton";
 
 export function Hero() {
     return (
@@ -40,16 +40,27 @@ export function Hero() {
                             </p>
 
                             <div className="flex flex-col sm:flex-row items-center gap-4 pt-4">
-                                <Button size="lg" className="h-16 px-12 text-[10px] font-black uppercase tracking-[0.4em] rounded-none group/btn bg-primary text-primary-foreground hover:bg-primary/90 transition-all border border-primary" asChild>
+                                <ScrambleButton
+                                    size="lg"
+                                    scrambleText="Initiate Protocol"
+                                    className="h-16 px-12 text-[10px] font-black uppercase tracking-[0.4em] rounded-none group/btn bg-primary text-primary-foreground hover:bg-primary/90 transition-all border border-primary"
+                                    asChild
+                                >
                                     <Link href="/contact" className="flex items-center">
-                                        Initiate Protocol <ArrowRight className="ml-4 size-4 group-hover/btn:translate-x-2 transition-transform duration-500" />
+                                        <ArrowRight className="ml-4 size-4 group-hover/btn:translate-x-2 transition-transform duration-500" />
                                     </Link>
-                                </Button>
-                                <Button size="lg" variant="outline" className="h-16 px-12 text-[10px] font-black uppercase tracking-[0.4em] rounded-none border-border/40 hover:bg-muted/10 transition-all" asChild>
+                                </ScrambleButton>
+                                <ScrambleButton
+                                    size="lg"
+                                    variant="outline"
+                                    scrambleText="Records"
+                                    className="h-16 px-12 text-[10px] font-black uppercase tracking-[0.4em] rounded-none border-border/40 hover:bg-muted/10 transition-all"
+                                    asChild
+                                >
                                     <Link href="/work" className="flex items-center">
-                                        Records <ChevronRight className="ml-2 size-4 opacity-40" />
+                                        <ChevronRight className="ml-2 size-4 opacity-40" />
                                     </Link>
-                                </Button>
+                                </ScrambleButton>
                             </div>
                         </div>
 

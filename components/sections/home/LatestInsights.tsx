@@ -1,5 +1,9 @@
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
+import { ScrambleText } from "@/components/ui/ScrambleText";
 import { BLOG_POSTS } from "@/lib/blog-data";
 import { BlogCard } from "@/components/blog/BlogCard";
 
@@ -26,7 +30,7 @@ export function LatestInsights() {
                                 href="/blog"
                                 className="inline-flex items-center gap-4 text-[10px] font-black text-primary uppercase tracking-[0.5em] hover:translate-x-4 transition-all duration-500 group"
                             >
-                                Access full archive <ArrowUpRight className="size-4 group-hover:rotate-45 transition-transform" />
+                                <ArchiveLinkText /> <ArrowUpRight className="size-4 group-hover:rotate-45 transition-transform" />
                             </Link>
                         </div>
                         <div className="grid-symbol -top-2.5 -right-2.5" />
@@ -46,5 +50,19 @@ export function LatestInsights() {
                 </div>
             </div>
         </section>
+    );
+}
+
+function ArchiveLinkText() {
+    const [isHovered, setIsHovered] = useState(false);
+
+    return (
+        <span
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+            className="inline-block"
+        >
+            <ScrambleText text="Access full archive" trigger={isHovered} />
+        </span>
     );
 }
