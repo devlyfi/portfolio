@@ -5,18 +5,12 @@ import { ScrambleButton } from "@/components/ui/ScrambleButton";
 export function Hero() {
     return (
         <section className="relative bg-background overflow-hidden">
-            {/* Architectural Grid Underlay */}
-            <div className="absolute inset-0 -z-10 pointer-events-none opacity-40">
-                <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:80px_80px]" />
-                <div className="absolute left-0 top-0 h-full w-px bg-border/40" />
-                <div className="absolute right-0 top-0 h-full w-px bg-border/40" />
-            </div>
 
             <div className="container px-4 mx-auto">
-                <div className="flex flex-col lg:flex-row border-x border-border/40 min-h-[90vh]">
+                <div className="flex flex-col lg:flex-row min-h-[90vh]">
 
                     {/* Main Narrative Panel */}
-                    <div className="w-full p-12 lg:p-32 flex flex-col items-center justify-center text-center space-y-16 relative bg-background/50 backdrop-blur-[2px]">
+                    <div className="w-full p-12 lg:p-32 flex flex-col items-center justify-center text-center space-y-16 relative">
 
                         <div className="space-y-10">
                             <div className="flex flex-col items-center gap-4">
@@ -75,13 +69,16 @@ export function Hero() {
                             <span className="text-[9px] font-bold uppercase tracking-[0.4em]">EXPLORE DEVLYFI</span>
                         </div>
 
-                        <div className="grid-symbol -top-2.5 -left-2.5" />
                     </div>
 
                 </div>
 
                 {/* Performance Metrics Bar */}
-                <div className="grid grid-cols-2 lg:grid-cols-4 border-x border-b border-border/40 divide-x divide-border/40 bg-background/50">
+                <div className="grid grid-cols-2 lg:grid-cols-4 border border-border/40 divide-x divide-border/40 relative">
+                    <div className="grid-symbol -top-2.5 -left-2.5" />
+                    <div className="grid-symbol -top-2.5 -right-2.5" />
+                    <div className="grid-symbol -bottom-2.5 -left-2.5" />
+                    <div className="grid-symbol -bottom-2.5 -right-2.5" />
                     {[
                         {
                             label: "/PROJECTS_DELIVERED",
