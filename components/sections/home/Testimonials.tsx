@@ -19,16 +19,16 @@ export function Testimonials() {
             <div className="container px-4 mx-auto">
                 <div className="flex flex-col lg:flex-row border-x border-border/40 divide-y lg:divide-y-0 lg:divide-x divide-border/40">
                     {/* Header Label / Sidebar */}
-                    <div className="lg:w-1/3 p-12 lg:p-24 space-y-12 relative bg-muted/2">
-                        <div className="space-y-6">
+                    <div className="lg:w-1/3 p-8 lg:p-12 space-y-8 relative bg-muted/2">
+                        <div className="space-y-4">
                             <span className="text-[10px] font-black text-primary uppercase tracking-[0.5em] block animate-pulse">/FEEDBACK_METRICS</span>
-                            <h2 className="display-bold text-4xl lg:text-5xl uppercase tracking-tighter !leading-[0.9]">Verified<br />Industry<br />Voices</h2>
+                            <h2 className="display-bold text-3xl lg:text-4xl uppercase tracking-tighter !leading-[0.9]">Industry<br />Voices</h2>
                         </div>
 
-                        <div className="space-y-6 pt-4">
-                            <div className="p-8 bg-background border border-border/40 relative group overflow-hidden shadow-sm group-hover:shadow-primary/5 transition-all">
-                                <span className="text-[10px] font-black text-muted-foreground/40 uppercase tracking-[0.4em] block mb-4">/SATISFACTION_INDEX</span>
-                                <div className="text-4xl font-black text-primary tracking-tighter">98.4%</div>
+                        <div className="space-y-6 pt-2">
+                            <div className="p-6 bg-background border border-border/40 relative group overflow-hidden shadow-sm group-hover:shadow-primary/5 transition-all">
+                                <span className="text-[10px] font-black text-muted-foreground/40 uppercase tracking-[0.4em] block mb-2">/SATISFACTION</span>
+                                <div className="text-3xl font-black text-primary tracking-tighter">98.4%</div>
                                 <div className="sidebar-meta absolute -right-2 top-4 scale-75 opacity-10 group-hover:opacity-100 transition-opacity">TX_CONFIRMED</div>
                                 <div className="absolute bottom-0 left-0 h-0.5 w-0 bg-primary/20 group-hover:w-full transition-all duration-700" />
                             </div>
@@ -39,21 +39,21 @@ export function Testimonials() {
 
                     {/* Testimonial Active Unit */}
                     <div className="lg:w-2/3 flex flex-col divide-y divide-border/40 relative">
-                        <div className="flex-1 p-12 lg:p-24 space-y-16 relative min-h-[600px] flex flex-col justify-center bg-background/50 backdrop-blur-[2px]">
-                            <Quote className="size-24 text-primary opacity-[0.03] absolute top-12 left-12 rotate-12" />
+                        <div className="flex-1 p-8 lg:p-12 space-y-10 relative min-h-[320px] flex flex-col justify-center bg-background/50 backdrop-blur-[2px]">
+                            <Quote className="size-16 text-primary opacity-[0.03] absolute top-8 left-8 rotate-12" />
 
-                            <div className="space-y-12 relative z-10">
-                                <p className="text-2xl md:text-4xl font-bold uppercase tracking-tight !leading-[1.4] text-foreground/90 italic border-l-2 border-primary/20 pl-10 max-w-2xl">
+                            <div className="space-y-8 relative z-10">
+                                <p className="text-xl md:text-2xl font-bold uppercase tracking-tight !leading-[1.4] text-foreground/90 italic border-l-2 border-primary/20 pl-8 max-w-2xl">
                                     "{testimonial.content}"
                                 </p>
 
-                                <div className="flex items-center gap-8 pt-8">
-                                    <div className="size-20 border border-border/40 flex items-center justify-center bg-muted/5 group-hover:border-primary transition-all duration-700">
-                                        <User className="size-10 text-primary opacity-20" />
+                                <div className="flex items-center gap-6 pt-4">
+                                    <div className="size-14 border border-border/40 flex items-center justify-center bg-muted/5 group-hover:border-primary transition-all duration-700">
+                                        <User className="size-6 text-primary opacity-20" />
                                     </div>
-                                    <div className="space-y-2">
-                                        <h4 className="text-2xl font-black uppercase tracking-tight text-foreground">{testimonial.author}</h4>
-                                        <div className="text-[11px] font-black text-primary uppercase tracking-[0.4em] opacity-80">{testimonial.role}</div>
+                                    <div className="space-y-1">
+                                        <h4 className="text-xl font-black uppercase tracking-tight text-foreground">{testimonial.author}</h4>
+                                        <div className="text-[10px] font-black text-primary uppercase tracking-[0.4em] opacity-80">{testimonial.role}</div>
                                     </div>
                                 </div>
                             </div>
@@ -62,7 +62,7 @@ export function Testimonials() {
                         </div>
 
                         {/* Navigation Unit */}
-                        <div className="p-10 lg:p-16 flex items-center justify-between bg-muted/1 relative group/nav">
+                        <div className="p-4 lg:p-6 flex items-center justify-between bg-muted/1 relative group/nav">
                             <div className="flex items-center gap-3">
                                 {TESTIMONIALS.map((_, i) => (
                                     <div

@@ -922,24 +922,27 @@ export const PROCESS_STEPS = [
 
 export const TESTIMONIALS = [
     {
-        id: 1,
-        content: "The AI agent they built saved our team hours every week and improved our response time. It feels like we hired a new team member who never sleeps!",
-        author: "Windi Kulina",
-        role: "CMO OF BIMA"
+        content: "Working with Devlyfi has transformed our digital infrastructure—unmatched reliability and speed.",
+        author: "Rohan Mehta",
+        role: "CTO, TechNova Solutions"
     },
     {
-        id: 2,
-        content: "Their technical expertise in Next.js and Cloud architecture is unmatched. They transformed our legacy platform into a high-performance SaaS in record time.",
-        author: "Sarah Johnson",
-        role: "CTO, TechFlow Inc."
-    },
-    {
-        id: 3,
-        content: "Reliable, transparent, and incredibly skilled. They didn't just write code; they provided strategic technical direction that saved us months of R&D.",
+        content: "Their team delivered a seamless integration with zero downtime, exceeding all expectations.",
         author: "Elena Rodriguez",
-        role: "Founder, GreenEarth Startups"
-    }
+        role: "VP of Engineering, CloudWave"
+    },
+    {
+        content: "The Devlyfi engineers’ expertise in scalable systems is evident in every interaction.",
+        author: "Samuel Lee",
+        role: "Head of Product, FinEdge Corp"
+    },
+    {
+        content: "They consistently provide actionable insights that make our systems more resilient and efficient.",
+        author: "Priya Anand",
+        role: "Operations Director, DataForge Labs"
+    },
 ];
+
 
 export const TEAM = [
     {
