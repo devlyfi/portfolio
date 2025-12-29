@@ -45,16 +45,17 @@ export default function ContactPage() {
                         <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-muted-foreground/80 mb-6">
                             <span>Agency</span>
                             <span>/</span>
-                            <span>Partnership</span>
-                            <span>/</span>
                             <span className="text-foreground">Contact</span>
                         </div>
 
                         <div className="grid grid-cols-1 lg:grid-cols-[1fr_400px] gap-12 lg:gap-24 items-end">
-                            <h1 className="text-5xl lg:text-8xl font-bold display-bold leading-[0.9]">
-                                Let's Build <br /> Something.
+                            <h1 className="display-bold text-6xl md:text-7xl lg:text-9xl flex flex-col items-start gap-2 uppercase tracking-tighter !leading-[0.85]">
+                                <span className="flex items-center gap-6">
+                                    Let's Build <span className="h-[2px] w-12 md:w-24 bg-primary mt-4" />
+                                </span>
+                                <span className="text-muted-foreground/20">Something.</span>
                             </h1>
-                            <p className="text-lg text-muted-foreground leading-relaxed pb-2 border-l border-border/40 pl-8 opacity-90">
+                            <p className="text-lg text-muted-foreground leading-relaxed pb-2 border-l border-border/40 pl-8 italic">
                                 Whether you have a specific project in mind or just want to explore a new idea, we're here to help you navigate the digital frontier.
                             </p>
                         </div>
@@ -95,7 +96,7 @@ export default function ContactPage() {
                                         <Mail className="size-5 text-primary" />
                                         <span className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground whitespace-nowrap">/INQUIRY_FORM_V01</span>
                                     </div>
-                                    <h2 className="text-3xl lg:text-5xl font-bold display-bold mb-6">Start a <br /> Conversation.</h2>
+                                    <h2 className="text-3xl lg:text-5xl display-bold uppercase tracking-tighter !leading-[0.85] mb-6">Start a <br /> Conversation.</h2>
                                 </div>
 
                                 {/* Custom Tabs */}

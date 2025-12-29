@@ -20,19 +20,20 @@ export default function CareersPage() {
                 <div className="container relative z-10 px-4 mx-auto pt-32 pb-24 text-foreground">
                     {/* Header Section */}
                     <div className="mb-24">
-                        <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-muted-foreground mb-6">
+                        <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-muted-foreground/80 mb-6">
                             <span>Agency</span>
-                            <span>/</span>
-                            <span>Join the Team</span>
                             <span>/</span>
                             <span className="text-foreground">Careers</span>
                         </div>
 
                         <div className="grid grid-cols-1 lg:grid-cols-[1fr_400px] gap-12 lg:gap-24 items-end">
-                            <h1 className="text-5xl lg:text-8xl font-bold display-bold leading-[0.9]">
-                                Build the <br /> Future Together.
+                            <h1 className="display-bold text-6xl md:text-7xl lg:text-9xl flex flex-col items-start gap-2 uppercase tracking-tighter !leading-[0.85]">
+                                <span className="flex items-center gap-6">
+                                    Build the <span className="h-[2px] w-12 md:w-24 bg-primary mt-4" />
+                                </span>
+                                <span className="text-muted-foreground/20">Future.</span>
                             </h1>
-                            <p className="text-lg text-muted-foreground leading-relaxed pb-2 border-l border-border/40 pl-8">
+                            <p className="text-lg text-muted-foreground leading-relaxed pb-2 border-l border-border/40 pl-8 italic">
                                 We are a world-class team of engineers, designers, and strategists on a mission to redefine digital excellence. Join us in creating software that matters.
                             </p>
                         </div>
@@ -70,7 +71,7 @@ export default function CareersPage() {
                                 {/* Text content */}
                                 <div className="p-8 lg:p-16 flex flex-col justify-center">
                                     <div className="mb-6">
-                                        <h2 className="text-3xl lg:text-5xl font-bold leading-tight mb-6 uppercase tracking-tighter">
+                                        <h2 className="display-bold text-3xl lg:text-5xl uppercase tracking-tighter !leading-[0.85] mb-6">
                                             An Environment Built <br /> for Excellence.
                                         </h2>
                                         <p className="text-lg text-muted-foreground leading-relaxed mb-12">
@@ -191,7 +192,7 @@ export default function CareersPage() {
                                     <Sparkles className="size-6 text-primary" />
                                     <span className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">/JOIN_OUR_COMMUNITY</span>
                                 </div>
-                                <h2 className="text-4xl lg:text-6xl font-bold mb-8 display-bold">Ready to make <br /> your mark?</h2>
+                                <h2 className="display-bold text-4xl lg:text-6xl uppercase tracking-tighter !leading-[0.85] mb-8">Ready to make <br /> your mark?</h2>
                                 <p className="text-lg text-muted-foreground leading-relaxed max-w-md">
                                     While we don't have active positions today, we are always looking for exceptional engineers and designers for our future projects.
                                 </p>

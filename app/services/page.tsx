@@ -9,18 +9,20 @@ export default function ServicesPage() {
             <div className="container relative z-10 px-4 mx-auto pt-32 pb-24">
                 {/* Header Section */}
                 <div className="mb-24 relative">
-                    <div className="flex items-center gap-4 mb-4">
-                        <div className="h-[1px] w-12 lg:w-24 bg-border/60" />
-                        <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground">
-                            /OUR EXPERTISE
-                        </span>
+                    <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-muted-foreground/80 mb-6">
+                        <span>Agency</span>
+                        <span>/</span>
+                        <span className="text-foreground">Services</span>
                     </div>
 
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-end">
-                        <h1 className="text-6xl md:text-8xl font-bold display-bold">
-                            Comprehensive <br /> Tech Services
+                    <div className="grid grid-cols-1 lg:grid-cols-[1fr_400px] gap-12 lg:gap-24 items-end">
+                        <h1 className="display-bold text-6xl md:text-7xl lg:text-9xl flex flex-col items-start gap-2 uppercase tracking-tighter !leading-[0.85]">
+                            <span className="flex items-center gap-6">
+                                Tech <span className="h-[2px] w-12 md:w-24 bg-primary mt-4" />
+                            </span>
+                            <span className="text-muted-foreground/20">Services.</span>
                         </h1>
-                        <p className="text-lg text-muted-foreground leading-relaxed max-w-xl lg:mb-2">
+                        <p className="text-lg text-muted-foreground leading-relaxed pb-2 border-l border-border/40 pl-8 italic">
                             From initial discovery to final deployment, we provide end-to-end engineering and design services to scale your business.
                         </p>
                     </div>
@@ -52,7 +54,7 @@ export default function ServicesPage() {
                                                 <div className="font-bold tracking-tighter text-2xl opacity-80 uppercase tracking-widest">{service.title.split(' ')[0]}</div>
                                                 <div className="text-[10px] font-bold text-muted-foreground/60">/{service.year || '2024'}</div>
                                             </div>
-                                            <h3 className="text-3xl lg:text-4xl lg:leading-[1.15] font-bold">
+                                            <h3 className="text-3xl lg:text-4xl display-bold uppercase tracking-tighter !leading-[0.85]">
                                                 {service.shortDesc}
                                             </h3>
                                         </div>

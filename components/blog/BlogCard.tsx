@@ -15,7 +15,7 @@ export function BlogCard({ post }: BlogCardProps) {
     }).format(new Date(post.publishedDate));
 
     return (
-        <div className="flex flex-col h-full relative group bg-background">
+        <div className="flex flex-col h-full relative group">
             <Link href={`/blog/${post.slug}`} className="block overflow-hidden relative aspect-video border border-border/40">
                 <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity z-10 flex items-center justify-center">
                     <div className="bg-primary text-primary-foreground p-4 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
@@ -44,7 +44,7 @@ export function BlogCard({ post }: BlogCardProps) {
                 </div>
             </Link>
 
-            <div className="pt-8 space-y-4 flex-1 flex flex-col">
+            <div className="pt-6 space-y-4 flex-1 flex flex-col">
                 <div className="flex items-center justify-between text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground/60">
                     <div className="flex items-center gap-4">
                         <span className="flex items-center gap-1.5">

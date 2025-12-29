@@ -31,7 +31,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
                         <span>/</span>
                         <span className="text-foreground">{project.title}</span>
                     </div>
-                    <h1 className="text-6xl md:text-8xl font-bold display-bold mb-12 max-w-5xl">
+                    <h1 className="text-6xl md:text-8xl display-bold uppercase tracking-tighter !leading-[0.85] mb-12 max-w-5xl">
                         {project.title}
                     </h1>
                 </div>
@@ -100,7 +100,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
                                         {/* Text content */}
                                         <div className={`p-8 lg:p-16 flex flex-col justify-center ${index % 2 !== 0 ? 'lg:order-2' : ''}`}>
                                             <div className="mb-6">
-                                                <h2 className="text-3xl lg:text-5xl font-bold leading-tight mb-6">
+                                                <h2 className="display-bold text-3xl lg:text-5xl uppercase tracking-tighter !leading-[0.85] mb-6">
                                                     {section.title}
                                                 </h2>
                                                 <div className="space-y-6">
@@ -174,7 +174,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
                             {/* Main Content */}
                             <div className="p-8 lg:p-24 flex flex-col items-center text-center">
                                 <div className="max-w-2xl mx-auto space-y-8 mb-16">
-                                    <h2 className="text-4xl lg:text-6xl font-bold leading-tight">
+                                    <h2 className="display-bold text-4xl lg:text-6xl uppercase tracking-tighter !leading-[0.85]">
                                         {project.resultsHighlight.title}
                                     </h2>
                                     <p className="text-lg text-muted-foreground leading-relaxed max-w-xl mx-auto">
@@ -211,7 +211,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
                         </span>
                     </div>
                     <div className="flex flex-col md:flex-row md:items-end justify-between gap-8">
-                        <h2 className="text-5xl lg:text-7xl font-bold leading-tight">
+                        <h2 className="display-bold text-5xl lg:text-7xl uppercase tracking-tighter !leading-[0.85]">
                             Next case study
                         </h2>
                         <Link href="/work" className="inline-flex items-center gap-3 px-6 py-4 border border-border/40 font-bold text-sm tracking-widest uppercase hover:bg-foreground hover:text-background transition-colors group">
@@ -254,7 +254,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
                                                     <div className="font-bold tracking-tighter text-2xl opacity-80">{nextProject.client.name.split(' ')[0].toLowerCase()}</div>
                                                     <div className="text-[10px] font-bold text-muted-foreground/60">/{nextProject.year}</div>
                                                 </div>
-                                                <h3 className="text-3xl lg:text-5xl lg:leading-[1.15] font-bold">
+                                                <h3 className="text-3xl lg:text-5xl display-bold uppercase tracking-tighter !leading-[0.85]">
                                                     {nextProject.summary.split('.')[0]}.
                                                 </h3>
                                             </div>

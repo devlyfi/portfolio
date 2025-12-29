@@ -15,25 +15,25 @@ export function CTASection() {
                         <div className="space-y-10 max-w-3xl">
                             <span className="text-[10px] font-black text-primary uppercase tracking-[0.5em] block animate-pulse">/OPEN_CHANNEL_PROTOCOL</span>
                             <h2 className="display-bold text-4xl lg:text-7xl uppercase tracking-tighter !leading-[0.85]">
-                                Transform Your<br />Technical Future
+                                Accelerate Your<br />Technical Vision
                             </h2>
-                            <p className="text-[12px] text-muted-foreground uppercase leading-[2] tracking-[0.3em] font-medium opacity-60 border-l border-primary/20 pl-10">
-                                Initiating a partnership begins with a high-fidelity strategy session. Secure your position in the upcoming deployment phase through our verified technical channel.
+                            <p className="text-[12px] uppercase leading-[2] tracking-[0.3em] font-medium opacity-60 border-l border-primary/20 pl-10">
+                                Connect with our expert team to explore innovative technical solutions. Initiate a conversation to unlock strategies, insights, and collaborative opportunities tailored for your goals.
                             </p>
                         </div>
 
                         <div className="flex flex-wrap gap-16 pt-8">
                             <div className="space-y-4">
                                 <span className="text-[10px] font-black text-muted-foreground/30 uppercase tracking-[0.4em] block">AVAILABILITY</span>
-                                <div className="text-sm font-black uppercase text-primary tracking-[0.4em]">PHASE_04 // DEC 2024</div>
+                                <div className="text-sm font-black uppercase text-primary tracking-[0.4em]">PHASE_ACTIVE // {new Date().getFullYear()}</div>
                             </div>
                             <div className="space-y-4">
                                 <span className="text-[10px] font-black text-muted-foreground/30 uppercase tracking-[0.4em] block">STATUS</span>
-                                <div className="text-sm font-black uppercase text-foreground tracking-[0.4em]">READY_FOR_COMMMS</div>
+                                <div className="text-sm font-black uppercase text-foreground tracking-[0.4em]">READY_FOR_ENGAGEMENT</div>
                             </div>
                         </div>
 
-                        <div className="sidebar-meta absolute -right-2 top-24 scale-90 opacity-10">TX_READY_v04</div>
+                        <div className="sidebar-meta absolute -right-2 top-24 scale-90 opacity-10">TX_OPEN_v01</div>
                         <div className="grid-symbol -bottom-2.5 -left-2.5 lg:hidden" />
                     </div>
 
@@ -51,14 +51,12 @@ export function CTASection() {
                                 <span className="text-lg font-black uppercase tracking-[0.6em] text-foreground group-hover:text-white transition-colors block">
                                     <CTAActionText />
                                 </span>
-                                <span className="text-[10px] font-bold text-muted-foreground group-hover:text-white/60 uppercase tracking-[0.4em] transition-colors block">/START_CONVERSATION</span>
+                                <span className="text-[10px] font-bold text-muted-foreground group-hover:text-white/60 uppercase tracking-[0.4em] transition-colors block">/INITIATE_CONVERSATION</span>
                             </div>
                         </Link>
 
                         {/* Visual Connector - Abstract Grid */}
-                        <div className="absolute inset-0 pointer-events-none opacity-10 group-hover:opacity-30 transition-all duration-1000">
-                            <div className="h-full w-full border-[40px] border-border/5 border-double group-hover:border-white/10 transition-colors" />
-                        </div>
+
 
                         <div className="grid-symbol -top-2.5 -right-2.5" />
                         <div className="grid-symbol -bottom-2.5 -right-2.5" />
@@ -81,7 +79,7 @@ function CTAActionText() {
             onMouseLeave={() => setIsHovered(false)}
             className="inline-block"
         >
-            <ScrambleText text="Initiate" trigger={isHovered} />
+            <ScrambleText text="Connect Now" trigger={isHovered} />
         </span>
     );
 }

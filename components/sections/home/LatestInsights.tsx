@@ -18,10 +18,15 @@ export function LatestInsights() {
                 <div className="flex flex-col lg:flex-row border-x border-border/40 divide-y lg:divide-y-0 lg:divide-x divide-border/40 border-b border-border/40 bg-background/40">
                     <div className="lg:w-2/3 p-12 lg:p-24 space-y-10">
                         <span className="text-[10px] font-black text-primary uppercase tracking-[0.5em] block animate-pulse">/INTEL_STREAMS</span>
-                        <h2 className="display-bold text-4xl lg:text-6xl uppercase tracking-tighter !leading-[0.9]">Technical<br />Insights &<br />Strategy</h2>
+                        <h2 className="display-bold text-4xl lg:text-7xl flex flex-col items-start gap-2 uppercase tracking-tighter !leading-[0.85]">
+                            <span className="flex items-center gap-6">
+                                Technical <span className="h-[2px] w-8 md:w-16 bg-primary mt-2" />
+                            </span>
+                            <span className="text-muted-foreground/20">Insights & Strategy.</span>
+                        </h2>
                     </div>
                     <div className="lg:w-1/3 p-12 lg:p-24 flex flex-col justify-center space-y-12 bg-muted/1 relative">
-                        <p className="text-[11px] text-muted-foreground uppercase leading-[2] tracking-[0.3em] font-medium opacity-80 border-l border-primary/20 pl-8">
+                        <p className="text-[11px] uppercase leading-[2] tracking-[0.3em] font-medium opacity-80 border-l border-primary/20 pl-8">
                             Engineering perspectives and strategic resources to master global scale and technical excellence.
                         </p>
 
@@ -40,7 +45,7 @@ export function LatestInsights() {
                 {/* Insights Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-x border-border/40 divide-x divide-border/40 relative">
                     {recentPosts.map((post) => (
-                        <div key={post.id} className="relative group bg-background/50 hover:bg-background transition-all duration-700">
+                        <div key={post.id} className="relative group bg-background/50 hover:bg-background transition-all duration-700 p-8 lg:p-12 xl:p-14">
                             <BlogCard post={post} />
                             <div className="grid-symbol -bottom-2.5 -right-2.5 opacity-0 group-hover:opacity-100 transition-opacity" />
                         </div>

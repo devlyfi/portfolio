@@ -30,34 +30,30 @@ export default function BlogListingPage() {
 
     return (
         <div className="bg-background min-h-screen">
-            {/* Split Header */}
-            <header className="pt-32 pb-0 border-b border-border/40 overflow-hidden bg-background">
-                <div className="container px-4 mx-auto">
-                    <div className="flex flex-col lg:flex-row">
-                        {/* Title Side */}
-                        <div className="lg:w-2/3 pb-12 lg:pb-20">
-                            <div className="inline-flex items-center gap-3 mb-8">
-                                <span className="text-[10px] font-bold uppercase tracking-[0.4em] text-muted-foreground/60">Agency // Insights</span>
-                                <div className="h-[1px] w-8 bg-border" />
-                                <span className="text-[10px] font-bold uppercase tracking-[0.4em] text-primary">Strategy</span>
-                            </div>
-                            <h1 className="display-bold text-6xl md:text-7xl lg:text-8xl flex flex-col items-start gap-2">
-                                <span className="flex items-center gap-6">
-                                    INSIGHTS <span className="h-[2px] w-12 md:w-24 bg-primary mt-4" />
-                                </span>
-                                <span className="text-muted-foreground/20">& STRATEGY.</span>
-                            </h1>
-                        </div>
+            {/* Header Section */}
+            <div className="container relative z-10 px-4 mx-auto pt-32 pb-24 text-foreground">
+                <div className="mb-24">
+                    <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-muted-foreground mb-6">
+                        <span>Agency</span>
+                        <span>/</span>
+                        <span className="text-foreground">Insights</span>
+                        <span>/</span>
+                        <span>Strategy</span>
+                    </div>
 
-                        {/* Description Side */}
-                        <div className="lg:w-1/3 border-l border-border/40 p-8 md:p-12 lg:p-16 flex flex-col justify-end">
-                            <p className="text-lg text-muted-foreground leading-relaxed italic border-l-2 border-primary/20 pl-6">
-                                Expert guidance on Fiverr growth, client management, and scaling your software agency in the global market.
-                            </p>
-                        </div>
+                    <div className="grid grid-cols-1 lg:grid-cols-[1fr_400px] gap-12 lg:gap-24 items-end">
+                        <h1 className="display-bold text-6xl md:text-7xl lg:text-9xl flex flex-col items-start gap-2 uppercase tracking-tighter !leading-[0.85]">
+                            <span className="flex items-center gap-6">
+                                Insights <span className="h-[2px] w-12 md:w-24 bg-primary mt-4" />
+                            </span>
+                            <span className="text-muted-foreground/20">& Strategy.</span>
+                        </h1>
+                        <p className="text-lg text-muted-foreground leading-relaxed pb-2 border-l border-border/40 pl-8 italic">
+                            Expert guidance on Fiverr growth, client management, and scaling your software agency in the global market.
+                        </p>
                     </div>
                 </div>
-            </header>
+            </div>
 
             {/* Metadata Grid */}
             <section className="border-b border-border/40 bg-muted/5">
