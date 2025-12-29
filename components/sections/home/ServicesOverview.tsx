@@ -1,24 +1,53 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useLayoutEffect } from "react";
 import Link from "next/link";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { SERVICES } from "@/lib/data";
 import { ScrambleText } from "@/components/ui/ScrambleText";
 import { cn } from "@/lib/utils";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export function ServicesOverview() {
+    const sectionRef = useRef<HTMLDivElement>(null);
+    const sideHeaderRef = useRef<HTMLDivElement>(null);
+
+    useLayoutEffect(() => {
+        const ctx = gsap.context(() => {
+            const mm = gsap.matchMedia();
+
+            mm.add("(min-width: 1024px)", () => {
+                ScrollTrigger.create({
+                    trigger: sectionRef.current,
+                    start: "top top",
+                    end: "bottom bottom",
+                    pin: sideHeaderRef.current,
+                    pinSpacing: false,
+                    scrub: true,
+                });
+            });
+        }, sectionRef);
+
+        return () => ctx.revert();
+    }, []);
+
     return (
-        <section className="py-0 bg-background overflow-hidden border-b border-border/40">
+        <section ref={sectionRef} className="py-0 bg-background overflow-hidden border-b border-border/40">
             <div className="container px-4 mx-auto">
-                <div className="flex flex-col lg:flex-row border-x border-border/40">
+                <div className="flex flex-col lg:flex-row border-x border-border/40 items-start">
                     {/* Section Label / Side Header */}
-                    <div className="lg:w-1/4 p-12 lg:p-24 space-y-10 relative bg-muted/2">
+                    <div ref={sideHeaderRef} className="lg:w-1/4 p-12 lg:p-24 space-y-10 relative bg-muted/2 h-full min-h-max lg:min-h-screen">
                         <div className="space-y-4">
-                            <span className="text-[10px] font-black text-primary uppercase tracking-[0.4em] block animate-pulse">/SOLUTIONS_OVERVIEW</span>
-                            <h2 className="display-bold text-3xl lg:text-5xl uppercase tracking-tighter !leading-[0.9]">Core<br />Systems &<br />Services</h2>
+                            <span className="text-[10px] font-black text-primary uppercase tracking-[0.4em] block animate-pulse">/SERVICES</span>
+                            <h2 className="display-bold text-3xl lg:text-5xl uppercase tracking-tighter !leading-[0.9]"> Engineering<br />
+                                Services for<br />
+                                Digital Products
+                            </h2>
                         </div>
-                        <p className="text-[11px] text-muted-foreground uppercase tracking-[0.2em] leading-relaxed opacity-80">End-to-end digital engineering protocols designed for high-frontier enterprise performance.</p>
+                        <p className="text-[11px] text-muted-foreground uppercase tracking-[0.2em] leading-relaxed opacity-80">We design, build, and scale reliable software systems with a focus on clarity, performance, and long-term maintainability.</p>
 
                         <div className="pt-8">
                             <Link
@@ -33,7 +62,7 @@ export function ServicesOverview() {
 
                     {/* Services Grid */}
                     <div className="lg:w-3/4 grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-border/40 relative">
-                        {SERVICES.slice(0, 4).map((service, index) => (
+                        {SERVICES.slice(0, 6).map((service, index) => (
                             <div
                                 key={service.id}
                                 className={cn(
@@ -89,7 +118,7 @@ function ExploreCaseLinkText() {
     const [isHovered, setIsHovered] = useState(false);
     return (
         <span onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
-            <ScrambleText text="/EXPLORE_CASE" trigger={isHovered} />
+            <ScrambleText text="/EXPLORE_MORE" trigger={isHovered} />
         </span>
     );
 }

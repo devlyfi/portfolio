@@ -14,10 +14,10 @@ export function TechStack() {
                     {/* Summary Label */}
                     <div className="lg:w-1/3 p-12 lg:p-20 space-y-12 relative bg-muted/5 border-b lg:border-b-0 lg:border-r border-border/40">
                         <div className="space-y-6">
-                            <span className="text-[10px] font-black text-primary uppercase tracking-[0.5em] block animate-pulse">/SYSTEM_STACK_01</span>
-                            <h2 className="display-bold text-3xl lg:text-3xl xl:text-5xl uppercase tracking-tighter !leading-[0.9]">Enterprise<br />Infrastructure<br />Stack</h2>
+                            <span className="text-[10px] font-black text-primary uppercase tracking-[0.5em] block animate-pulse">/TECH_STACK</span>
+                            <h2 className="display-bold text-3xl lg:text-3xl xl:text-5xl uppercase tracking-tighter !leading-[0.9]">Tools That<br />Power<br />Products</h2>
                         </div>
-                        <p className="text-[11px] text-muted-foreground uppercase tracking-[0.3em] leading-relaxed opacity-80 max-w-sm">Highly reliable and scalable technology stack for modern digital solutions.</p>
+                        <p className="text-[11px] text-muted-foreground uppercase tracking-[0.3em] leading-relaxed opacity-80 max-w-sm"> A modern development stack optimized for fast iteration, scalability, and clean architecture.</p>
                         <div className="grid-symbol -bottom-2.5 -left-2.5 lg:hidden" />
                     </div>
 
@@ -26,7 +26,7 @@ export function TechStack() {
                         <div className="flex animate-marquee space-x-0 items-center hover:pause">
                             {[...technologies, ...technologies, ...technologies].map((tech, index) => (
                                 <div key={index} className="flex items-center">
-                                    <span className="text-sm md:text-base font-bold tracking-[0.3em] text-muted-foreground/50 hover:text-primary transition-all duration-300 cursor-default px-16 uppercase whitespace-nowrap">
+                                    <span className="text-sm md:text-base font-bold tracking-[0.3em] text-muted-foreground/80 hover:text-primary transition-all duration-300 cursor-default px-16 uppercase whitespace-nowrap">
                                         {tech}
                                     </span>
                                     <div className="h-12 w-px bg-border/40" />
