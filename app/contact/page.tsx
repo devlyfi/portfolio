@@ -235,7 +235,7 @@ function ContactTabButton({ isActive, onClick, label }: { isActive: boolean; onC
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
             className={cn(
-                "flex-1 py-4 text-[10px] font-bold uppercase tracking-[0.2em] transition-all",
+                "flex-1 py-4 text-[10px] font-bold uppercase tracking-[0.2em] transition-all whitespace-nowrap",
                 isActive
                     ? "bg-primary text-primary-foreground"
                     : "bg-transparent text-muted-foreground hover:text-foreground"

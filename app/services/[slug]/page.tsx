@@ -304,13 +304,6 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
                     })()}
                 </div>
 
-                {/* Footer Nav */}
-                <div className="mt-32 pt-24 text-center">
-                    <Link href="/services" className="inline-flex items-center gap-3 text-lg font-bold group">
-                        <ArrowLeft className="size-5 group-hover:-translate-x-1 transition-transform" />
-                        <span>All Expertise</span>
-                    </Link>
-                </div>
             </div>
         </div>
     );

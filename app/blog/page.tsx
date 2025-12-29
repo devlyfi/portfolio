@@ -31,7 +31,7 @@ export default function BlogListingPage() {
     return (
         <div className="bg-background min-h-screen">
             {/* Header Section */}
-            <div className="container relative z-10 px-4 mx-auto pt-32 pb-24 text-foreground">
+            <div className="container relative z-10 px-4 mx-auto pt-32 pb-16 text-foreground">
                 <div className="mb-24">
                     <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-muted-foreground mb-6">
                         <span>Agency</span>
@@ -56,9 +56,9 @@ export default function BlogListingPage() {
             </div>
 
             {/* Metadata Grid */}
-            <section className="border-b border-border/40 bg-muted/5">
+            <section className="bg-background">
                 <div className="container px-4 mx-auto">
-                    <div className="grid grid-cols-2 lg:grid-cols-4 divide-x divide-border/40 border-x border-border/40">
+                    <div className="grid grid-cols-2 lg:grid-cols-4 divide-x divide-border/40 border-x border-border/40 bg-muted/5 border-b border-border/40">
                         {[
                             { label: "/TOTAL_POSTS", value: BLOG_POSTS.length.toString().padStart(2, '0') },
                             { label: "/CATEGORIES", value: "07" },
@@ -84,7 +84,7 @@ export default function BlogListingPage() {
             )}
 
             {/* Filters and Search - Architectural Layout */}
-            <section className="py-12 border-b border-border/40 sticky top-20 bg-background/90 backdrop-blur-md z-30">
+            <section className="py-12 sticky top-[60px] bg-background/90 backdrop-blur-md z-30">
                 <div className="container px-4 mx-auto">
                     <div className="flex flex-col lg:flex-row items-center justify-between gap-8 border border-border/40 p-6 relative">
                         <CategoryFilter

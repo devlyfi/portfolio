@@ -7,7 +7,8 @@ import { BlogCTA } from "@/components/blog/BlogCTA";
 import { AuthorCard } from "@/components/blog/AuthorCard";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Calendar, Clock, Share2, Facebook, Twitter, Linkedin, Link as LinkIcon } from "lucide-react";
+import { ArrowLeft, Calendar, Clock, Share2 } from "lucide-react";
+import { ShareButtons } from "@/components/blog/ShareButtons";
 
 interface PageProps {
     params: Promise<{ slug: string }>;
@@ -57,9 +58,9 @@ export default async function BlogPostPage({ params }: PageProps) {
             {/* Split Header */}
             <header className="pt-32 pb-0 border-b border-border/40 overflow-hidden bg-background">
                 <div className="container px-4 mx-auto">
-                    <div className="flex flex-col lg:flex-row">
+                    <div className="grid grid-cols-1 lg:grid-cols-[1fr_400px] gap-0 border-x border-border/40">
                         {/* Title Side */}
-                        <div className="lg:w-2/3 pb-12 lg:pb-20">
+                        <div className="p-8 md:p-12 lg:p-16 border-b lg:border-b-0">
                             <div className="inline-flex items-center gap-3 mb-8">
                                 <Link href="/blog" className="text-[10px] font-bold uppercase tracking-[0.4em] text-muted-foreground/60 hover:text-primary transition-colors">Insights</Link>
                                 <div className="h-[1px] w-8 bg-border" />
@@ -71,7 +72,7 @@ export default async function BlogPostPage({ params }: PageProps) {
                         </div>
 
                         {/* Description Side */}
-                        <div className="lg:w-1/3 border-l border-border/40 p-8 md:p-12 lg:p-16 flex flex-col justify-end">
+                        <div className="lg:border-l border-border/40 p-8 md:p-12 lg:p-16 flex flex-col justify-end bg-muted/5">
                             <p className="text-lg text-muted-foreground leading-relaxed italic border-l-2 border-primary/20 pl-6">
                                 {post.excerpt}
                             </p>
@@ -83,10 +84,10 @@ export default async function BlogPostPage({ params }: PageProps) {
             {/* Content & Sidebar Redesign */}
             <div className="border-b border-border/40">
                 <div className="container px-4 mx-auto">
-                    <div className="flex flex-col lg:grid lg:grid-cols-12 divide-y lg:divide-y-0 lg:divide-x divide-border/40 border-x border-border/40">
+                    <div className="flex flex-col lg:grid lg:grid-cols-[1fr_400px] divide-y lg:divide-y-0 lg:divide-x divide-border/40 border-x border-border/40">
 
                         {/* Narrative Content */}
-                        <div className="lg:col-span-8 p-8 md:p-12 lg:p-20 bg-background relative group">
+                        <div className="p-8 md:p-12 lg:p-20 bg-background relative group">
                             <div className="sidebar-meta absolute -left-2 top-24">01 // NARRATIVE</div>
 
                             <div className="blog-content prose prose-lg dark:prose-invert max-w-none">
@@ -153,7 +154,7 @@ export default async function BlogPostPage({ params }: PageProps) {
                         </div>
 
                         {/* Sidebar Metadata */}
-                        <aside className="lg:col-span-4 bg-muted/5 relative group">
+                        <aside className="bg-muted/5 relative group">
                             <div className="sticky top-32 divide-y divide-border/40 border-b border-border/40 lg:border-none">
                                 {/* Author */}
                                 <div className="p-8 lg:p-12 space-y-6">
@@ -197,13 +198,7 @@ export default async function BlogPostPage({ params }: PageProps) {
                                 {/* Share Transmission */}
                                 <div className="p-8 lg:p-12 space-y-8">
                                     <span className="text-[10px] font-bold text-muted-foreground uppercase tracking-[0.4em]">// SHARE_PROTOCOL</span>
-                                    <div className="grid grid-cols-4 gap-4">
-                                        {[Facebook, Twitter, Linkedin, LinkIcon].map((Icon, i) => (
-                                            <button key={i} className="aspect-square border border-border/40 flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/5 transition-all group/icon">
-                                                <Icon className="size-4 group-hover/icon:scale-110 transition-transform" />
-                                            </button>
-                                        ))}
-                                    </div>
+                                    <ShareButtons title={post.title} url={`https://devlyfi.com/blog/${post.slug}`} />
                                 </div>
                             </div>
 
@@ -217,9 +212,9 @@ export default async function BlogPostPage({ params }: PageProps) {
             {/* Premium Footer Transition */}
             <section className="bg-background border-t border-border/40 overflow-hidden">
                 <div className="container px-4 mx-auto">
-                    <div className="flex flex-col lg:flex-row divide-y lg:divide-y-0 lg:divide-x divide-border/40 border-x border-border/40">
-                        {/* Next Post Preview - 66% width on desktop */}
-                        <div className="lg:w-2/3 relative group/next overflow-hidden bg-muted/5">
+                    <div className="flex flex-col lg:grid lg:grid-cols-[1fr_400px] divide-y lg:divide-y-0 lg:divide-x divide-border/40 border-x border-border/40">
+                        {/* Next Post Preview */}
+                        <div className="relative group/next overflow-hidden bg-muted/5">
                             <Link href={`/blog/${BLOG_POSTS[(BLOG_POSTS.findIndex(p => p.id === post.id) + 1) % BLOG_POSTS.length].slug}`} className="block relative h-full">
                                 <div className="p-12 lg:p-20 space-y-8 relative z-20 transition-transform duration-700 group-hover/next:-translate-y-4">
                                     <div className="flex items-center gap-4 text-primary font-black text-[10px] uppercase tracking-[0.4em]">
@@ -263,8 +258,8 @@ export default async function BlogPostPage({ params }: PageProps) {
                             </Link>
                         </div>
 
-                        {/* Directory Access - 33% width on desktop */}
-                        <div className="lg:w-1/3 p-12 lg:p-20 flex flex-col items-center justify-center bg-muted/5 relative group/dir">
+                        {/* Directory Access */}
+                        <div className="p-12 lg:p-20 flex flex-col items-center justify-center bg-muted/5 relative group/dir">
                             <Link href="/blog" className="flex flex-col items-center gap-8 w-full">
                                 <div className="relative">
                                     <div className="size-20 border border-border/40 flex items-center justify-center relative z-20 bg-background group-hover/dir:border-primary transition-colors duration-500">
