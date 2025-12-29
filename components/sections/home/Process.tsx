@@ -63,18 +63,17 @@ export function Process() {
                     </div>
 
                     {/* Process Milestones */}
-                    <div className="w-full lg:w-2/3 relative overflow-hidden">
+                    <div className="w-full lg:w-2/3 relative overflow-hidden bg-border/40">
                         <div
                             ref={wrapperRef}
-                            className="flex flex-col md:grid md:grid-cols-2 lg:flex lg:flex-row lg:h-full relative"
+                            className="flex flex-col md:grid md:grid-cols-2 lg:flex lg:flex-row lg:h-full relative gap-px"
                         >
                             {PROCESS_STEPS.map((step, i) => (
                                 <div
                                     key={i}
                                     className={cn(
-                                        "p-10 lg:p-12 xl:p-16 space-y-16 group hover:bg-background transition-all duration-700 relative flex flex-col justify-between border-b border-border/40",
-                                        "md:border-r md:[&:nth-child(2n)]:border-r-0 lg:border-r lg:border-b-0 lg:min-w-[400px] xl:min-w-[450px]",
-                                        i === PROCESS_STEPS.length - 1 && "lg:border-r-0"
+                                        "p-10 lg:p-12 xl:p-16 space-y-16 group bg-background hover:bg-muted/5 transition-all duration-700 relative flex flex-col justify-between",
+                                        "md:w-full lg:min-w-[400px] xl:min-w-[450px]"
                                     )}
                                 >
                                     <div className="space-y-12">

@@ -45,11 +45,11 @@ export function WhyChooseUs() {
                     </div>
 
                     {/* Reasons Grid */}
-                    <div className="lg:w-2/3 grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-border/40 relative">
+                    <div className="lg:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-px bg-border/40 border-l border-border/40 relative">
                         {reasons.map((reason, index) => (
                             <div
                                 key={index}
-                                className="p-12 lg:p-24 space-y-12 group hover:bg-muted/5 transition-all duration-700 relative"
+                                className="p-12 lg:p-20 space-y-12 group bg-background hover:bg-muted/5 transition-all duration-700 relative"
                             >
                                 <div className="space-y-8">
                                     <div className="flex items-center justify-between">
