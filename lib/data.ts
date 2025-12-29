@@ -6,7 +6,12 @@ import {
     Palette,
     Database,
     Blocks,
-    Rocket
+    Rocket,
+    Search,
+    Layers,
+    Code,
+    CheckCircle,
+    RefreshCcw
 } from 'lucide-react';
 
 export interface ServiceProcessStep {
@@ -877,31 +882,43 @@ export const PROJECTS: Project[] = [
 
 export const PROCESS_STEPS = [
     {
-        title: "Discovery",
-        description: "We dive deep into your business goals, user needs, and technical requirements to build a solid roadmap.",
-        icon: Rocket
+        title: "Discovery & Planning",
+        description:
+            "We understand your business goals, technical requirements, and constraints to define a clear and realistic roadmap.",
+        icon: Search
     },
     {
-        title: "Design",
-        description: "Our designers craft intuitive, high-fidelity prototypes that align with your brand/vision.",
-        icon: Palette
+        title: "System Design",
+        description:
+            "Architecture, data models, and technology choices are designed with scalability, security, and maintainability in mind.",
+        icon: Layers
     },
     {
         title: "Development",
-        description: "Agile engineering with top-tier code quality, ensuring scalability and security from day one.",
-        icon: Code2
+        description:
+            "Features are built iteratively with clean code, version control, and continuous feedback throughout the process.",
+        icon: Code
+    },
+    {
+        title: "Testing & Validation",
+        description:
+            "We test functionality, performance, and edge cases to ensure the system behaves reliably in real-world scenarios.",
+        icon: CheckCircle
     },
     {
         title: "Deployment",
-        description: "Smooth, automated launches with zero downtime strategies and rigorous testing.",
-        icon: Cloud
+        description:
+            "Applications are deployed using stable environments and repeatable processes to minimize risk and downtime.",
+        icon: Rocket
     },
     {
-        title: "Support",
-        description: "Continuous monitoring, updates, and optimization to keep your product ahead of the curve.",
-        icon: Database
+        title: "Support & Improvement",
+        description:
+            "Post-launch support, monitoring, and continuous improvements help systems evolve as your business grows.",
+        icon: RefreshCcw
     }
 ];
+
 
 export const TESTIMONIALS = [
     {

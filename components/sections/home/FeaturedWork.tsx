@@ -10,12 +10,14 @@ export function FeaturedWork() {
                 {/* Header Split */}
                 <div className="flex flex-col lg:flex-row border-x border-border/40 divide-y lg:divide-y-0 lg:divide-x divide-border/40 border-b border-border/40 bg-background/40">
                     <div className="lg:w-1/2 p-12 lg:p-24 space-y-10">
-                        <span className="text-[10px] font-black text-primary uppercase tracking-[0.5em] block animate-pulse">/CASE_STUDIES_ARCHIVE</span>
-                        <h2 className="display-bold text-4xl lg:text-6xl uppercase tracking-tighter !leading-[0.9]">Engineering<br />Successful<br />Digital Products</h2>
+                        <span className="text-[10px] font-black text-primary uppercase tracking-[0.5em] block animate-pulse">/CASE_STUDIES</span>
+                        <h2 className="display-bold text-4xl lg:text-6xl uppercase tracking-tighter !leading-[0.9]"> Real-World<br />
+                            Software<br />
+                            Deliveries</h2>
                     </div>
                     <div className="lg:w-1/2 p-12 lg:p-24 flex items-center relative">
-                        <p className="text-[12px] text-muted-foreground uppercase leading-[2] tracking-[0.3em] font-medium opacity-60 max-w-md border-l border-primary/20 pl-8">
-                            We don't just write code; we build transformative digital infrastructure. Explore our most recent enterprise system deployments and strategic outcomes.
+                        <p className="text-[12px]  uppercase leading-[2] tracking-[0.3em] font-medium opacity-60 max-w-md border-l border-primary/20 pl-8">
+                            A selection of projects where we partnered with teams to design, build, and scale reliable digital products—focused on outcomes, performance, and long-term value.
                         </p>
                         <div className="grid-symbol -top-2.5 -right-2.5" />
                     </div>
@@ -58,7 +60,7 @@ export function FeaturedWork() {
                                         <div className="h-px flex-1 bg-border/40" />
                                     </div>
                                     <h3 className="display-bold text-4xl lg:text-5xl uppercase tracking-tighter group-hover:text-primary transition-all duration-500">{project.title}</h3>
-                                    <p className="text-[11px] text-muted-foreground uppercase leading-[2] tracking-[0.3em] font-medium opacity-60">
+                                    <p className="text-[11px]  uppercase leading-[2] tracking-[0.3em] font-medium opacity-60">
                                         {project.summary}
                                     </p>
                                 </div>
@@ -77,14 +79,14 @@ export function FeaturedWork() {
 
                                 <div className="flex flex-wrap gap-4">
                                     {project.tags.slice(0, 3).map(tag => (
-                                        <span key={tag} className="text-[9px] font-black border border-border/40 px-4 py-2 uppercase tracking-[0.3em] text-muted-foreground/40 group-hover:text-primary/60 group-hover:border-primary/40 transition-all">
+                                        <span key={tag} className="text-[9px] font-black border border-border/40 px-4 py-2 uppercase tracking-[0.3em] text-muted-foreground/80 group-hover:text-primary/60 group-hover:border-primary/40 transition-all">
                                             #{tag}
                                         </span>
                                     ))}
                                 </div>
 
-                                <div className="sidebar-meta absolute -right-2 top-32 scale-75 opacity-20 group-hover:opacity-100 transition-opacity">TRANS_RECORD</div>
-                                <div className="grid-symbol -bottom-2.5 -right-2.5" />
+                                {/* <div className="sidebar-meta absolute -right-2 top-32 scale-75 opacity-20 group-hover:opacity-100 transition-opacity">TRANS_RECORD</div>
+                                <div className="grid-symbol -bottom-2.5 -right-2.5" /> */}
                             </div>
                         </div>
                     ))}
@@ -97,10 +99,10 @@ export function FeaturedWork() {
                         className="group flex flex-col items-center gap-10 relative z-10"
                     >
                         <div className="px-16 py-6 border border-primary bg-background group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-500 shadow-xl shadow-primary/5 group-hover:shadow-primary/20">
-                            <span className="text-xs font-black uppercase tracking-[0.6em]">View full archive protocol</span>
+                            <span className="text-xs font-black uppercase tracking-[0.6em]">View Case Studies</span>
                         </div>
-                        <p className="text-[10px] text-muted-foreground uppercase tracking-[0.5em] opacity-30 group-hover:opacity-100 transition-opacity">
-                            System Access // Case Studies // Phase_03
+                        <p className="text-[10px]  uppercase tracking-[0.5em] opacity-30 group-hover:opacity-100 transition-opacity">
+                            Built with Care // Shipped with Confidence
                         </p>
                     </Link>
                     <div className="absolute inset-0 opacity-0 group-hover:opacity-[0.02] bg-[radial-gradient(circle_at_center,var(--primary)_0%,transparent_70%)] transition-opacity duration-1000" />

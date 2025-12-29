@@ -3,28 +3,28 @@ import { ShieldCheck, Zap, Users, TrendingUp } from "lucide-react";
 export function WhyChooseUs() {
     const reasons = [
         {
-            title: "Enterprise Security",
-            desc: "Rigorous security standards (ISO 27001, SOC 2) to protect your IP and user data.",
+            title: "Security & Reliability",
+            desc: "Security-first development practices and reliable system design to protect data and ensure operational continuity.",
             icon: ShieldCheck,
-            marker: "/SEC_READY"
+            marker: "/SECURITY_FIRST"
         },
         {
-            title: "High-Velocity Agile",
-            desc: "CI/CD pipelines and rapid iteration cycles ensuring faster market entry.",
+            title: "Efficient Delivery",
+            desc: "Well-defined processes, automation, and iterative development to deliver features consistently and on time.",
             icon: Zap,
-            marker: "/VELOCITY_OPT"
+            marker: "/DELIVERY_FLOW"
         },
         {
-            title: "Senior Talent",
-            desc: "Work directly with seasoned engineers and designers, not junior trainees.",
+            title: "Experienced Team",
+            desc: "Work directly with experienced engineers and designers who understand real-world product and system challenges.",
             icon: Users,
-            marker: "/TALENT_EXP"
+            marker: "/TEAM_EXPERIENCE"
         },
         {
-            title: "Scalable Architecture",
-            desc: "Systems built to handle millions of users using proven cloud-native patterns.",
+            title: "Scalable Foundations",
+            desc: "Architectures designed to scale gradually and safely as products, users, and workloads grow.",
             icon: TrendingUp,
-            marker: "/ARCH_SCALE"
+            marker: "/BUILT_TO_SCALE"
         }
     ];
 
@@ -35,10 +35,12 @@ export function WhyChooseUs() {
                     {/* Header Label */}
                     <div className="lg:w-1/3 p-12 lg:p-24 space-y-10 relative bg-muted/2">
                         <div className="space-y-4">
-                            <span className="text-[10px] font-black text-primary uppercase tracking-[0.5em] block animate-pulse">/RATION_LOG</span>
-                            <h2 className="display-bold text-4xl lg:text-5xl uppercase tracking-tighter !leading-[0.9]">Why<br />Leading<br />Brands Choose Us</h2>
+                            <span className="text-[10px] font-black text-primary uppercase tracking-[0.5em] block animate-pulse">/WHY_DEVLYFI</span>
+                            <h2 className="display-bold text-4xl lg:text-5xl uppercase tracking-tighter !leading-[0.9]"> Why Teams<br />
+                                Choose to<br />
+                                Work With Us</h2>
                         </div>
-                        <p className="text-[11px] text-muted-foreground uppercase tracking-[0.3em] leading-relaxed opacity-60">Technical superiority through architectural discipline and deep business acumen.</p>
+                        <p className="text-[11px] uppercase tracking-[0.3em] leading-relaxed opacity-60"> A practical, transparent approach to building reliable software and long-term technical partnerships.</p>
                         <div className="grid-symbol -bottom-2.5 -left-2.5 lg:hidden" />
                     </div>
 
@@ -58,7 +60,7 @@ export function WhyChooseUs() {
                                     </div>
                                     <div className="space-y-4">
                                         <h3 className="text-2xl font-black uppercase tracking-tight text-foreground group-hover:text-primary transition-colors">{reason.title}</h3>
-                                        <p className="text-[11px] text-muted-foreground uppercase leading-loose tracking-widest opacity-60 group-hover:opacity-100 transition-opacity max-w-sm">
+                                        <p className="text-[11px] uppercase leading-loose tracking-widest opacity-60 group-hover:opacity-100 transition-opacity max-w-sm">
                                             {reason.desc}
                                         </p>
                                     </div>
