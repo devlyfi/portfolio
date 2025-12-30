@@ -9,6 +9,7 @@ import { ModeToggle } from "@/components/mode-toggle";
 import { ScrambleText } from "@/components/ui/ScrambleText";
 import { NAV_LINKS, SITE_CONFIG } from "@/lib/constants";
 import { cn } from "@/lib/utils";
+import { DevlyfiLogoMark } from "@/components/ui/DevlyfiLogo";
 
 export function Navbar() {
     const pathname = usePathname();
@@ -43,9 +44,7 @@ export function Navbar() {
                     {/* Left: Logo + Phase Marker */}
                     <div className="flex items-center gap-8">
                         <Link href="/" className="flex items-center gap-3 group/logo">
-                            <div className="size-6 bg-primary flex items-center justify-center text-[10px] text-primary-foreground font-bold rounded-none group-hover/logo:rotate-90 transition-transform duration-500">
-                                NX
-                            </div>
+                            <DevlyfiLogoMark size={24} className="text-primary group-hover/logo:rotate-12 transition-transform duration-500" />
                             <span className="text-sm font-bold tracking-[0.2em] uppercase">
                                 {SITE_CONFIG.name}
                             </span>

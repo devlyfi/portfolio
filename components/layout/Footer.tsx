@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { SITE_CONFIG, NAV_LINKS } from "@/lib/constants";
 import { Twitter, Linkedin, Github, Mail, MapPin, Phone } from "lucide-react";
+import { DevlyfiLogoMark } from "@/components/ui/DevlyfiLogo";
 import Image from "next/image";
 import footerr from '../../public/footerr.png'
 export function Footer() {
@@ -20,9 +21,7 @@ export function Footer() {
                     {/* Brand Column */}
                     <div className="p-8 lg:p-12 space-y-8 flex flex-col relative group">
                         <Link href="/" className="flex items-center gap-3 group/logo">
-                            <div className="size-8 bg-primary flex items-center justify-center text-xs text-primary-foreground font-bold rounded-none group-hover/logo:scale-110 transition-transform">
-                                NX
-                            </div>
+                            <DevlyfiLogoMark size={32} className="text-primary group-hover/logo:scale-110 transition-transform" />
                             <span className="text-lg font-bold tracking-[0.2em] uppercase">
                                 {SITE_CONFIG.name}
                             </span>

@@ -39,7 +39,7 @@ export function ServicesOverview() {
             <div className="container px-4 mx-auto">
                 <div className="flex flex-col lg:flex-row border border-border/40 items-start">
                     {/* Section Label / Side Header */}
-                    <div ref={sideHeaderRef} className="lg:w-1/4 p-12 lg:p-24 space-y-10 relative bg-muted/2 h-full min-h-max lg:min-h-screen">
+                    <div ref={sideHeaderRef} className="lg:w-1/3 p-12 lg:p-16 xl:p-24 space-y-10 relative bg-muted/2 h-full min-h-max ">
                         <div className="space-y-4">
                             <span className="text-[10px] font-black text-primary uppercase tracking-[0.4em] block animate-pulse">SERVICES</span>
                             <h2 className="display-bold text-3xl lg:text-5xl uppercase tracking-tighter !leading-[0.9]"> Engineering<br />
@@ -61,7 +61,7 @@ export function ServicesOverview() {
                     </div>
 
                     {/* Services Grid */}
-                    <div className="lg:w-3/4 grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-border/40 relative">
+                    <div className="lg:w-2/3 grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-border/40 relative">
                         {SERVICES.slice(0, 6).map((service, index) => (
                             <div
                                 key={service.id}
