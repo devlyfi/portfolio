@@ -5,8 +5,11 @@ import { Footer } from "@/components/layout/Footer";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "sonner";
 
+
 import { SITE_CONFIG } from "@/lib/constants";
 import "./globals.css";
+import LenisProvider from "@/components/layout/LenisProvider";
+import Stairs from "@/components/layout/Stairs";
 
 const geistSans = Geist({
   variable: "--font-sans",
@@ -44,7 +47,11 @@ export default function RootLayout({
         >
           <Navbar />
           <main className="flex-1 pt-20">
-            {children}
+            <LenisProvider>
+              <Stairs>
+                {children}
+              </Stairs>
+            </LenisProvider>
           </main>
           <Footer />
           <Toaster position="bottom-right" />
