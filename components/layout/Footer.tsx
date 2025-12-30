@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { SITE_CONFIG, NAV_LINKS } from "@/lib/constants";
 import { Twitter, Linkedin, Github, Mail, MapPin, Phone } from "lucide-react";
-
+import Image from "next/image";
+import footerr from '../../public/footerr.png'
 export function Footer() {
     const currentYear = new Date().getFullYear();
 
@@ -15,7 +16,7 @@ export function Footer() {
             </div>
 
             <div className="container mx-auto px-4 relative z-10">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 divide-y md:divide-y-0 lg:divide-x divide-border/40 border-x border-border/40">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 divide-y md:divide-y-0 lg:divide-x divide-border/40 border border-border/40">
                     {/* Brand Column */}
                     <div className="p-8 lg:p-12 space-y-8 flex flex-col relative group">
                         <Link href="/" className="flex items-center gap-3 group/logo">
@@ -102,8 +103,12 @@ export function Footer() {
                     </div>
                 </div>
 
+                <div className="w-full md:mt-4">
+                    <Image src={footerr} alt="Footer logo" width={2000} height={2000} />
+                </div>
+
                 {/* Bottom Bar with Symbols */}
-                <div className="border-x border-t border-border/40 py-8 px-8 flex flex-col md:flex-row justify-between items-center gap-6 relative group/bottom">
+                <div className="border border-t border-border/40 py-8 px-8 flex flex-col md:flex-row justify-between items-center gap-6 relative group/bottom">
                     <p className="text-[10px] uppercase tracking-[0.4em] text-foreground/60 font-medium">
                         &copy; {currentYear} {SITE_CONFIG.name}_SYSTEMS [[ ALL_RIGHTS_RESERVED ]]
                     </p>

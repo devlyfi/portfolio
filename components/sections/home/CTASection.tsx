@@ -9,7 +9,7 @@ export function CTASection() {
     return (
         <section className="py-0 bg-muted/3 overflow-hidden relative border-b border-border/40">
             <div className="container px-4 mx-auto">
-                <div className="flex flex-col lg:flex-row border-x border-border/40 divide-y lg:divide-y-0 lg:divide-x divide-border/40 h-full min-h-[600px]">
+                <div className="flex flex-col lg:flex-row border border-border/40 divide-y lg:divide-y-0 lg:divide-x divide-border/40 h-full min-h-[600px]">
                     {/* Narrative Panel */}
                     <div className="lg:w-2/3 p-12 lg:p-24 space-y-16 relative flex flex-col justify-center bg-background/40">
                         <div className="space-y-10 max-w-3xl">

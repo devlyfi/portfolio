@@ -31,10 +31,10 @@ export default function CareersPage() {
                                 <span className="flex items-center gap-6">
                                     Build the <span className="h-[2px] w-12 md:w-24 bg-primary mt-4" />
                                 </span>
-                                <span className="text-muted-foreground/20">Future.</span>
+                                <span className="text-muted-foreground/20">Scale.</span>
                             </h1>
                             <p className="text-lg text-muted-foreground leading-relaxed pb-2 border-l border-border/40 pl-8 italic">
-                                We are a world-class team of engineers, designers, and strategists on a mission to redefine digital excellence. Join us in creating software that matters.
+                                We are a world-class team of engineers, designers, and strategists on a mission to redefine digital excellence. Join us in architecting systems that matter.
                             </p>
                         </div>
                     </div>
@@ -75,7 +75,7 @@ export default function CareersPage() {
                                             An Environment Built <br /> for Excellence.
                                         </h2>
                                         <p className="text-lg text-muted-foreground leading-relaxed mb-12">
-                                            At Nakula, we've replaced rigid hierarchies with radical transparency and autonomous ownership. We believe that top-tier talent thrives when they have the freedom to innovate.
+                                            At Devlyfi, we've replaced rigid hierarchies with radical transparency and autonomous ownership. We believe that top-tier talent thrives when they have the freedom to innovate.
                                         </p>
                                         <div className="space-y-8">
                                             {[

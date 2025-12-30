@@ -128,7 +128,7 @@ export function TeamSection({
         )}>
             <div className="container px-4 mx-auto">
                 {/* Header Split */}
-                <div className="flex flex-col lg:flex-row border-x border-border/40 divide-y lg:divide-y-0 lg:divide-x divide-border/40 border-b border-border/40 bg-background/40">
+                <div className="flex flex-col lg:flex-row border border-border/40 divide-y lg:divide-y-0 lg:divide-x divide-border/40 border-b border-border/40 bg-background/40">
                     <div className="lg:w-2/3 p-8 lg:p-16 space-y-8">
                         <span className="text-[10px] font-black text-primary uppercase tracking-[0.5em] block animate-pulse">/PERSONNEL_LOGS</span>
                         <h2 className="display-bold text-4xl lg:text-6xl uppercase tracking-tighter !leading-[0.9]">{title}</h2>
@@ -142,7 +142,7 @@ export function TeamSection({
                     </div>
                 </div>
 
-                <div className="border-x border-border/40 relative overflow-hidden">
+                <div className="border border-border/40 relative overflow-hidden">
                     {isCarousel ? (
                         <div className="overflow-hidden lg:overflow-visible" ref={emblaRef}>
                             <div ref={wrapperRef} className="flex flex-col sm:flex-row lg:flex-nowrap">

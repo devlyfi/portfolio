@@ -17,7 +17,7 @@ export function Testimonials() {
     return (
         <section className="py-0 bg-background overflow-hidden border-b border-border/40">
             <div className="container px-4 mx-auto">
-                <div className="flex flex-col lg:flex-row border-x border-border/40 divide-y lg:divide-y-0 lg:divide-x divide-border/40">
+                <div className="flex flex-col lg:flex-row border border-border/40 divide-y lg:divide-y-0 lg:divide-x divide-border/40">
                     {/* Header Label / Sidebar */}
                     <div className="lg:w-1/3 p-8 lg:p-12 space-y-8 relative bg-muted/2">
                         <div className="space-y-4">

@@ -37,7 +37,7 @@ export function ServicesOverview() {
     return (
         <section ref={sectionRef} className="py-0 bg-background overflow-hidden border-b border-border/40">
             <div className="container px-4 mx-auto">
-                <div className="flex flex-col lg:flex-row border-x border-border/40 items-start">
+                <div className="flex flex-col lg:flex-row border border-border/40 items-start">
                     {/* Section Label / Side Header */}
                     <div ref={sideHeaderRef} className="lg:w-1/4 p-12 lg:p-24 space-y-10 relative bg-muted/2 h-full min-h-max lg:min-h-screen">
                         <div className="space-y-4">

@@ -21,7 +21,7 @@ export default function AboutPage() {
                             <span className="flex items-center gap-6">
                                 We Design <span className="h-[2px] w-12 md:w-24 bg-primary mt-4" />
                             </span>
-                            <span className="text-muted-foreground/20">The Future.</span>
+                            <span className="text-muted-foreground/20">Scalable Foundations.</span>
                         </h1>
                         <p className="text-lg text-muted-foreground leading-relaxed pb-2 border-l border-border/40 pl-8 italic">
                             A collective of strategists, engineers, and designers dedicated to building impactful software solutions that drive global transformation.
@@ -38,19 +38,19 @@ export default function AboutPage() {
 
                     <div className="space-y-2">
                         <p className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">/EXPERIENCE</p>
-                        <p className="font-bold uppercase tracking-tighter text-4xl text-primary">10Y+</p>
+                        <p className="font-bold uppercase tracking-tighter text-4xl text-primary">5Y+</p>
                     </div>
                     <div className="space-y-2">
                         <p className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">/DELIVERED</p>
-                        <p className="font-bold uppercase tracking-tighter text-4xl text-primary">200+</p>
-                    </div>
-                    <div className="space-y-2">
-                        <p className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">/EXPERTS</p>
                         <p className="font-bold uppercase tracking-tighter text-4xl text-primary">50+</p>
                     </div>
                     <div className="space-y-2">
+                        <p className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">/EXPERTS</p>
+                        <p className="font-bold uppercase tracking-tighter text-4xl text-primary">12+</p>
+                    </div>
+                    <div className="space-y-2">
                         <p className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">/REACH</p>
-                        <p className="font-bold uppercase tracking-tighter text-4xl text-primary">15+</p>
+                        <p className="font-bold uppercase tracking-tighter text-4xl text-primary">1M+</p>
                     </div>
                 </div>
 
@@ -68,7 +68,7 @@ export default function AboutPage() {
                                         <div className="space-y-4">
                                             <div className="flex items-center gap-3">
                                                 <Globe className="size-5 text-primary" />
-                                                <h3 className="text-xl font-bold uppercase tracking-tight">Global Impact</h3>
+                                                <h3 className="text-xl font-bold uppercase tracking-tight">Enterprise Scale</h3>
                                             </div>
                                             <p className="text-lg text-muted-foreground leading-relaxed">
                                                 To empower businesses worldwide with technology that drives sustainable growth and efficiency. We build for the global stage, ensuring every solution is scalable and resilient.
@@ -77,7 +77,7 @@ export default function AboutPage() {
                                         <div className="space-y-4">
                                             <div className="flex items-center gap-3">
                                                 <Users className="size-5 text-primary" />
-                                                <h3 className="text-xl font-bold uppercase tracking-tight">Human-Centric</h3>
+                                                <h3 className="text-xl font-bold uppercase tracking-tight">Performance-Driven</h3>
                                             </div>
                                             <p className="text-lg text-muted-foreground leading-relaxed">
                                                 We believe technology should serve people, creating intuitive experiences that solve real problems. Our design philosophy stands at the intersection of psychology and aesthetics.
@@ -177,7 +177,7 @@ export default function AboutPage() {
                 <div className="pt-24 border-t border-border/40">
                     <TeamSection
                         title="Leadership Team"
-                        subtitle="The visionaries steering Nakula towards global excellence."
+                        subtitle="The visionaries steering Devlyfi towards global excellence."
                     />
                 </div>
             </div>

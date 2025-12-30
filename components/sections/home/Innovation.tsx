@@ -5,7 +5,7 @@ export function Innovation() {
     return (
         <section className="py-0 bg-background overflow-hidden border border-border/40 relative">
             <div className="container px-4 mx-auto">
-                <div className="flex flex-col lg:flex-row border-x border-border/40">
+                <div className="flex flex-col lg:flex-row border border-border/40">
                     {/* Header Label */}
                     <div className="w-full lg:w-1/3 p-10 lg:p-16 xl:p-24 space-y-12 relative bg-muted/5 border-b lg:border-b-0 lg:border-r border-border/40">
                         <div className="space-y-6">

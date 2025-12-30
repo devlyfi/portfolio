@@ -20,10 +20,10 @@ export default function WorkPage() {
                             <span className="flex items-center gap-6">
                                 Latest <span className="h-[2px] w-12 md:w-24 bg-primary mt-4" />
                             </span>
-                            <span className="text-muted-foreground/20">Works.</span>
+                            <span className="text-muted-foreground/20">Systems.</span>
                         </h1>
                         <p className="text-lg text-muted-foreground leading-relaxed pb-2 border-l border-border/40 pl-8 italic">
-                            Real stories behind our work, showing how we solve problems, create impact, and help ideas find their place in the world.
+                            A deep dive into the systems we've engineered—showcasing clean architecture, stability under real-world load, and technical strategies that drive impact.
                         </p>
                     </div>
                 </div>

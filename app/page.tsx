@@ -2,6 +2,7 @@ import { Hero } from "@/components/sections/home/Hero";
 import { ServicesOverview } from "@/components/sections/home/ServicesOverview";
 import { FeaturedWork } from "@/components/sections/home/FeaturedWork";
 import { WhyChooseUs } from "@/components/sections/home/WhyChooseUs";
+import { Comparison } from "@/components/sections/home/Comparison";
 import { TechStack } from "@/components/sections/home/TechStack";
 import { Process } from "@/components/sections/home/Process";
 import { Innovation } from "@/components/sections/home/Innovation";
@@ -20,6 +21,7 @@ export default function Home() {
                 <ServicesOverview />
                 <FeaturedWork />
                 <WhyChooseUs />
+                <Comparison />
                 <Process />
                 <Innovation />
                 <TeamSection isCarousel={true} />

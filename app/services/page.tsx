@@ -20,10 +20,10 @@ export default function ServicesPage() {
                             <span className="flex items-center gap-6">
                                 Tech <span className="h-[2px] w-12 md:w-24 bg-primary mt-4" />
                             </span>
-                            <span className="text-muted-foreground/20">Services.</span>
+                            <span className="text-muted-foreground/20">Excellence.</span>
                         </h1>
                         <p className="text-lg text-muted-foreground leading-relaxed pb-2 border-l border-border/40 pl-8 italic">
-                            From initial discovery to final deployment, we provide end-to-end engineering and design services to scale your business.
+                            We architect high-performance digital systems built for scale, security, and operational clarity—from initial discovery to production-ready foundations.
                         </p>
                     </div>
                 </div>

@@ -16,7 +16,7 @@ export function FeaturedPost({ post }: FeaturedPostProps) {
     }).format(new Date(post.publishedDate));
 
     return (
-        <section className="relative overflow-hidden group border-x border-border/40">
+        <section className="relative overflow-hidden group border border-border/40">
             <div className="grid grid-cols-1 lg:grid-cols-2 divide-y lg:divide-y-0 lg:divide-x divide-border/40">
                 {/* Visual Side */}
                 <div className="relative aspect-video lg:aspect-auto overflow-hidden bg-muted/10">

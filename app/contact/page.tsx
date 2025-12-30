@@ -53,10 +53,10 @@ export default function ContactPage() {
                                 <span className="flex items-center gap-6">
                                     Let's Build <span className="h-[2px] w-12 md:w-24 bg-primary mt-4" />
                                 </span>
-                                <span className="text-muted-foreground/20">Something.</span>
+                                <span className="text-muted-foreground/20">Success.</span>
                             </h1>
                             <p className="text-lg text-muted-foreground leading-relaxed pb-2 border-l border-border/40 pl-8 italic">
-                                Whether you have a specific project in mind or just want to explore a new idea, we're here to help you navigate the digital frontier.
+                                Whether you have a specific system challenge or a vision for scale, we're here to engineer high-performance digital solutions with operational clarity.
                             </p>
                         </div>
                     </div>

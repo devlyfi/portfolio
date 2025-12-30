@@ -10,7 +10,7 @@ export function TechStack() {
     return (
         <section className="py-0 border-b border-border/40 overflow-hidden bg-muted/3">
             <div className="container px-4 mx-auto">
-                <div className="flex flex-col lg:flex-row border-x border-border/40 divide-y lg:divide-y-0 lg:divide-x divide-border/40">
+                <div className="flex flex-col lg:flex-row border border-border/40 divide-y lg:divide-y-0 lg:divide-x divide-border/40">
                     {/* Summary Label */}
                     <div className="lg:w-1/3 p-12 lg:p-20 space-y-12 relative bg-muted/5 border-b lg:border-b-0 lg:border-r border-border/40">
                         <div className="space-y-6">

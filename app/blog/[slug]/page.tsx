@@ -58,7 +58,7 @@ export default async function BlogPostPage({ params }: PageProps) {
             {/* Split Header */}
             <header className="pt-32 pb-0 border-b border-border/40 overflow-hidden bg-background">
                 <div className="container px-4 mx-auto">
-                    <div className="grid grid-cols-1 lg:grid-cols-[1fr_400px] gap-0 border-x border-border/40">
+                    <div className="grid grid-cols-1 lg:grid-cols-[1fr_400px] gap-0 border border-border/40">
                         {/* Title Side */}
                         <div className="p-8 md:p-12 lg:p-16 border-b lg:border-b-0">
                             <div className="inline-flex items-center gap-3 mb-8">
@@ -84,7 +84,7 @@ export default async function BlogPostPage({ params }: PageProps) {
             {/* Content & Sidebar Redesign */}
             <div className="border-b border-border/40">
                 <div className="container px-4 mx-auto">
-                    <div className="flex flex-col lg:grid lg:grid-cols-[1fr_400px] divide-y lg:divide-y-0 lg:divide-x divide-border/40 border-x border-border/40">
+                    <div className="flex flex-col lg:grid lg:grid-cols-[1fr_400px] divide-y lg:divide-y-0 lg:divide-x divide-border/40 border border-border/40">
 
                         {/* Narrative Content */}
                         <div className="p-8 md:p-12 lg:p-20 bg-background relative group">
@@ -212,7 +212,7 @@ export default async function BlogPostPage({ params }: PageProps) {
             {/* Premium Footer Transition */}
             <section className="bg-background border-t border-border/40 overflow-hidden">
                 <div className="container px-4 mx-auto">
-                    <div className="flex flex-col lg:grid lg:grid-cols-[1fr_400px] divide-y lg:divide-y-0 lg:divide-x divide-border/40 border-x border-border/40">
+                    <div className="flex flex-col lg:grid lg:grid-cols-[1fr_400px] divide-y lg:divide-y-0 lg:divide-x divide-border/40 border border-border/40">
                         {/* Next Post Preview */}
                         <div className="relative group/next overflow-hidden bg-muted/5">
                             <Link href={`/blog/${BLOG_POSTS[(BLOG_POSTS.findIndex(p => p.id === post.id) + 1) % BLOG_POSTS.length].slug}`} className="block relative h-full">

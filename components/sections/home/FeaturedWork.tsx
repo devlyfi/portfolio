@@ -8,7 +8,7 @@ export function FeaturedWork() {
         <section className="py-0 bg-muted/2 overflow-hidden border-b border-border/40">
             <div className="container px-4 mx-auto">
                 {/* Header Split */}
-                <div className="flex flex-col lg:flex-row border-x border-border/40 divide-y lg:divide-y-0 lg:divide-x divide-border/40 border-b border-border/40 bg-background/40">
+                <div className="flex flex-col lg:flex-row border border-border/40 divide-y lg:divide-y-0 lg:divide-x divide-border/40 border-b border-border/40 bg-background/40">
                     <div className="lg:w-1/2 p-12 lg:p-24 space-y-10">
                         <span className="text-[10px] font-black text-primary uppercase tracking-[0.5em] block animate-pulse">/CASE_STUDIES</span>
                         <h2 className="display-bold text-4xl lg:text-6xl uppercase tracking-tighter !leading-[0.9]"> Real-World<br />
@@ -24,7 +24,7 @@ export function FeaturedWork() {
                 </div>
 
                 {/* Projects Loop */}
-                <div className="divide-y divide-border/40 border-x border-border/40">
+                <div className="divide-y divide-border/40 border border-border/40">
                     {PROJECTS.map((project, index) => (
                         <div
                             key={project.id}
@@ -93,7 +93,7 @@ export function FeaturedWork() {
                 </div>
 
                 {/* Footer CTA */}
-                <div className="flex items-center justify-center p-20 lg:p-32 border-x border-border/40 relative bg-background/20 group cursor-pointer overflow-hidden">
+                <div className="flex items-center justify-center p-20 lg:p-32 border border-border/40 relative bg-background/20 group cursor-pointer overflow-hidden">
                     <Link
                         href="/work"
                         className="group flex flex-col items-center gap-10 relative z-10"

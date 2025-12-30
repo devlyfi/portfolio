@@ -35,7 +35,7 @@ export function Navbar() {
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative group">
                 {/* Navbar Connected Grid Effect */}
                 <div className={cn(
-                    "absolute -left-2 -right-2 inset-y-0 border-x border-border/20 transition-opacity duration-500",
+                    "absolute -left-2 -right-2 inset-y-0 border border-border/20 transition-opacity duration-500",
                     scrolled ? "opacity-100" : "opacity-0 group-hover:opacity-100"
                 )} />
 

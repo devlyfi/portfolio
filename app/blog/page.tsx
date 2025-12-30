@@ -58,7 +58,7 @@ export default function BlogListingPage() {
             {/* Metadata Grid */}
             <section className="bg-background">
                 <div className="container px-4 mx-auto">
-                    <div className="grid grid-cols-2 lg:grid-cols-4 divide-x divide-border/40 border-x border-border/40 bg-muted/5 border-b border-border/40">
+                    <div className="grid grid-cols-2 lg:grid-cols-4 divide-x divide-border/40 border border-border/40 bg-muted/5 border-b border-border/40">
                         {[
                             { label: "/TOTAL_POSTS", value: BLOG_POSTS.length.toString().padStart(2, '0') },
                             { label: "/CATEGORIES", value: "07" },
@@ -152,7 +152,7 @@ export default function BlogListingPage() {
             {/* Newsletter/Subscriber - Visual/Narrative Split */}
             <section className="py-0 border-t border-border/40 bg-muted/10">
                 <div className="container px-4 mx-auto">
-                    <div className="flex flex-col lg:flex-row divide-y lg:divide-y-0 lg:divide-x divide-border/40 border-x border-border/40">
+                    <div className="flex flex-col lg:flex-row divide-y lg:divide-y-0 lg:divide-x divide-border/40 border border-border/40">
                         {/* Narrative Side */}
                         <div className="lg:w-1/2 p-12 lg:p-24 space-y-8 relative group">
                             <div className="sidebar-meta absolute -left-2 top-24">01 // SUBSCRIPTION</div>

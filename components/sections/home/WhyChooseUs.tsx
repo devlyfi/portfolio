@@ -31,7 +31,7 @@ export function WhyChooseUs() {
     return (
         <section className="py-0 bg-background overflow-hidden border-b border-border/40">
             <div className="container px-4 mx-auto">
-                <div className="flex flex-col lg:flex-row border-x border-border/40 divide-y lg:divide-y-0 lg:divide-x divide-border/40">
+                <div className="flex flex-col lg:flex-row border border-border/40 divide-y lg:divide-y-0 lg:divide-x divide-border/40">
                     {/* Header Label */}
                     <div className="lg:w-1/3 p-12 lg:p-24 space-y-10 relative bg-muted/2">
                         <div className="space-y-4">

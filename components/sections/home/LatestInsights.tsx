@@ -15,7 +15,7 @@ export function LatestInsights() {
         <section className="py-0 bg-muted/1 overflow-hidden border-b border-border/40">
             <div className="container px-4 mx-auto">
                 {/* Header Split */}
-                <div className="flex flex-col lg:flex-row border-x border-border/40 divide-y lg:divide-y-0 lg:divide-x divide-border/40 border-b border-border/40 bg-background/40">
+                <div className="flex flex-col lg:flex-row border border-border/40 divide-y lg:divide-y-0 lg:divide-x divide-border/40 border-b border-border/40 bg-background/40">
                     <div className="lg:w-2/3 p-12 lg:p-24 space-y-10">
                         <span className="text-[10px] font-black text-primary uppercase tracking-[0.5em] block animate-pulse">/INTEL_STREAMS</span>
                         <h2 className="display-bold text-4xl lg:text-7xl flex flex-col items-start gap-2 uppercase tracking-tighter !leading-[0.85]">
@@ -43,7 +43,7 @@ export function LatestInsights() {
                 </div>
 
                 {/* Insights Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-x border-border/40 divide-x divide-border/40 relative">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border border-border/40 divide-x divide-border/40 relative">
                     {recentPosts.map((post) => (
                         <div key={post.id} className="relative group bg-background/50 hover:bg-background transition-all duration-700 p-8 lg:p-12 xl:p-14">
                             <BlogCard post={post} />
