@@ -10,7 +10,7 @@ export function FeaturedWork() {
                 {/* Header Split */}
                 <div className="flex flex-col lg:flex-row border border-border/40 divide-y lg:divide-y-0 lg:divide-x divide-border/40 border-b border-border/40 bg-background/40">
                     <div className="lg:w-1/2 p-12 lg:p-24 space-y-10">
-                        <span className="text-[10px] font-black text-primary uppercase tracking-[0.5em] block animate-pulse">/CASE_STUDIES</span>
+                        <span className="text-[10px] font-black text-primary uppercase tracking-[0.5em] block animate-pulse">CASE_STUDIES</span>
                         <h2 className="display-bold text-4xl lg:text-6xl uppercase tracking-tighter !leading-[0.9]"> Real-World<br />
                             Software<br />
                             Deliveries</h2>
@@ -42,7 +42,7 @@ export function FeaturedWork() {
                                             {/* Neon Learn More Hover Effect */}
                                             <div className="learn-more-box group-hover/img:opacity-100 opacity-0 transition-opacity absolute inset-0 flex items-center justify-center z-30 pointer-events-none scale-90 group-hover:scale-100 duration-500">
                                                 <div className="px-10 py-5 border border-primary bg-background/95 text-primary text-[10px] font-black tracking-[0.5em] uppercase flex items-center gap-4 shadow-2xl shadow-primary/20">
-                                                    LEARN_MORE <ArrowUpRight className="size-4" />
+                                                    Learn More <ArrowUpRight className="size-4" />
                                                 </div>
                                             </div>
                                         </div>
@@ -56,7 +56,7 @@ export function FeaturedWork() {
                             <div className="lg:w-1/2 p-12 lg:p-24 space-y-16 flex flex-col justify-center relative hover:bg-muted/5 transition-all duration-700">
                                 <div className="space-y-8">
                                     <div className="flex items-center gap-4">
-                                        <span className="text-[10px] font-black text-primary uppercase tracking-[0.5em]">0{index + 1} // PROJECT_FILE</span>
+                                        <span className="text-[10px] font-black text-primary uppercase tracking-[0.5em]">PROJECT_0{index + 1}</span>
                                         <div className="h-px flex-1 bg-border/40" />
                                     </div>
                                     <h3 className="display-bold text-4xl lg:text-5xl uppercase tracking-tighter group-hover:text-primary transition-all duration-500">{project.title}</h3>
@@ -68,11 +68,11 @@ export function FeaturedWork() {
                                 {/* Technical Metadata Grid */}
                                 <div className="grid grid-cols-2 gap-px bg-border/40 border border-border/40 bg-muted/10">
                                     <div className="bg-background/40 p-8 space-y-3">
-                                        <p className="text-[9px] font-black text-muted-foreground uppercase tracking-[0.4em]">/INDUSTRY</p>
+                                        <p className="text-[9px] font-black text-muted-foreground uppercase tracking-[0.4em]">INDUSTRY</p>
                                         <p className="text-xs font-black uppercase tracking-[0.3em]">{project.category.replace(' & ', '_')}</p>
                                     </div>
                                     <div className="bg-background/40 p-8 space-y-3">
-                                        <p className="text-[9px] font-black text-muted-foreground uppercase tracking-[0.4em]">/OUTCOME</p>
+                                        <p className="text-[9px] font-black text-muted-foreground uppercase tracking-[0.4em]">OUTCOME</p>
                                         <p className="text-xs font-black uppercase tracking-[0.3em] text-primary">{project.results[0].split(' ').pop()}</p>
                                     </div>
                                 </div>

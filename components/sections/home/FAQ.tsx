@@ -32,8 +32,8 @@ export function FAQ() {
                     {/* Header Label */}
                     <div className="lg:w-1/3 p-12 lg:p-24 space-y-10 relative bg-muted/2">
                         <div className="space-y-4">
-                            <span className="text-[10px] font-black text-primary uppercase tracking-[0.5em] block animate-pulse">/QUERY_RESOLUTION</span>
-                            <h2 className="display-bold text-4xl lg:text-5xl uppercase tracking-tighter !leading-[0.9]">Technical<br />Operations<br />Protocols</h2>
+                            <span className="text-[10px] font-black text-primary uppercase tracking-[0.5em] block animate-pulse">KNOWLEDGE_BASE</span>
+                            <h2 className="display-bold text-4xl lg:text-5xl uppercase tracking-tighter !leading-[0.9]">Common<br />Professional<br />Questions</h2>
                         </div>
                         <p className="text-[11px] text-muted-foreground uppercase tracking-[0.3em] leading-relaxed opacity-60">Everything required to initiate and maintain a high-performance engineering partnership.</p>
                         <div className="grid-symbol -bottom-2.5 -left-2.5 lg:hidden" />

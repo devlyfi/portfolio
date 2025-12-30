@@ -13,7 +13,7 @@ export function CTASection() {
                     {/* Narrative Panel */}
                     <div className="lg:w-2/3 p-12 lg:p-24 space-y-16 relative flex flex-col justify-center bg-background/40">
                         <div className="space-y-10 max-w-3xl">
-                            <span className="text-[10px] font-black text-primary uppercase tracking-[0.5em] block animate-pulse">/OPEN_CHANNEL_PROTOCOL</span>
+                            <span className="text-[10px] font-black text-primary uppercase tracking-[0.5em] block animate-pulse">GET_IN_TOUCH</span>
                             <h2 className="display-bold text-4xl lg:text-7xl uppercase tracking-tighter !leading-[0.85]">
                                 Accelerate Your<br />Technical Vision
                             </h2>
@@ -25,15 +25,15 @@ export function CTASection() {
                         <div className="flex flex-wrap gap-16 pt-8">
                             <div className="space-y-4">
                                 <span className="text-[10px] font-black text-muted-foreground/30 uppercase tracking-[0.4em] block">AVAILABILITY</span>
-                                <div className="text-sm font-black uppercase text-primary tracking-[0.4em]">PHASE_ACTIVE // {new Date().getFullYear()}</div>
+                                <div className="text-sm font-black uppercase text-primary tracking-[0.4em]">CURRENT_SESSION // {new Date().getFullYear()}</div>
                             </div>
                             <div className="space-y-4">
                                 <span className="text-[10px] font-black text-muted-foreground/30 uppercase tracking-[0.4em] block">STATUS</span>
-                                <div className="text-sm font-black uppercase text-foreground tracking-[0.4em]">READY_FOR_ENGAGEMENT</div>
+                                <div className="text-sm font-black uppercase text-foreground tracking-[0.4em]">OPEN_FOR_PROJECTS</div>
                             </div>
                         </div>
 
-                        <div className="sidebar-meta absolute -right-2 top-24 scale-90 opacity-10">TX_OPEN_v01</div>
+                        <div className="sidebar-meta absolute -right-2 top-24 scale-90 opacity-10">CONTACT_v01</div>
                         <div className="grid-symbol -bottom-2.5 -left-2.5 lg:hidden" />
                     </div>
 
@@ -51,7 +51,7 @@ export function CTASection() {
                                 <span className="text-lg font-black uppercase tracking-[0.6em] text-foreground group-hover:text-white transition-colors block">
                                     <CTAActionText />
                                 </span>
-                                <span className="text-[10px] font-bold text-muted-foreground group-hover:text-white/60 uppercase tracking-[0.4em] transition-colors block">/INITIATE_CONVERSATION</span>
+                                <span className="text-[10px] font-bold text-muted-foreground group-hover:text-white/60 uppercase tracking-[0.4em] transition-colors block">INITIATE_CONTACT</span>
                             </div>
                         </Link>
 

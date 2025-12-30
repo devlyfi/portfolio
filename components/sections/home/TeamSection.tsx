@@ -130,7 +130,7 @@ export function TeamSection({
                 {/* Header Split */}
                 <div className="flex flex-col lg:flex-row border border-border/40 divide-y lg:divide-y-0 lg:divide-x divide-border/40 border-b border-border/40 bg-background/40">
                     <div className="lg:w-2/3 p-8 lg:p-16 space-y-8">
-                        <span className="text-[10px] font-black text-primary uppercase tracking-[0.5em] block animate-pulse">/PERSONNEL_LOGS</span>
+                        <span className="text-[10px] font-black text-primary uppercase tracking-[0.5em] block animate-pulse">OUR_TEAM</span>
                         <h2 className="display-bold text-4xl lg:text-6xl uppercase tracking-tighter !leading-[0.9]">{title}</h2>
                     </div>
                     <div className="lg:w-1/3 p-8 lg:p-16 flex flex-col justify-center space-y-10 bg-muted/2 relative">
@@ -156,7 +156,7 @@ export function TeamSection({
 
                                                     {/* Operational ID */}
                                                     <div className="absolute top-8 left-8 z-20">
-                                                        <span className="text-[9px] font-black text-primary uppercase tracking-[0.4em] opacity-40 group-hover:opacity-100 transition-all">ID: OPS_{i + 101}</span>
+                                                        <span className="text-[9px] font-black text-primary uppercase tracking-[0.4em] opacity-40 group-hover:opacity-100 transition-all">MEMBER_{i + 1}</span>
                                                     </div>
 
                                                     {/* Social Overlay */}

@@ -6,25 +6,25 @@ export function WhyChooseUs() {
             title: "Security & Reliability",
             desc: "Security-first development practices and reliable system design to protect data and ensure operational continuity.",
             icon: ShieldCheck,
-            marker: "/SECURITY_FIRST"
+            marker: "SECURITY_PROTOCOL"
         },
         {
             title: "Efficient Delivery",
             desc: "Well-defined processes, automation, and iterative development to deliver features consistently and on time.",
             icon: Zap,
-            marker: "/DELIVERY_FLOW"
+            marker: "DELIVERY_MANAGEMENT"
         },
         {
             title: "Experienced Team",
             desc: "Work directly with experienced engineers and designers who understand real-world product and system challenges.",
             icon: Users,
-            marker: "/TEAM_EXPERIENCE"
+            marker: "ADVISORY_TEAM"
         },
         {
             title: "Scalable Foundations",
             desc: "Architectures designed to scale gradually and safely as products, users, and workloads grow.",
             icon: TrendingUp,
-            marker: "/BUILT_TO_SCALE"
+            marker: "GROWTH_SCALE"
         }
     ];
 
@@ -35,7 +35,7 @@ export function WhyChooseUs() {
                     {/* Header Label */}
                     <div className="lg:w-1/3 p-12 lg:p-24 space-y-10 relative bg-muted/2">
                         <div className="space-y-4">
-                            <span className="text-[10px] font-black text-primary uppercase tracking-[0.5em] block animate-pulse">/WHY_DEVLYFI</span>
+                            <span className="text-[10px] font-black text-primary uppercase tracking-[0.5em] block animate-pulse">WHY_DEVLYFI</span>
                             <h2 className="display-bold text-4xl lg:text-5xl uppercase tracking-tighter !leading-[0.9]"> Why Teams<br />
                                 Choose to<br />
                                 Work With Us</h2>

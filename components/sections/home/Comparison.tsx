@@ -49,7 +49,7 @@ export function Comparison() {
                     {/* Header Panel */}
                     <div className="lg:w-1/3 p-12 lg:p-24 space-y-12 relative bg-muted/2">
                         <div className="space-y-6">
-                            <span className="text-[10px] font-black text-primary uppercase tracking-[0.5em] block animate-pulse">/COMPARISON</span>
+                            <span className="text-[10px] font-black text-primary uppercase tracking-[0.5em] block animate-pulse">AGENCY_COMPARISON</span>
                             <h2 className="display-bold text-4xl lg:text-5xl uppercase tracking-tighter !leading-[0.9]">
                                 A Higher <br />
                                 Standard of <br />
@@ -70,7 +70,7 @@ export function Comparison() {
                                 <div className="size-10 bg-primary/10 flex items-center justify-center border border-primary/20">
                                     <Check className="size-5 text-primary" />
                                 </div>
-                                <span className="text-sm font-black uppercase tracking-[0.4em] text-primary">DEVLYFI_STANDARD</span>
+                                <span className="text-sm font-black uppercase tracking-[0.4em] text-primary">OUR_APPROACH</span>
                             </div>
 
                             <div className="space-y-10">
@@ -92,17 +92,17 @@ export function Comparison() {
                         </div>
 
                         {/* Others Column */}
-                        <div className="flex-1 p-10 lg:p-16 space-y-12 bg-muted/5 relative">
+                        <div className="flex-1 p-10 lg:p-16 space-y-12 bg-muted/10 dark:bg-muted/5 relative border-t md:border-t-0 md:border-l border-border/40">
                             <div className="flex items-center gap-4 mb-4">
                                 <div className="size-10 bg-muted/20 flex items-center justify-center border border-border/40">
                                     <X className="size-5 text-muted-foreground/40" />
                                 </div>
-                                <span className="text-sm font-black uppercase tracking-[0.4em] text-muted-foreground/40">OTHER_AGENCIES</span>
+                                <span className="text-sm font-black uppercase tracking-[0.4em] text-muted-foreground">TRADITIONAL_AGENCIES</span>
                             </div>
 
                             <div className="space-y-10">
                                 {otherAgencies.map((item, i) => (
-                                    <div key={i} className="space-y-3 opacity-40 hover:opacity-100 transition-opacity cursor-default">
+                                    <div key={i} className="space-y-3 cursor-default">
                                         <div className="flex items-center gap-3">
                                             <div className="size-1.5 bg-border/60 rotate-45" />
                                             <h3 className="text-lg font-bold uppercase tracking-tighter text-muted-foreground">{item.title}</h3>

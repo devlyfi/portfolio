@@ -41,7 +41,7 @@ export function Footer() {
                                 </a>
                             ))}
                         </div>
-                        <div className="sidebar-meta absolute -left-2 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity">/SITE_CORE_V1.0</div>
+                        <div className="sidebar-meta absolute -left-2 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity">DEVLYFI_GLOBAL</div>
                     </div>
 
                     {/* Links Column */}
@@ -57,13 +57,13 @@ export function Footer() {
                                         href={link.href}
                                         className="text-xs uppercase tracking-widest text-foreground/80 font-bold hover:text-primary transition-colors flex items-center gap-2 group/item"
                                     >
-                                        <span className="opacity-0 group-hover/item:opacity-100 transition-opacity">/</span>
+                                        <span className="opacity-0 group-hover/item:opacity-100 transition-opacity">_</span>
                                         {link.label}
                                     </Link>
                                 </li>
                             ))}
                         </ul>
-                        <div className="sidebar-meta absolute top-12 right-4">/DIR_MAP</div>
+                        <div className="sidebar-meta absolute top-12 right-4">SITE_MAP</div>
                     </div>
 
                     {/* Services Column */}
@@ -80,7 +80,7 @@ export function Footer() {
                                 </li>
                             ))}
                         </ul>
-                        <div className="sidebar-meta absolute top-12 right-4">/SERVICES</div>
+                        <div className="sidebar-meta absolute top-12 right-4">SERVICES</div>
                     </div>
 
                     {/* Contact Column */}
@@ -91,15 +91,15 @@ export function Footer() {
                         </div>
                         <div className="space-y-6">
                             <div className="space-y-2">
-                                <p className="text-[10px] font-bold text-muted-foreground tracking-widest uppercase">/LOCALATION</p>
+                                <p className="text-[10px] font-bold text-muted-foreground tracking-widest uppercase">LOCATION</p>
                                 <p className="text-xs uppercase tracking-widest text-foreground font-bold">{SITE_CONFIG.contact.address}</p>
                             </div>
                             <div className="space-y-2">
-                                <p className="text-[10px] font-bold text-muted-foreground tracking-widest uppercase">/TRANSMISSION</p>
+                                <p className="text-[10px] font-bold text-muted-foreground tracking-widest uppercase">CONTACT</p>
                                 <p className="text-xs uppercase tracking-widest text-foreground font-bold">{SITE_CONFIG.contact.email}</p>
                             </div>
                         </div>
-                        <div className="sidebar-meta absolute -right-2 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity">/STATUS_ACTIVE</div>
+                        <div className="sidebar-meta absolute -right-2 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity">STATUS_ONLINE</div>
                     </div>
                 </div>
 

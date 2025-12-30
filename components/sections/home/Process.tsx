@@ -53,7 +53,7 @@ export function Process() {
                     {/* Header Label */}
                     <div className="w-full lg:w-1/3 p-10 lg:p-16 xl:p-24 space-y-12 relative border-b lg:border-b-0 lg:border-r border-border/40 bg-background/40 z-20">
                         <div className="space-y-6">
-                            <span className="text-[10px] font-black text-primary uppercase tracking-[0.5em] block animate-pulse">/PROCESS</span>
+                            <span className="text-[10px] font-black text-primary uppercase tracking-[0.5em] block animate-pulse">OUR_METHODOLOGY</span>
                             <h2 className="display-bold text-3xl lg:text-3xl xl:text-5xl uppercase tracking-tighter !leading-[0.9]"> Our<br />
                                 Delivery<br />
                                 Process</h2>
@@ -93,7 +93,7 @@ export function Process() {
 
                                     <div className="pt-10 flex items-center gap-6">
                                         <div className="h-px flex-1 bg-border/40 group-hover:bg-primary/20 transition-colors" />
-                                        <span className="text-[10px] font-mono text-muted-foreground/10 group-hover:text-primary/40 uppercase tracking-widest transition-colors">ID: {i + 101}</span>
+                                        <span className="text-[10px] font-mono text-muted-foreground/10 group-hover:text-primary/40 uppercase tracking-widest transition-colors">STEP_{i + 1}</span>
                                     </div>
                                     <div className="grid-symbol -bottom-2.5 -right-2.5 opacity-0 group-hover:opacity-100 transition-opacity" />
                                 </div>

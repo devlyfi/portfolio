@@ -763,14 +763,14 @@ export const PROJECTS: Project[] = [
         sections: [
             {
                 title: "AI-Powered Campaign Optimization",
-                description: "A marketing agency wanted to integrate AI into their workflow but lacked a clear strategy. With Nakula, we built an AI-focused site that explained their services, showcased case studies, and positioned them as innovators in their industry.",
+                description: "A marketing agency wanted to integrate AI into their workflow but lacked a clear strategy. With Devlyfi, we built an AI-focused site that explained their services, showcased case studies, and positioned them as innovators in their industry.",
                 image: "/images/projects/fintech-challenge.jpg",
                 bgColor: "bg-background",
                 quote: "How can we show clients the real value of AI and win bigger deals?"
             },
             {
                 title: "AI Storytelling with Case Studies & Clear Positioning",
-                description: "We customized Nakula with:",
+                description: "We customized Devlyfi with:",
                 image: "/images/projects/fintech-solution.jpg",
                 bgColor: "bg-[#a3e635]",
                 bullets: [

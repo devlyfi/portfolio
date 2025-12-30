@@ -52,7 +52,7 @@ export function Navbar() {
                         </Link>
                         <div className="hidden lg:flex items-center gap-2 text-[8px] font-bold tracking-[0.3em] text-muted-foreground/40 border-l border-border/40 pl-8">
                             <span className="text-primary animate-pulse">●</span>
-                            <span>PHASE_03 // PRODUCTION</span>
+                            <span>SYSTEM_STATUS // ONLINE</span>
                         </div>
                     </div>
 
@@ -107,7 +107,7 @@ export function Navbar() {
                             onClick={() => setIsOpen(false)}
                             className="w-full py-5 text-center text-xs font-bold uppercase tracking-[0.3em] bg-primary text-primary-foreground"
                         >
-                            GET A QUOTE
+                            CONTACT US
                         </Link>
                     </nav>
                 </div>
@@ -143,7 +143,7 @@ function EnquiryButtonText() {
             onMouseLeave={() => setIsHovered(false)}
             className="relative"
         >
-            <ScrambleText text="ENQUIRY" trigger={isHovered} />
+            <ScrambleText text="Enquiry" trigger={isHovered} />
         </span>
     );
 }

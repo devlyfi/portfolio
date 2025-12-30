@@ -41,7 +41,7 @@ export function ServicesOverview() {
                     {/* Section Label / Side Header */}
                     <div ref={sideHeaderRef} className="lg:w-1/4 p-12 lg:p-24 space-y-10 relative bg-muted/2 h-full min-h-max lg:min-h-screen">
                         <div className="space-y-4">
-                            <span className="text-[10px] font-black text-primary uppercase tracking-[0.4em] block animate-pulse">/SERVICES</span>
+                            <span className="text-[10px] font-black text-primary uppercase tracking-[0.4em] block animate-pulse">SERVICES</span>
                             <h2 className="display-bold text-3xl lg:text-5xl uppercase tracking-tighter !leading-[0.9]"> Engineering<br />
                                 Services for<br />
                                 Digital Products
@@ -75,7 +75,7 @@ export function ServicesOverview() {
                                         <div className="size-16 border border-border/40 flex items-center justify-center text-primary bg-background group-hover:border-primary transition-all duration-500">
                                             <service.icon className="size-7" />
                                         </div>
-                                        <span className="text-[10px] font-mono text-muted-foreground/20 group-hover:text-primary transition-colors">ID: 0{index + 1}</span>
+                                        <span className="text-[10px] font-mono text-muted-foreground/20 group-hover:text-primary transition-colors">SERVICE_0{index + 1}</span>
                                     </div>
                                     <div className="space-y-4">
                                         <h3 className="text-3xl font-black uppercase tracking-tight text-foreground group-hover:text-primary transition-colors">{service.title}</h3>
@@ -118,7 +118,7 @@ function ExploreCaseLinkText() {
     const [isHovered, setIsHovered] = useState(false);
     return (
         <span onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
-            <ScrambleText text="/EXPLORE_MORE" trigger={isHovered} />
+            <ScrambleText text="Explore Service" trigger={isHovered} />
         </span>
     );
 }

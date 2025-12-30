@@ -92,9 +92,7 @@ export default function AboutPage() {
                                 <div className="absolute inset-0 flex items-center justify-center p-8">
                                     <div className="w-full h-full border border-foreground/5 bg-foreground/[0.02] backdrop-blur-sm flex items-center justify-center relative">
                                         <div className="p-12 text-center max-w-sm">
-                                            <p className="text-xl font-bold italic opacity-60 leading-relaxed">
-                                                "Innovation distinguishes between a leader and a follower."
-                                            </p>
+                                            <p className="text-[11px] uppercase tracking-[0.3em] leading-relaxed opacity-60">Architecting high-performance digital systems for the next generation of enterprise scale.</p>
                                             <div className="mt-6 h-[1px] w-12 bg-primary/40 mx-auto" />
                                         </div>
                                         <div className="absolute top-0 right-0 w-4 h-4 border-t border-r border-foreground/10" />

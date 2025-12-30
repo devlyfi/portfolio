@@ -21,15 +21,15 @@ export function Testimonials() {
                     {/* Header Label / Sidebar */}
                     <div className="lg:w-1/3 p-8 lg:p-12 space-y-8 relative bg-muted/2">
                         <div className="space-y-4">
-                            <span className="text-[10px] font-black text-primary uppercase tracking-[0.5em] block animate-pulse">/FEEDBACK_METRICS</span>
+                            <span className="text-[10px] font-black text-primary uppercase tracking-[0.5em] block animate-pulse">CLIENT_FEEDBACK</span>
                             <h2 className="display-bold text-3xl lg:text-4xl uppercase tracking-tighter !leading-[0.9]">Industry<br />Voices</h2>
                         </div>
 
                         <div className="space-y-6 pt-2">
                             <div className="p-6 bg-background border border-border/40 relative group overflow-hidden shadow-sm group-hover:shadow-primary/5 transition-all">
-                                <span className="text-[10px] font-black text-muted-foreground/40 uppercase tracking-[0.4em] block mb-2">/SATISFACTION</span>
+                                <span className="text-[10px] font-black text-muted-foreground/40 uppercase tracking-[0.4em] block mb-2">SATISFACTION_RATE</span>
                                 <div className="text-3xl font-black text-primary tracking-tighter">98.4%</div>
-                                <div className="sidebar-meta absolute -right-2 top-4 scale-75 opacity-10 group-hover:opacity-100 transition-opacity">TX_CONFIRMED</div>
+                                <div className="sidebar-meta absolute -right-2 top-4 scale-75 opacity-10 group-hover:opacity-100 transition-opacity">VERIFIED</div>
                                 <div className="absolute bottom-0 left-0 h-0.5 w-0 bg-primary/20 group-hover:w-full transition-all duration-700" />
                             </div>
                         </div>

@@ -17,7 +17,7 @@ export function LatestInsights() {
                 {/* Header Split */}
                 <div className="flex flex-col lg:flex-row border border-border/40 divide-y lg:divide-y-0 lg:divide-x divide-border/40 border-b border-border/40 bg-background/40">
                     <div className="lg:w-2/3 p-12 lg:p-24 space-y-10">
-                        <span className="text-[10px] font-black text-primary uppercase tracking-[0.5em] block animate-pulse">/INTEL_STREAMS</span>
+                        <span className="text-[10px] font-black text-primary uppercase tracking-[0.5em] block animate-pulse">LATEST_ARTICLES</span>
                         <h2 className="display-bold text-4xl lg:text-7xl flex flex-col items-start gap-2 uppercase tracking-tighter !leading-[0.85]">
                             <span className="flex items-center gap-6">
                                 Technical <span className="h-[2px] w-8 md:w-16 bg-primary mt-2" />
