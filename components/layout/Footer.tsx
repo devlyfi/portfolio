@@ -1,9 +1,10 @@
 import Link from "next/link";
 import { SITE_CONFIG, NAV_LINKS } from "@/lib/constants";
 import { Twitter, Linkedin, Github, Mail, MapPin, Phone } from "lucide-react";
-import { DevlyfiLogoMark } from "@/components/ui/DevlyfiLogo";
+
 import Image from "next/image";
 import footerr from '../../public/footerr.png'
+import DevlyfiLogoMark from "../ui/DevlyfiLogo";
 export function Footer() {
     const currentYear = new Date().getFullYear();
 
