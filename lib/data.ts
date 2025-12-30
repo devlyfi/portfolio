@@ -13,6 +13,7 @@ import {
     CheckCircle,
     RefreshCcw
 } from 'lucide-react';
+import { teamImages } from './image';
 
 export interface ServiceProcessStep {
     id: number;
@@ -946,11 +947,11 @@ export const TESTIMONIALS = [
 
 export const TEAM = [
     {
-        id: "faisal-f",
-        name: "Faisal F.",
+        id: "anm-r",
+        name: "ANM Rasheduzzaman",
         role: "Founder & CEO",
-        bio: "Visionary leader with 10+ years in software architecture and agency growth.",
-        image: "/images/team/faisal.jpg",
+        bio: "Visionary technology leader with 7+ years of experience in software architecture, product strategy, and scaling high-performing digital teams.",
+        image: teamImages.rashed,
         socials: {
             linkedin: "#",
             twitter: "#",
@@ -958,11 +959,12 @@ export const TEAM = [
         }
     },
     {
-        id: "sarah-smith",
-        name: "Sarah Smith",
-        role: "Head of Operations",
-        bio: "Expert in project management and scaling remote engineering teams.",
-        image: "/images/team/sarah.jpg",
+        id: "tamim-t",
+        name: "Ruhul Quddus Tamim",
+        role: "AI & Machine Learning Engineer",
+        bio: "Co-Founder and AI engineer focused on delivering production-ready machine learning solutions for Malaysian and global remote clients.",
+        image: teamImages.tamim,
+
         socials: {
             linkedin: "#",
             twitter: "#",
@@ -970,11 +972,12 @@ export const TEAM = [
         }
     },
     {
-        id: "david-kim",
-        name: "David Kim",
+        id: "foysal-f",
+        name: "Foysal Fahim",
         role: "Lead UI/UX Designer",
-        bio: "Award-winning designer focused on human-centric digital experiences.",
-        image: "/images/team/david.jpg",
+        bio: "Experienced UI/UX designer with a proven track record in creating intuitive and engaging user interfaces.",
+        image: teamImages.foysal,
+
         socials: {
             linkedin: "#",
             twitter: "#",
@@ -982,11 +985,12 @@ export const TEAM = [
         }
     },
     {
-        id: "alex-chen",
-        name: "Alex Chen",
-        role: "CTO",
-        bio: "Full-stack wizard specializing in AI integrations and cloud infrastructure.",
-        image: "/images/team/alex.jpg",
+        id: "abdullah-el",
+        name: "Abdullah El Jaber",
+        role: "Senior Software Engineer",
+        bio: "Experienced software engineer with a proven track record in building scalable and maintainable applications.",
+        image: teamImages.abdullah,
+
         socials: {
             linkedin: "#",
             twitter: "#",

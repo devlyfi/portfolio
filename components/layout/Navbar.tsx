@@ -25,6 +25,22 @@ export function Navbar() {
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
+    // Close mobile menu when path changes (navigation completes)
+    useEffect(() => {
+        setIsOpen(false);
+    }, [pathname]);
+
+    const handleTransition = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+        if (pathname === href) {
+            setIsOpen(false);
+            return;
+        }
+        e.preventDefault();
+        // Do not close menu immediately - let the stairs cover it first
+        const event = new CustomEvent("stairs:navigate", { detail: { href } });
+        window.dispatchEvent(event);
+    };
+
     return (
         <header
             className={cn(
@@ -44,7 +60,11 @@ export function Navbar() {
                 <div className="flex items-center justify-between relative">
                     {/* Left: Logo + Phase Marker */}
                     <div className="flex items-center gap-8">
-                        <Link href="/" className="flex items-center gap-3 group/logo">
+                        <Link
+                            href="/"
+                            className="flex items-center gap-3 group/logo"
+                            onClick={(e) => handleTransition(e, "/")}
+                        >
                             <DevlyfiLogoMark size={24} className="text-primary group-hover/ transition-transform duration-500 " />
                             <span className="text-sm font-bold tracking-[0.2em] uppercase">
                                 {SITE_CONFIG.name}
@@ -59,11 +79,12 @@ export function Navbar() {
                     {/* Desktop Nav */}
                     <nav className="hidden md:flex items-center gap-12">
                         {NAV_LINKS.map((link) => (
-                            <NavLink key={link.href} link={link} pathname={pathname} />
+                            <NavLink key={link.href} link={link} pathname={pathname} onNavigate={handleTransition} />
                         ))}
                         <div className="w-[1px] h-4 bg-border/40" />
                         <Link
                             href="/contact"
+                            onClick={(e) => handleTransition(e, "/contact")}
                             className="text-xs font-bold uppercase tracking-[0.2em] px-6 py-2 border border-border/40 hover:border-primary hover:bg-primary hover:text-primary-foreground transition-all group/btn"
                         >
                             <EnquiryButtonText />
@@ -97,14 +118,14 @@ export function Navbar() {
                                     "text-xs font-bold uppercase tracking-[0.3em] p-4 border border-transparent hover:border-border/40 transition-all",
                                     pathname === link.href ? "text-primary bg-primary/5 border-border/40" : "text-muted-foreground"
                                 )}
-                                onClick={() => setIsOpen(false)}
+                                onClick={(e) => handleTransition(e, link.href)}
                             >
                                 {link.label}
                             </Link>
                         ))}
                         <Link
                             href="/contact"
-                            onClick={() => setIsOpen(false)}
+                            onClick={(e) => handleTransition(e, "/contact")}
                             className="w-full py-5 text-center text-xs font-bold uppercase tracking-[0.3em] bg-primary text-primary-foreground"
                         >
                             CONTACT US
@@ -116,7 +137,7 @@ export function Navbar() {
     );
 }
 
-function NavLink({ link, pathname }: { link: { label: string; href: string }; pathname: string }) {
+function NavLink({ link, pathname, onNavigate }: { link: { label: string; href: string }; pathname: string; onNavigate?: (e: React.MouseEvent<HTMLAnchorElement>, href: string) => void }) {
     const [isHovered, setIsHovered] = useState(false);
 
     return (
@@ -124,6 +145,7 @@ function NavLink({ link, pathname }: { link: { label: string; href: string }; pa
             href={link.href}
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
+            onClick={(e) => onNavigate?.(e, link.href)}
             className={cn(
                 "text-xs font-bold uppercase tracking-[0.2em] transition-all hover:text-primary",
                 pathname === link.href ? "text-primary" : "text-muted-foreground"

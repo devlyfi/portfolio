@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Image from "next/image";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -50,7 +51,7 @@ export function TeamSection({
                     scrollTrigger: {
                         trigger: section,
                         pin: true,
-                        start: "center center",
+                        start: "center 40%",
                         end: () => `+=${scrollDistance}`,
                         scrub: 1,
                         pinSpacing: true,
@@ -149,14 +150,21 @@ export function TeamSection({
                                 {TEAM.map((member, i) => (
                                     <div key={member.id} className="flex-[0_0_100%] sm:flex-[0_0_50%] lg:flex-[0_0_25%] min-w-0 lg:min-w-[320px] xl:min-w-[380px]">
                                         <div className="group h-full relative border-r border-border/40">
-                                            <div className="aspect-[3/4] bg-muted/10 relative overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-1000">
+                                            <div className="aspect-[3/4] bg-primary relative overflow-hidden transition-all duration-1000">
                                                 <div className="absolute inset-0 bg-primary/2 opacity-0 group-hover:opacity-100 transition-opacity z-10" />
-                                                <div className="w-full h-full flex items-center justify-center relative bg-background/5">
-                                                    <span className="text-[12vw] font-black opacity-[0.05] select-none uppercase pointer-events-none tracking-tighter">{member.name.split(' ')[0]}</span>
+                                                <div className="w-full h-full flex items-center justify-center relative ">
+                                                    <Image
+                                                        src={member.image}
+                                                        alt={member.name}
+                                                        fill
+                                                        className="object-cover"
+                                                    />
+
+
 
                                                     {/* Operational ID */}
                                                     <div className="absolute top-8 left-8 z-20">
-                                                        <span className="text-[9px] font-black text-primary uppercase tracking-[0.4em] opacity-40 group-hover:opacity-100 transition-all">MEMBER_{i + 1}</span>
+                                                        <span className="text-[9px] font-black text-black uppercase tracking-[0.4em] opacity-80 group-hover:opacity-100 transition-all">MEMBER_{i + 1}</span>
                                                     </div>
 
                                                     {/* Social Overlay */}
@@ -197,14 +205,21 @@ export function TeamSection({
                             {/* Re-implementing static grid if carousel is false */}
                             {TEAM.map((member, i) => (
                                 <div key={member.id} className="group h-full relative border-r border-border/40">
-                                    <div className="aspect-[3/4] bg-muted/10 relative overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-1000">
+                                    <div className="aspect-[3/4] bg-primary relative overflow-hidden transition-all duration-1000">
                                         <div className="absolute inset-0 bg-primary/2 opacity-0 group-hover:opacity-100 transition-opacity z-10" />
                                         <div className="w-full h-full flex items-center justify-center relative bg-background/5">
-                                            <span className="text-[10vw] font-black opacity-[0.05] select-none uppercase pointer-events-none tracking-tighter">{member.name.split(' ')[0]}</span>
+                                            <Image
+                                                src={member.image}
+                                                alt={member.name}
+                                                fill
+                                                className="object-cover"
+                                            />
+
+
 
                                             {/* Operational ID */}
                                             <div className="absolute top-8 left-8 z-20">
-                                                <span className="text-[9px] font-black text-primary uppercase tracking-[0.4em] opacity-40 group-hover:opacity-100 transition-all">ID: OPS_{i + 101}</span>
+                                                <span className="text-[9px] font-black text-white/90 uppercase tracking-[0.4em] opacity-80 group-hover:opacity-100 transition-all">ID: OPS_{i + 101}</span>
                                             </div>
 
                                             {/* Social Overlay */}

@@ -14,12 +14,21 @@ const Stairs = (props: { children: React.ReactNode }) => {
 
     const stairParentRef = useRef<HTMLDivElement>(null)
     const stairsRef = useRef<HTMLDivElement[]>([])
+    const pageWrapperRef = useRef<HTMLDivElement>(null)
 
     // Page entrance animation on route change
     useGSAP(() => {
         const ctx = gsap.context(() => {
             // Set initial state
             gsap.set(stairParentRef.current, { display: 'block' })
+
+            // Initial state for page content
+            if (pageWrapperRef.current) {
+                gsap.set(pageWrapperRef.current, {
+                    opacity: 0,
+                    y: 20
+                })
+            }
 
             const tl = gsap.timeline({
                 defaults: {
@@ -37,32 +46,34 @@ const Stairs = (props: { children: React.ReactNode }) => {
                 }
             })
 
-            // Stairs reveal animation (coming down)
-            tl.fromTo(stairsRef.current,
-                {
-                    scaleY: 0,
-                    transformOrigin: 'top'
-                },
-                {
-                    scaleY: 1,
-                    duration: 0.5,
-                    stagger: {
-                        each: 0.04,
-                        from: 'start'
-                    }
-                }
-            )
+            // Stairs reveal animation (start covered, then drop down)
+            // We set starting state immediately to covered
+            tl.set(stairsRef.current, {
+                scaleY: 1,
+                transformOrigin: 'bottom'
+            })
 
-            // Stairs exit animation (sliding up)
+            // Then animate to reveal (scaleY -> 0)
             tl.to(stairsRef.current, {
                 scaleY: 0,
-                transformOrigin: 'bottom',
                 duration: 0.5,
                 stagger: {
                     each: 0.04,
                     from: 'end'
                 }
-            }, '+=0.05')
+            })
+
+            // Page content entrance animation
+            // Using clearProps to ensure no transforms remain to interfere with ScrollTrigger
+            if (pageWrapperRef.current) {
+                tl.to(pageWrapperRef.current, {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.6,
+                    ease: 'power3.out',
+                    clearProps: 'transform' // CRITICAL for ScrollTrigger compatibility
+                }, '-=0.4')
+            }
 
             // Hide overlay
             tl.set(stairParentRef.current, { display: 'none' })
@@ -70,6 +81,7 @@ const Stairs = (props: { children: React.ReactNode }) => {
             // Skip animation on first load for faster initial render
             if (isFirstLoad) {
                 tl.progress(1)
+                if (pageWrapperRef.current) gsap.set(pageWrapperRef.current, { clearProps: 'all' })
                 setIsFirstLoad(false)
             }
         })
@@ -100,6 +112,16 @@ const Stairs = (props: { children: React.ReactNode }) => {
             preTl.set(stairParentRef.current, { display: 'block' })
             preTl.set(stairsRef.current, { scaleY: 0, transformOrigin: 'bottom' })
 
+            // Page exit animation
+            if (pageWrapperRef.current) {
+                preTl.to(pageWrapperRef.current, {
+                    opacity: 0,
+                    y: -20,
+                    duration: 0.3,
+                    ease: 'power2.in'
+                })
+            }
+
             // Stairs cover animation (coming up from bottom)
             preTl.to(stairsRef.current, {
                 scaleY: 1,
@@ -108,7 +130,7 @@ const Stairs = (props: { children: React.ReactNode }) => {
                     each: 0.04,
                     from: 'end'
                 }
-            })
+            }, '-=0.1')
 
             // Navigate after stairs cover the screen
             preTl.call(() => router.push(href))
@@ -131,7 +153,7 @@ const Stairs = (props: { children: React.ReactNode }) => {
 
     return (
         <>
-            {/* Stairs Overlay - completely separate from page content */}
+            {/* Stairs Overlay */}
             <div
                 ref={stairParentRef}
                 className="h-screen w-full fixed z-[9999] top-0 left-0 overflow-hidden pointer-events-none hidden"
@@ -150,9 +172,10 @@ const Stairs = (props: { children: React.ReactNode }) => {
                 </div>
             </div>
 
-            {/* Page Content - NO wrapper div, render children directly */}
-            {/* This prevents any transform interference with ScrollTrigger */}
-            {props.children}
+            {/* Page Content Wrapper - safe for ScrollTrigger because props are cleared */}
+            <div ref={pageWrapperRef}>
+                {props.children}
+            </div>
         </>
     )
 }
