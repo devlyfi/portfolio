@@ -21,7 +21,7 @@ export function Hero() {
                                 <div className="h-px w-12 bg-primary/40" />
                             </div>
 
-                            <h1 className="display-bold text-6xl md:text-8xl lg:text-[7.5rem] leading-[0.85] uppercase tracking-tighter text-foreground">
+                            <h1 className="display-bold text-5xl md:text-8xl lg:text-[7.5rem] leading-[0.85] uppercase tracking-tighter text-foreground">
                                 Architecting <br />
                                 <span className="text-primary italic">Reliable Digital</span> <br />
                                 Foundations.
@@ -29,7 +29,7 @@ export function Hero() {
                         </div>
 
                         <div className="max-w-2xl space-y-10 flex flex-col items-center">
-                            <p className="text-[11px] text-muted-foreground uppercase leading-[2] tracking-[0.3em] font-medium opacity-90 border-y border-border/10 py-6 px-8">
+                            <p className="text-[11px] md:text-[11px] text-muted-foreground uppercase leading-[2] tracking-[0.3em] font-medium opacity-90 border-y border-border/10 py-6 px-8">
                                 We engineer high-performance digital systems for modern enterprises—built for scale, security, and operational clarity.
                                 At Devlyfi, every solution is designed with transparent processes, clean architecture, and a focus on stability under real-world load.
                             </p>
