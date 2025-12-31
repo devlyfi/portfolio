@@ -998,11 +998,11 @@ export const TEAM = [
         }
     },
     {
-        id: "jessica-wu",
-        name: "Jessica Wu",
-        role: "Head of Marketing",
-        bio: "Strategic growth expert with a passion for creative storytelling and data-driven results.",
-        image: "/images/team/jessica.jpg",
+        id: "tahsin-n",
+        name: "Tahsin Al Mahi",
+        role: "SEO & Content Writer",
+        bio: "Experienced SEO & Content Writer with a passion for creative storytelling and data-driven results.",
+        image: teamImages.neon,
         socials: {
             linkedin: "#",
             twitter: "#",
@@ -1013,7 +1013,7 @@ export const TEAM = [
         id: "ryan-h",
         name: "Ryan H.",
         role: "Senior Dev Analyst",
-        bio: "Specializing in technical feasibility and optimizing internal development workflows.",
+        bio: "Experienced Dev Analyst with a passion for creative storytelling and data-driven results.",
         image: "/images/team/ryan.jpg",
         socials: {
             linkedin: "#",
