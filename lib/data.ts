@@ -984,13 +984,13 @@ export const TEAM = [
             github: "#"
         }
     },
-    {
-        id: "abdullah-el",
-        name: "Abdullah El Jaber",
-        role: "Senior Software Engineer",
-        bio: "Experienced software engineer with a proven track record in building scalable and maintainable applications.",
-        image: teamImages.abdullah,
 
+    {
+        id: "tahsin-n",
+        name: "Tahsin Al Mahi",
+        role: "SEO & Content Writer",
+        bio: "Experienced SEO & Content Writer with a passion for creative storytelling and data-driven results.",
+        image: teamImages.neon,
         socials: {
             linkedin: "#",
             twitter: "#",
@@ -998,11 +998,12 @@ export const TEAM = [
         }
     },
     {
-        id: "tahsin-n",
-        name: "Tahsin Al Mahi",
-        role: "SEO & Content Writer",
-        bio: "Experienced SEO & Content Writer with a passion for creative storytelling and data-driven results.",
-        image: teamImages.neon,
+        id: "abdullah-el",
+        name: "Abdullah El Jaber",
+        role: "Senior Software Engineer",
+        bio: "Experienced software engineer with a proven track record in building scalable and maintainable applications.",
+        image: teamImages.abdullah,
+
         socials: {
             linkedin: "#",
             twitter: "#",
