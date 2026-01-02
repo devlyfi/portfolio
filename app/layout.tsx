@@ -9,6 +9,7 @@ import { SITE_CONFIG } from "@/lib/constants";
 import "./globals.css";
 import LenisProvider from "@/components/layout/LenisProvider";
 import Stairs from "@/components/layout/Stairs";
+
 import { Analytics } from "@vercel/analytics/react";
 
 const geistSans = Geist({
