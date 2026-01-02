@@ -947,11 +947,11 @@ export const TESTIMONIALS = [
 
 export const TEAM = [
     {
-        id: "anm-r",
-        name: "ANM Rasheduzzaman",
+        id: "Bay-p",
+        name: "Bayu Pratama",
         role: "Founder & CEO",
         bio: "Visionary technology leader with 7+ years of experience in software architecture, product strategy, and scaling high-performing digital teams.",
-        image: teamImages.rashed,
+        image: "https://framerusercontent.com/images/KpYSUGGCC0qK2rL79NdDfRecwjs.png",
         socials: {
             linkedin: "#",
             twitter: "#",
@@ -959,11 +959,11 @@ export const TEAM = [
         }
     },
     {
-        id: "tamim-t",
-        name: "Ruhul Quddus Tamim",
+        id: "gilang-n",
+        name: "Gilang Nugroho",
         role: "AI & Machine Learning Engineer",
         bio: "Co-Founder and AI engineer focused on delivering production-ready machine learning solutions for Malaysian and global remote clients.",
-        image: teamImages.tamim,
+        image: "https://framerusercontent.com/images/QdEY2Qpvm52XeskP1e7RAOOsBd4.png",
 
         socials: {
             linkedin: "#",
@@ -972,11 +972,11 @@ export const TEAM = [
         }
     },
     {
-        id: "foysal-f",
-        name: "Foysal Fahim",
+        id: "Putri-a",
+        name: "Putri Andini",
         role: "Lead UI/UX Designer",
         bio: "Experienced UI/UX designer with a proven track record in creating intuitive and engaging user interfaces.",
-        image: teamImages.foysal,
+        image: "https://framerusercontent.com/images/oCnuYGTGjH2Rfl3aGz0xMtLkc.png",
 
         socials: {
             linkedin: "#",
@@ -986,11 +986,11 @@ export const TEAM = [
     },
 
     {
-        id: "tahsin-n",
-        name: "Tahsin Al Mahi",
+        id: "dinda-k",
+        name: "Dinda Kurniati",
         role: "SEO & Content Writer",
         bio: "Experienced SEO & Content Writer with a passion for creative storytelling and data-driven results.",
-        image: teamImages.neon,
+        image: "https://framerusercontent.com/images/vmqfxIiGo4Y85vT4bYiISA3EWas.png",
         socials: {
             linkedin: "#",
             twitter: "#",
@@ -998,11 +998,11 @@ export const TEAM = [
         }
     },
     {
-        id: "abdullah-el",
-        name: "Abdullah El Jaber",
+        id: "paramitha-s",
+        name: "Paramitha Surya",
         role: "Senior Software Engineer",
         bio: "Experienced software engineer with a proven track record in building scalable and maintainable applications.",
-        image: teamImages.abdullah,
+        image: "https://framerusercontent.com/images/TzdaeslnoVsqLoWizTKsPHw63t4.png",
 
         socials: {
             linkedin: "#",
@@ -1015,7 +1015,7 @@ export const TEAM = [
         name: "Ryan H.",
         role: "Senior Dev Analyst",
         bio: "Experienced Dev Analyst with a passion for creative storytelling and data-driven results.",
-        image: "/images/team/ryan.jpg",
+        image: "https://framerusercontent.com/images/u28MncU4ajKmaH7TDZRucwiTrUc.png",
         socials: {
             linkedin: "#",
             twitter: "#",
